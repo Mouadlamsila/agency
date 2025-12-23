@@ -20,12 +20,38 @@ export default function Hero() {
             ref={containerRef}
             className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden px-6 pt-20 bg-[#0A0A0A]"
         >
+            {/* Architectural Layer: Background Grid */}
+            <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
+                <div className="absolute inset-0" style={{
+                    backgroundImage: `linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)`,
+                    backgroundSize: '40px 40px'
+                }} />
+            </div>
+
+            {/* Structural Guide Lines */}
+            <div className="absolute inset-0 z-0 flex justify-center pointer-events-none">
+                <div className="relative w-full max-w-5xl h-full">
+                    <motion.div
+                        initial={{ scaleY: 0 }}
+                        animate={{ scaleY: 1 }}
+                        transition={{ duration: 1.5, delay: 1, ease: expoOut }}
+                        className="absolute left-0 top-0 w-[1px] h-full bg-gradient-to-b from-transparent via-white/10 to-transparent origin-top"
+                    />
+                    <motion.div
+                        initial={{ scaleY: 0 }}
+                        animate={{ scaleY: 1 }}
+                        transition={{ duration: 1.5, delay: 1, ease: expoOut }}
+                        className="absolute right-0 top-0 w-[1px] h-full bg-gradient-to-b from-transparent via-white/10 to-transparent origin-top"
+                    />
+                </div>
+            </div>
+
             {/* Abstract Background Element */}
             <motion.div
                 style={{ y: y1 }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{
-                    opacity: 0.1,
+                    opacity: 0.08,
                     scale: 1,
                 }}
                 transition={{
@@ -57,7 +83,7 @@ export default function Hero() {
                                 animate={{ y: 0 }}
                                 transition={{
                                     duration: 1.8,
-                                    delay: 0.4 + i * 0.08,
+                                    delay: 0.4 + i * 0.06,
                                     ease: expoOut,
                                 }}
                                 className="block"
@@ -73,12 +99,12 @@ export default function Hero() {
                     <motion.p
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1.5, delay: 1.4, ease: expoOut }}
+                        transition={{ duration: 1.5, delay: 1.2, ease: expoOut }}
                         className="text-lg text-zinc-400 md:text-xl font-sans leading-relaxed tracking-tight"
                     >
-                        Specializing in high-performance <span className="text-brand-blue font-medium">websites</span>,
-                        scalable <span className="text-brand-blue font-medium">digital products</span>,
-                        and enterprise <span className="text-brand-blue font-medium">SaaS systems</span>.
+                        Specializing in high-performance <span className="text-brand-blue font-medium cursor-help transition-opacity hover:opacity-80">websites</span>,
+                        scalable <span className="text-brand-blue font-medium cursor-help transition-opacity hover:opacity-80">digital products</span>,
+                        and enterprise <span className="text-brand-blue font-medium cursor-help transition-opacity hover:opacity-80">SaaS systems</span>.
                     </motion.p>
                 </div>
 
@@ -86,7 +112,7 @@ export default function Hero() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2, delay: 1.8, ease: expoOut }}
+                    transition={{ duration: 1.2, delay: 1.6, ease: expoOut }}
                     className="mt-16 flex flex-col sm:flex-row items-center gap-6"
                 >
                     <button className="group relative px-8 py-4 bg-brand-blue text-white font-sans text-sm font-medium tracking-wide overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98]">
@@ -102,16 +128,22 @@ export default function Hero() {
                     </button>
                 </motion.div>
 
-                {/* Scroll Indicator */}
+                {/* Directional Guide (Engineered Scroll) */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 2, delay: 2.5, ease: "linear" }}
-                    className="mt-24"
+                    transition={{ duration: 2, delay: 2.2, ease: "linear" }}
+                    className="mt-24 relative"
                 >
                     <div className="flex flex-col items-center gap-4">
-                        <div className="h-[40px] w-[1px] bg-gradient-to-b from-brand-blue to-transparent" />
-                        <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-zinc-600">Scroll to explore</span>
+                        <div className="relative h-[60px] w-[1px] bg-white/10 overflow-hidden">
+                            <motion.div
+                                animate={{ y: ["-100%", "100%"] }}
+                                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                                className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-transparent via-brand-blue to-transparent"
+                            />
+                        </div>
+                        <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-zinc-600">System Ready</span>
                     </div>
                 </motion.div>
             </div>
@@ -119,7 +151,7 @@ export default function Hero() {
             {/* Subtle Glass Overlay */}
             <motion.div
                 style={{ y: y2 }}
-                className="absolute inset-0 pointer-events-none"
+                className="absolute inset-0 pointer-events-none z-0"
             >
                 <div className="absolute left-[10%] top-[20%] h-64 w-64 rounded-full border border-white/5 bg-white/[0.01] backdrop-blur-2xl" />
             </motion.div>

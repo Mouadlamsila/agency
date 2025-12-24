@@ -77,7 +77,7 @@ export default function Impact() {
     });
 
     const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
-    const expoOut = [0.16, 1, 0.3, 1] as any;
+    const expoOut = [0.16, 1, 0.3, 1] as const;
 
     const metrics = [
         { value: 98, suffix: "%", label: "System Stability", description: "Average client retention rate across enterprise partnerships.", delay: 0.2 },

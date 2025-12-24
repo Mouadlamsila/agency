@@ -1,137 +1,264 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
-import Image from "next/image";
+import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion";
+import { useRef, useState } from "react";
 
 const projects = [
     {
-        title: "VENTRILOQ",
-        category: "Digital Architecture",
-        description: "A study in minimalist digital systems.",
-        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
+        id: "01",
+        title: "Ventriloq",
+        outcome: "Reduced friction. Increased conversion.",
+        industry: "E-commerce",
+        platform: "Web / Mobile",
+        scope: "System Design",
+        color: "#0066FF"
     },
     {
-        title: "AGENT VOICE",
-        category: "AI Infrastructure",
-        description: "Engineering the future of vocal intelligence.",
-        image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2670&auto=format&fit=crop",
+        id: "02",
+        title: "Agent Voice",
+        outcome: "Rebuilt for scale.",
+        industry: "AI / SaaS",
+        platform: "Desktop App",
+        scope: "Infrastructure",
+        color: "#0066FF"
     },
     {
-        title: "CODER",
-        category: "System Design",
-        description: "High-performance environments for creators.",
-        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop",
+        id: "03",
+        title: "Coder OS",
+        outcome: "From marketing site to product system.",
+        industry: "DevTools",
+        platform: "Web Platform",
+        scope: "Product Strategy",
+        color: "#0066FF"
     },
     {
-        title: "QUANTUM",
-        category: "Commerce Logic",
-        description: "Redefining the mechanics of digital trade.",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2672&auto=format&fit=crop",
+        id: "04",
+        title: "Quantum",
+        outcome: "Engineered for high-frequency trade.",
+        industry: "Fintech",
+        platform: "Terminal",
+        scope: "Core UI",
+        color: "#0066FF"
     }
 ];
 
 export default function SelectedWork() {
-    const targetRef = useRef<HTMLDivElement>(null);
+    const sectionRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
-        target: targetRef,
+        target: sectionRef,
+        offset: ["start start", "end end"]
     });
 
+    // Custom expo.out easing for heavy, intentional movement
     const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+    const springX = useSpring(x, { stiffness: 50, damping: 20, restDelta: 0.001 });
 
     return (
-        <section ref={targetRef} className="relative h-[400vh] bg-[#0A0A0A]">
+        <section
+            ref={sectionRef}
+            className="relative h-[400vh] bg-[#0A0A0A] text-zinc-100 selection:bg-[#0066FF]/30"
+        >
+            {/* Noise Overlay */}
+            <div className="pointer-events-none fixed inset-0 z-50 opacity-[0.03] mix-blend-overlay">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <filter id="noise">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+                    </filter>
+                    <rect width="100%" height="100%" filter="url(#noise)" />
+                </svg>
+            </div>
+
             <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-                <motion.div style={{ x }} className="flex gap-20 px-20">
+                {/* Background Text / Progress */}
+                <div className="absolute left-12 top-12 z-10">
+                    <motion.div
+                        className="h-[1px] bg-[#0066FF]"
+                        style={{ width: useTransform(scrollYProgress, [0, 1], ["0px", "200px"]) }}
+                    />
+                    <span className="mt-2 block font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-500">
+                        Execution / 04
+                    </span>
+                </div>
+
+                <motion.div style={{ x: springX }} className="flex gap-[10vw] px-[10vw]">
                     {/* Intro Slide */}
-                    <div className="flex h-[60vh] w-[40vw] flex-col justify-center shrink-0">
+                    <div className="flex h-[60vh] w-[35vw] flex-col justify-center shrink-0">
                         <motion.span
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1 }}
-                            className="font-mono text-[10px] uppercase tracking-[0.4em] text-zinc-600"
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                            className="font-mono text-[10px] uppercase tracking-[0.4em] text-[#0066FF]"
                         >
-                            Portfolio
+                            Selected Work
                         </motion.span>
                         <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1.2, delay: 0.1 }}
-                            className="mt-6 text-6xl font-bold tracking-tight md:text-8xl font-display"
+                            transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                            className="mt-8 text-7xl font-bold tracking-tighter md:text-9xl font-display leading-[0.85]"
                         >
-                            Selected <br />
-                            <span className="text-zinc-500">Work.</span>
+                            Curated <br />
+                            <span className="text-zinc-800">Proof.</span>
                         </motion.h2>
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ duration: 1, delay: 0.4 }}
+                            className="mt-12 max-w-xs text-sm leading-relaxed text-zinc-500"
+                        >
+                            A demonstration of real-world application, built through clarity and restraint.
+                        </motion.p>
                     </div>
 
                     {/* Project Slides */}
                     {projects.map((project, index) => (
-                        <ProjectCard key={index} project={project} />
+                        <ProjectCard key={project.id} project={project} index={index} />
                     ))}
                 </motion.div>
+            </div>
+
+            {/* Mobile View (Vertical Stack) - Hidden on Desktop */}
+            <div className="md:hidden px-6 py-24 space-y-24">
+                {projects.map((project) => (
+                    <div key={project.id} className="space-y-6">
+                        <div className="aspect-[4/5] w-full rounded-sm bg-zinc-900/50 border border-zinc-800 flex items-center justify-center overflow-hidden">
+                            <AbstractUI />
+                        </div>
+                        <div className="space-y-2">
+                            <span className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest">{project.industry}</span>
+                            <h3 className="text-3xl font-display font-bold">{project.title}</h3>
+                            <p className="text-zinc-400 text-sm">{project.outcome}</p>
+                        </div>
+                    </div>
+                ))}
             </div>
         </section>
     );
 }
 
-function ProjectCard({ project }: { project: typeof projects[0] }) {
+function ProjectCard({ project, index }: { project: typeof projects[0], index: number }) {
+    const [isHovered, setIsHovered] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
+
+    // Parallax effect for the internal UI
     const { scrollYProgress } = useScroll({
         target: cardRef,
         offset: ["start end", "end start"]
     });
 
-    const imageX = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+    const y = useTransform(scrollYProgress, [0, 1], [20, -20]);
 
     return (
-        <div ref={cardRef} className="group relative h-[70vh] w-[80vw] shrink-0 overflow-hidden rounded-2xl bg-zinc-900 md:w-[60vw]">
-            <motion.div style={{ x: imageX }} className="absolute inset-0 h-full w-[120%]">
-                <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover opacity-50 transition-opacity duration-700 group-hover:opacity-70"
-                />
-            </motion.div>
+        <motion.div
+            ref={cardRef}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="group relative flex h-[75vh] w-[65vw] shrink-0 flex-col justify-between"
+        >
+            {/* Visual Frame */}
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-sm bg-zinc-900/30 border border-zinc-800/50 transition-colors duration-500 group-hover:border-[#0066FF]/30">
+                <motion.div
+                    style={{ y }}
+                    className="absolute inset-0 flex items-center justify-center"
+                >
+                    <AbstractUI isHovered={isHovered} />
+                </motion.div>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                {/* View Cursor Overlay (Simplified for React) */}
+                <AnimatePresence>
+                    {isHovered && (
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.8 }}
+                            className="absolute inset-0 z-20 flex items-center justify-center bg-black/20 backdrop-blur-[2px]"
+                        >
+                            <div className="flex h-20 w-20 items-center justify-center rounded-full border border-[#0066FF] bg-black/80 text-[10px] font-mono uppercase tracking-widest text-[#0066FF]">
+                                View
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
 
-            <div className="absolute bottom-12 left-12 right-12 flex items-end justify-between">
-                <div className="max-w-md">
-                    <motion.span
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="font-mono text-[9px] uppercase tracking-[0.3em] text-zinc-400"
-                    >
-                        {project.category}
-                    </motion.span>
-                    <motion.h3
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, delay: 0.1 }}
-                        className="mt-2 text-4xl font-bold tracking-tight md:text-6xl font-display text-zinc-100"
-                    >
-                        {project.title}
-                    </motion.h3>
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.3 }}
-                        className="mt-4 font-sans text-sm text-zinc-500"
-                    >
-                        {project.description}
-                    </motion.p>
+            {/* Content */}
+            <div className="mt-12 grid grid-cols-12 gap-8">
+                <div className="col-span-8">
+                    <div className="flex items-center gap-4">
+                        <span className="font-mono text-[10px] text-zinc-600">{project.id}</span>
+                        <h3 className="text-4xl font-bold tracking-tight font-display transition-colors duration-500 group-hover:text-[#0066FF]">
+                            {project.title}
+                        </h3>
+                    </div>
+                    <p className="mt-4 text-xl text-zinc-400 font-sans leading-snug max-w-md">
+                        {project.outcome}
+                    </p>
                 </div>
 
-                <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="hidden h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-sm md:flex"
-                >
-                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-                        <path d="M3.64645 11.3536C3.45118 11.5488 3.45118 11.8654 3.64645 12.0607C3.84171 12.2559 4.15829 12.2559 4.35355 12.0607L3.64645 11.3536ZM12.0607 4.35355C12.2559 4.15829 12.2559 3.84171 12.0607 3.64645L8.87868 0.464466C8.68342 0.269204 8.36683 0.269204 8.17157 0.464466C7.97631 0.659728 7.97631 0.976311 8.17157 1.17157L11 4L8.17157 6.82843C7.97631 7.02369 7.97631 7.34027 8.17157 7.53553C8.36683 7.7308 8.68342 7.7308 8.87868 7.53553L12.0607 4.35355ZM4.35355 12.0607L12.0607 4.35355L11.3536 3.64645L3.64645 11.3536L4.35355 12.0607Z" fill="currentColor" />
-                    </svg>
-                </motion.div>
+                <div className="col-span-4 flex flex-col justify-end space-y-2 border-l border-zinc-800 pl-8">
+                    <div className="space-y-1">
+                        <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600">Industry</p>
+                        <p className="font-mono text-[10px] text-zinc-400">{project.industry}</p>
+                    </div>
+                    <div className="space-y-1">
+                        <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600">Platform</p>
+                        <p className="font-mono text-[10px] text-zinc-400">{project.platform}</p>
+                    </div>
+                    <div className="space-y-1">
+                        <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600">Scope</p>
+                        <p className="font-mono text-[10px] text-zinc-400">{project.scope}</p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Hover Progress Indicator */}
+            <motion.div
+                className="absolute -bottom-4 left-0 h-[2px] bg-[#0066FF]"
+                initial={{ width: 0 }}
+                animate={{ width: isHovered ? "100%" : 0 }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            />
+        </motion.div>
+    );
+}
+
+function AbstractUI({ isHovered = false }: { isHovered?: boolean }) {
+    return (
+        <div className="relative h-full w-full p-12 opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0">
+            {/* Mock UI Elements */}
+            <div className="h-full w-full border border-zinc-800 p-6 flex flex-col gap-6">
+                <div className="flex justify-between items-center">
+                    <div className="h-2 w-24 bg-zinc-800" />
+                    <div className="flex gap-2">
+                        <div className="h-4 w-4 rounded-full border border-zinc-800" />
+                        <div className="h-4 w-4 rounded-full border border-zinc-800" />
+                    </div>
+                </div>
+                <div className="flex-1 grid grid-cols-3 gap-6">
+                    <div className="col-span-2 border border-zinc-800 relative overflow-hidden">
+                        <motion.div
+                            animate={{
+                                x: isHovered ? [0, 10, 0] : 0,
+                                opacity: isHovered ? [0.5, 1, 0.5] : 0.5
+                            }}
+                            transition={{ repeat: Infinity, duration: 4 }}
+                            className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0066FF]/10 to-transparent"
+                        />
+                    </div>
+                    <div className="flex flex-col gap-4">
+                        <div className="h-12 border border-zinc-800" />
+                        <div className="h-12 border border-zinc-800" />
+                        <div className="flex-1 border border-zinc-800" />
+                    </div>
+                </div>
+                <div className="h-8 border border-zinc-800 flex items-center px-4 gap-4">
+                    <div className="h-1 w-full bg-zinc-800 overflow-hidden">
+                        <motion.div
+                            animate={{ scaleX: isHovered ? 1 : 0.3 }}
+                            className="h-full w-full bg-[#0066FF] origin-left"
+                        />
+                    </div>
+                </div>
             </div>
         </div>
     );

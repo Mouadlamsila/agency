@@ -60,13 +60,14 @@ const SectionIntro = ({ isInView }: { isInView: boolean }) => (
         initial={{ opacity: 0, x: -20 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="lg:w-1/3"
+        className="lg:w-1/3 "
     >
         <span className="font-mono text-xs uppercase tracking-widest text-brand-blue mb-4 block">
             Workflow
         </span>
         <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight">
             Digital <br />
+
             Transformation <br />
             <span className="text-brand-blue">Process</span>
         </h2>
@@ -186,7 +187,7 @@ const ProcessSection = () => {
     return (
         <section
             ref={containerRef}
-            className="relative min-h-screen bg-brand-charcoal py-24 lg:py-32 overflow-hidden"
+            className="relative min-h-screen bg-brand-charcoal px-26 py-24 lg:py-32 overflow-hidden"
             id="process"
         >
             {/* Background Grid */}

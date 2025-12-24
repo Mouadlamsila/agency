@@ -10,7 +10,7 @@ export default function FinalCTA() {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
 
-    const springConfig = { damping: 20, stiffness: 150 };
+    const springConfig = { damping: 25, stiffness: 150 };
     const springX = useSpring(mouseX, springConfig);
     const springY = useSpring(mouseY, springConfig);
 
@@ -24,8 +24,15 @@ export default function FinalCTA() {
         const distanceX = e.clientX - centerX;
         const distanceY = e.clientY - centerY;
 
-        mouseX.set(distanceX * 0.35);
-        mouseY.set(distanceY * 0.35);
+        // Only apply magnetic effect within a certain range
+        const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2);
+        if (distance < 200) {
+            mouseX.set(distanceX * 0.4);
+            mouseY.set(distanceY * 0.4);
+        } else {
+            mouseX.set(0);
+            mouseY.set(0);
+        }
     };
 
     const handleMouseLeave = () => {
@@ -34,10 +41,10 @@ export default function FinalCTA() {
         setIsHovered(false);
     };
 
-    const expoOut = [0.16, 1, 0.3, 1] as any;
+    const expoOut = [0.16, 1, 0.3, 1] as const;
 
     return (
-        <section className="relative flex min-h-[90vh] w-full flex-col items-center justify-center overflow-hidden bg-[#0A0A0A] px-6 py-40">
+        <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#0D0D0D] px-6 py-40">
             {/* Subtle Grain Overlay */}
             <div className="pointer-events-none absolute inset-0 z-50 opacity-[0.03] mix-blend-overlay">
                 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
@@ -51,27 +58,51 @@ export default function FinalCTA() {
             {/* Soft Ambient Glow */}
             <motion.div
                 initial={{ opacity: 0 }}
-                whileInView={{ opacity: 0.1 }}
-                transition={{ duration: 3, ease: expoOut }}
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-brand-blue blur-[120px] pointer-events-none"
+                whileInView={{ opacity: 0.15 }}
+                transition={{ duration: 4, ease: expoOut }}
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-brand-blue blur-[140px] pointer-events-none"
             />
 
             <div className="relative z-10 flex flex-col items-center text-center">
-                <motion.h2
-                    initial={{ opacity: 0, y: 30 }}
+                {/* Pre-label */}
+                <motion.span
+                    initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 2, ease: expoOut }}
-                    className="max-w-4xl font-display text-4xl font-medium tracking-tight text-zinc-100 md:text-6xl lg:text-7xl"
+                    transition={{ duration: 1.5, delay: 0.2, ease: expoOut }}
+                    className="mb-8 font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-500"
                 >
-                    The next chapter begins <br /> with a conversation.
-                </motion.h2>
+                    Next step
+                </motion.span>
 
-                <motion.div
+                {/* Main Statement */}
+                <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 2, delay: 0.4, ease: expoOut }}
+                    className="max-w-4xl font-display text-5xl font-medium tracking-tight text-zinc-100 md:text-7xl lg:text-8xl"
+                >
+                    If this resonates, <br /> we should talk.
+                </motion.h2>
+
+                {/* Supporting Line */}
+                <motion.p
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 2, delay: 0.8, ease: expoOut }}
+                    className="mt-12 max-w-lg font-sans text-lg text-zinc-400 md:text-xl"
+                >
+                    We work with a small number of teams each year.
+                </motion.p>
+
+                {/* Primary CTA */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 2, delay: 1.2, ease: expoOut }}
                     className="mt-24"
                 >
                     <motion.button
@@ -80,39 +111,53 @@ export default function FinalCTA() {
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={handleMouseLeave}
                         style={{ x: springX, y: springY }}
-                        className="group relative flex h-56 w-56 items-center justify-center rounded-full border border-white/10 bg-transparent transition-colors hover:border-white/20"
+                        className="group relative flex h-64 w-64 items-center justify-center rounded-full border border-white/5 bg-transparent transition-colors hover:border-white/10"
                     >
+                        {/* Magnetic Background Glow */}
                         <motion.div
-                            className="absolute inset-0 rounded-full bg-white opacity-0 transition-opacity duration-500 group-hover:opacity-[0.03]"
+                            animate={{
+                                scale: isHovered ? 1.1 : 1,
+                                opacity: isHovered ? 0.1 : 0,
+                            }}
+                            className="absolute inset-0 rounded-full bg-brand-blue blur-2xl transition-all duration-700"
                         />
 
-                        <span className="relative z-10 font-sans text-sm font-medium uppercase tracking-[0.2em] text-zinc-400 transition-colors group-hover:text-white">
-                            Start a conversation
-                        </span>
+                        {/* Button Content */}
+                        <div className="relative z-10 flex flex-col items-center gap-2">
+                            <span className="font-sans text-sm font-medium text-zinc-200 transition-colors group-hover:text-white">
+                                Request a strategy call
+                            </span>
+                            <motion.div
+                                animate={{ x: isHovered ? 5 : 0 }}
+                                className="h-px w-8 bg-brand-blue"
+                            />
+                        </div>
 
-                        {/* Physical feel: subtle border glow on hover */}
-                        <div className="absolute inset-0 rounded-full border border-white/0 transition-all duration-500 group-hover:border-white/10 group-hover:scale-[1.02]" />
+                        {/* Border Glow */}
+                        <div className="absolute inset-0 rounded-full border border-brand-blue/0 transition-all duration-700 group-hover:border-brand-blue/20 group-hover:scale-[1.05]" />
                     </motion.button>
                 </motion.div>
+
+                {/* Secondary Micro Text */}
+                <motion.span
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 2, delay: 2, ease: expoOut }}
+                    className="mt-12 font-mono text-[9px] uppercase tracking-[0.4em] text-zinc-600"
+                >
+                    Projects start at $15k+
+                </motion.span>
             </div>
 
-            {/* Footer-like minimal info */}
-            <div className="absolute bottom-12 flex w-full max-w-7xl justify-between px-12 font-mono text-[9px] uppercase tracking-[0.4em] text-zinc-700">
-                <motion.span
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 2, delay: 1 }}
-                >
-                    © 2025 Agency
-                </motion.span>
-                <motion.span
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 2, delay: 1.2 }}
-                >
-                    Built for Excellence
-                </motion.span>
-            </div>
+            {/* Cursor Expansion Logic (Conceptual - would typically be handled by a global cursor component) */}
+            {isHovered && (
+                <style jsx global>{`
+                    body {
+                        cursor: none;
+                    }
+                `}</style>
+            )}
         </section>
     );
 }

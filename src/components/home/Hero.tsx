@@ -13,7 +13,7 @@ export default function Hero() {
     const headline = "WE BUILD THE SYSTEMS THAT POWER DIGITAL AMBITION.";
     const words = headline.split(" ");
 
-    const expoOut = [0.16, 1, 0.3, 1] as any;
+    const expoOut = [0.16, 1, 0.3, 1] as const;
 
     return (
         <section

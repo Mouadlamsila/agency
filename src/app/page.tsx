@@ -6,10 +6,12 @@ import Hero from "@/components/home/Hero";
 import Impact from "@/components/home/Impact";
 import Expertise from "@/components/home/Expertise";
 import Services from "@/components/home/Services";
+import DigitalTransformation from "@/components/home/DigitalTransformation";
 import ProcessSection from "@/components/home/ProcessSection";
-import ServicePackages from "@/components/home/ServicePackages";
+import Engagement from "@/components/home/Engagement";
 import SelectedWork from "@/components/home/SelectedWork";
 import Philosophy from "@/components/home/Philosophy";
+import ProjectFit from "@/components/home/ProjectFit";
 import FinalCTA from "@/components/home/FinalCTA";
 import Navbar from "@/components/layout/Navbar";
 
@@ -46,10 +48,12 @@ export default function Home() {
       <Impact />
       <Expertise />
       <Services />
+      <DigitalTransformation />
       <ProcessSection />
-      <ServicePackages />
+      <Engagement />
       <SelectedWork />
       <Philosophy />
+      <ProjectFit />
       <FinalCTA />
     </main>
   );

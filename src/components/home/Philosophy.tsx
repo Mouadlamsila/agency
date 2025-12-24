@@ -12,7 +12,7 @@ const statements = [
 ];
 
 export default function Philosophy() {
-    const expoOut = [0.16, 1, 0.3, 1] as any;
+    const expoOut = [0.16, 1, 0.3, 1] as const;
 
     return (
         <section className="w-full py-60 px-6 bg-[#0A0A0A]">

@@ -31,7 +31,7 @@ const services = [
 ];
 
 export default function Services() {
-    const expoOut = [0.16, 1, 0.3, 1] as any;
+    const expoOut = [0.16, 1, 0.3, 1] as const;
 
     return (
         <section className="w-full py-40 px-6 bg-[#0A0A0A]">

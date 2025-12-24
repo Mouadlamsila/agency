@@ -187,7 +187,7 @@ const ProcessSection = () => {
     return (
         <section
             ref={containerRef}
-            className="relative min-h-screen bg-brand-charcoal px-26 py-24 lg:py-32 overflow-hidden"
+            className="relative min-h-screen bg-brand-charcoal sm:px-26 px-2 py-24 lg:py-32 overflow-hidden"
             id="process"
         >
             {/* Background Grid */}

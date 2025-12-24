@@ -89,7 +89,7 @@ export default function Impact() {
     return (
         <section
             ref={containerRef}
-            className="relative w-full px-26 overflow-hidden bg-[#0E0E11] py-32 md:py-48"
+            className="relative w-full sm:px-26 px-2 overflow-hidden bg-[#0E0E11] py-32 md:py-48"
         >
             <div className="container relative z-10 mx-auto px-6">
                 <div className="grid grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-32">

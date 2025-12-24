@@ -56,7 +56,7 @@ export default function Expertise() {
     const expoOut = [0.16, 1, 0.3, 1] as const;
 
     return (
-        <section className="relative w-full px-26 overflow-hidden bg-[#0E0E11] py-32 md:py-48">
+        <section className="relative w-full sm:px-26 px-2 overflow-hidden bg-[#0E0E11] py-32 md:py-48">
             {/* Subtle Noise Overlay */}
             <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none bg-[url('/noise.png')] bg-repeat" />
 

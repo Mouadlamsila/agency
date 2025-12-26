@@ -4,6 +4,7 @@ import { initReactI18next } from 'react-i18next';
 // Import translation files from src directory
 import enCommon from '../locales/en/common.json';
 import frCommon from '../locales/fr/common.json';
+import arCommon from '../locales/ar/common.json';
 
 const resources = {
   en: {
@@ -12,17 +13,21 @@ const resources = {
   fr: {
     common: frCommon,
   },
+  ar: {
+    common: arCommon,
+  },
 };
 
 // Get saved language from localStorage or use browser language
 const getSavedLanguage = (): string => {
   if (typeof window !== 'undefined') {
     const saved = localStorage.getItem('i18nextLng');
-    if (saved && (saved === 'en' || saved === 'fr')) {
+    if (saved && (saved === 'en' || saved === 'fr' || saved === 'ar')) {
       return saved;
     }
     // Fallback to browser language
     const browserLang = navigator.language.split('-')[0];
+    if (browserLang === 'ar') return 'ar';
     return browserLang === 'fr' ? 'fr' : 'en';
   }
   return 'en';

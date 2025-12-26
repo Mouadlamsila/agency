@@ -4,16 +4,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Layers, Zap, ShoppingCart, Compass, ArrowUpRight } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 export default function Services() {
     const expoOut = [0.16, 1, 0.3, 1] as const;
-    const { t, i18n } = useTranslation('common');
-
-    const toggleLanguage = () => {
-        const newLang = i18n.language === 'en' ? 'fr' : 'en';
-        i18n.changeLanguage(newLang);
-    };
+    const { t } = useTranslation();
 
     const cards = [
         {
@@ -54,15 +48,6 @@ export default function Services() {
         <section className="w-full py-32 md:py-48 px-6 bg-[#0A0A0A] relative overflow-hidden">
             {/* Background Grid Accent */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:60px_60px]" />
-
-            {/* Language Toggle Button */}
-            <button
-                onClick={toggleLanguage}
-                className="absolute top-8 right-8 z-20 font-mono text-[10px] uppercase tracking-[0.3em] text-blue-400/80 hover:text-blue-400 transition-colors duration-300 border border-blue-500/20 hover:border-blue-500/40 px-4 py-2 rounded-full bg-neutral-900/50 backdrop-blur-sm"
-                aria-label="Toggle language"
-            >
-                {i18n.language === 'en' ? 'FR' : 'EN'}
-            </button>
 
             <div className="mx-auto max-w-7xl relative z-10 font-sans">
                 {/* Header Section */}

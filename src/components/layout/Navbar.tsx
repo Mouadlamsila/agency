@@ -62,7 +62,7 @@ const Navbar = () => {
                             CODSELLA<span className="text-brand-blue">.</span>
                         </span>
                         <motion.div
-                            className="absolute -bottom-1 left-0 w-0 h-[1px] bg-brand-blue group-hover:w-full transition-all duration-500 ease-expo"
+                            className="absolute -bottom-1 left-0 w-0 h-px bg-brand-blue group-hover:w-full transition-all duration-500 ease-expo"
                         />
                     </Link>
 
@@ -99,6 +99,17 @@ const Navbar = () => {
                                 )}
                             >
                                 FR
+                            </button>
+                            <button
+                                onClick={() => i18n.changeLanguage('ar')}
+                                className={cn(
+                                    "px-3 py-1 rounded-full font-mono text-[10px] uppercase tracking-[0.2em] transition-all duration-300",
+                                    i18n.language === 'ar'
+                                        ? "bg-brand-blue text-white"
+                                        : "text-white/40 hover:text-white/60"
+                                )}
+                            >
+                                AR
                             </button>
                         </div>
 
@@ -182,6 +193,17 @@ const Navbar = () => {
                             >
                                 FR
                             </button>
+                            <button
+                                onClick={() => i18n.changeLanguage('ar')}
+                                className={cn(
+                                    "px-4 py-2 rounded-full font-mono text-xs uppercase tracking-widest transition-all duration-300",
+                                    i18n.language === 'ar'
+                                        ? "bg-brand-blue text-white"
+                                        : "text-white/40"
+                                )}
+                            >
+                                AR
+                            </button>
                         </motion.div>
 
                         <motion.div
@@ -209,7 +231,7 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
         >
             {children}
             <motion.span
-                className="absolute -bottom-1 left-0 w-0 h-[1px] bg-white group-hover:w-full transition-all duration-500 ease-out"
+                className="absolute -bottom-1 left-0 w-0 h-px bg-white group-hover:w-full transition-all duration-500 ease-out"
             />
         </Link>
     );

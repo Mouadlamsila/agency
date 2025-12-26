@@ -12,11 +12,26 @@ export default function I18nProvider({
     useEffect(() => {
         // Ensure i18n is initialized with the correct language from localStorage
         const savedLang = localStorage.getItem('i18nextLng');
-        if (savedLang && (savedLang === 'en' || savedLang === 'fr')) {
+        if (savedLang && (savedLang === 'en' || savedLang === 'fr' || savedLang === 'ar')) {
             if (i18n.language !== savedLang) {
                 i18n.changeLanguage(savedLang);
             }
         }
+
+        const handleLanguageChange = (lng: string) => {
+            document.documentElement.lang = lng;
+            document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr';
+        };
+
+        // Set initial state
+        handleLanguageChange(i18n.language);
+
+        // Listen for changes
+        i18n.on('languageChanged', handleLanguageChange);
+
+        return () => {
+            i18n.off('languageChanged', handleLanguageChange);
+        };
     }, []);
 
     return <I18nextProvider i18n={i18n}>{children}</I18nextProvider>;

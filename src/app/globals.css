@@ -51,6 +51,11 @@
 }
 
 @layer base {
+  html[lang="ar"] {
+    --font-display: var(--font-cairo), sans-serif;
+    --font-sans: var(--font-cairo), sans-serif;
+  }
+
   body {
     background-color: var(--color-brand-dark);
     color: var(--color-foreground);

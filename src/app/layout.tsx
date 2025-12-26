@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Inter_Tight, Geist_Mono } from "next/font/google";
+import { Inter_Tight, Geist_Mono, Cairo, Syne } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import NoiseOverlay from "@/components/ui/NoiseOverlay";
 import I18nProvider from "@/components/providers/I18nProvider";
-
 
 // Load Clash Display locally (simulated with localFont for now, assuming file exists or fallback)
 // If Clash Display isn't available, we'll use a strong fallback or just Inter Tight for now
@@ -26,7 +25,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-import { Syne } from "next/font/google";
+const cairo = Cairo({
+  subsets: ["arabic"],
+  variable: "--font-cairo",
+  display: "swap",
+});
 
 const syne = Syne({
   subsets: ["latin"],
@@ -48,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${syne.variable} ${interTight.variable} ${geistMono.variable} antialiased bg-brand-dark text-foreground overflow-x-hidden selection:bg-brand-blue selection:text-white`}
+        className={`${syne.variable} ${interTight.variable} ${geistMono.variable} ${cairo.variable} antialiased bg-brand-dark text-foreground overflow-x-hidden selection:bg-brand-blue selection:text-white`}
       >
         <NoiseOverlay />
         <I18nProvider>

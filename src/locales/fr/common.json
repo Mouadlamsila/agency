@@ -489,5 +489,91 @@
             "logicGate": "Porte_Logique : 0",
             "engine": "Moteur : v.2.0"
         }
+    },
+    "testimonials": {
+        "label": "Témoignages",
+        "heading": {
+            "line1": "Ce que disent nos",
+            "highlight": "utilisateurs"
+        },
+        "description": "Découvrez comment des milliers d'équipes optimisent leurs opérations avec notre plateforme.",
+        "items": [
+            {
+                "text": "Cet ERP a révolutionné nos opérations, rationalisant la finance et l'inventaire. La plateforme cloud nous maintient productifs, même à distance.",
+                "name": "Briana Patton",
+                "role": "Responsable des Opérations"
+            },
+            {
+                "text": "La mise en œuvre de cet ERP a été fluide et rapide. L'interface personnalisable et conviviale a rendu la formation de l'équipe sans effort.",
+                "name": "Bilal Ahmed",
+                "role": "Responsable IT"
+            },
+            {
+                "text": "L'équipe de support est exceptionnelle, nous guidant à travers la configuration et fournissant une assistance continue, assurant notre satisfaction.",
+                "name": "Saman Malik",
+                "role": "Responsable Support Client"
+            },
+            {
+                "text": "L'intégration transparente de cet ERP a amélioré nos opérations commerciales et notre efficacité. Je recommande vivement pour son interface intuitive.",
+                "name": "Omar Raza",
+                "role": "PDG"
+            },
+            {
+                "text": "Ses fonctionnalités robustes et son support rapide ont transformé notre flux de travail, nous rendant significativement plus efficaces.",
+                "name": "Zainab Hussain",
+                "role": "Chef de Projet"
+            },
+            {
+                "text": "La mise en œuvre fluide a dépassé les attentes. Elle a rationalisé les processus, améliorant la performance globale de l'entreprise.",
+                "name": "Aliza Khan",
+                "role": "Analyste Commercial"
+            },
+            {
+                "text": "Nos fonctions commerciales se sont améliorées avec un design convivial et des retours clients positifs.",
+                "name": "Farhan Siddiqui",
+                "role": "Directeur Marketing"
+            },
+            {
+                "text": "Ils ont livré une solution qui a dépassé les attentes, comprenant nos besoins et améliorant nos opérations.",
+                "name": "Sana Sheikh",
+                "role": "Responsable des Ventes"
+            },
+            {
+                "text": "En utilisant cet ERP, notre présence en ligne et nos conversions se sont considérablement améliorées, stimulant la performance commerciale.",
+                "name": "Hassan Ali",
+                "role": "Responsable E-commerce"
+            }
+        ]
+    },
+    "team": {
+        "title": "Rencontrez l'équipe",
+        "subtitle": "Les esprits brillants derrière nos solutions innovantes.",
+        "members": [
+            {
+                "name": "Sarah Chen",
+                "designation": "Chef de Produit",
+                "quote": "Diriger notre vision produit avec un accent sur la conception centrée sur l'utilisateur et les solutions évolutives."
+            },
+            {
+                "name": "Michael Rodriguez",
+                "designation": "CTO",
+                "quote": "Architecture de systèmes robustes et sécurisés qui alimentent nos services d'agence de nouvelle génération."
+            },
+            {
+                "name": "Emily Watson",
+                "designation": "Directrice des Opérations",
+                "quote": "Assurer l'excellence opérationnelle et la livraison transparente dans tous nos projets clients."
+            },
+            {
+                "name": "James Kim",
+                "designation": "Responsable Ingénierie",
+                "quote": "Piloter l'innovation technique et encadrer notre équipe d'ingénierie vers de nouveaux sommets."
+            },
+            {
+                "name": "Lisa Thompson",
+                "designation": "VP Technologie",
+                "quote": "Stratégie de notre feuille de route technologique pour nous garder en avance sur un marché en évolution rapide."
+            }
+        ]
     }
 }

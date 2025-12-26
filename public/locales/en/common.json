@@ -1,0 +1,40 @@
+{
+    "services": {
+        "sectionLabel": "Capabilities",
+        "heading": {
+            "line1": "ENGINEERED",
+            "line2": "FOR",
+            "line3": "EXCLUSIVITY."
+        },
+        "items": [
+            {
+                "label": "01 / Architecture",
+                "title": "Digital Systems",
+                "description": "Foundational digital infrastructures designed for long-term stability and performance.",
+                "metadata": "Structure_Mastery",
+                "cta": "Explore_Module"
+            },
+            {
+                "label": "02 / Engineering",
+                "title": "Scalable Products",
+                "description": "High-performance applications that grow with your ambition.",
+                "metadata": "Performance_Logic",
+                "cta": "Explore_Module"
+            },
+            {
+                "label": "03 / Commerce",
+                "title": "Commerce Logic",
+                "description": "Bespoke shopping experiences built on robust, conversion-first logic.",
+                "metadata": "Conversion_Engine",
+                "cta": "Explore_Module"
+            },
+            {
+                "label": "04 / Strategy",
+                "title": "Technical Strategy",
+                "description": "Navigating complex digital landscapes with precision and foresight.",
+                "metadata": "Directional_Insight",
+                "cta": "Explore_Module"
+            }
+        ]
+    }
+}

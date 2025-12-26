@@ -1,0 +1,493 @@
+{
+    "services": {
+        "sectionLabel": "Capacités",
+        "heading": {
+            "line1": "CONÇU",
+            "line2": "POUR",
+            "line3": "L'EXCLUSIVITÉ."
+        },
+        "items": [
+            {
+                "label": "01 / Architecture",
+                "title": "Systèmes Numériques",
+                "description": "Infrastructures numériques fondamentales conçues pour la stabilité et la performance à long terme.",
+                "metadata": "Maîtrise_Structure",
+                "cta": "Explorer_Module"
+            },
+            {
+                "label": "02 / Ingénierie",
+                "title": "Produits Évolutifs",
+                "description": "Applications haute performance qui évoluent avec votre ambition.",
+                "metadata": "Logique_Performance",
+                "cta": "Explorer_Module"
+            },
+            {
+                "label": "03 / Commerce",
+                "title": "Logique Commerce",
+                "description": "Expériences d'achat sur mesure construites sur une logique axée sur la conversion.",
+                "metadata": "Moteur_Conversion",
+                "cta": "Explorer_Module"
+            },
+            {
+                "label": "04 / Stratégie",
+                "title": "Stratégie Technique",
+                "description": "Naviguer dans des paysages numériques complexes avec précision et prévoyance.",
+                "metadata": "Vision_Directionnelle",
+                "cta": "Explorer_Module"
+            }
+        ]
+    },
+    "impact": {
+        "sectionLabel": "Impact & Résultats",
+        "heading": {
+            "part1": "NOUS MESURONS",
+            "part2": "LE SUCCÈS",
+            "part3": "PAR LES SYSTÈMES QUE NOUS",
+            "part4": "CONSTRUISONS"
+        },
+        "metrics": [
+            {
+                "label": "Stabilité Système",
+                "description": "Taux moyen de fidélisation des clients dans les partenariats d'entreprise."
+            },
+            {
+                "label": "Échelle Architecturale",
+                "description": "Systèmes numériques haute performance déployés mondialement."
+            },
+            {
+                "label": "Optimisation",
+                "description": "Augmentation moyenne des performances après architecture système."
+            },
+            {
+                "label": "Standard Qualité",
+                "description": "Prix internationaux d'excellence en design et ingénierie."
+            }
+        ],
+        "visual": {
+            "alt": "Système Visuel d'Impact",
+            "label1": "Système_v.04",
+            "label2": "Noyau_Architecture",
+            "status": "Statut: Optimisé",
+            "load": "Charge: 0.04ms"
+        }
+    },
+    "hero": {
+        "label": "EST. 2024 — ARCHITECTURE NUMÉRIQUE",
+        "headline": "NOUS CONSTRUISONS LES SYSTÈMES QUI PROPULSENT L'AMBITION NUMÉRIQUE.",
+        "description": {
+            "part1": "Spécialisés dans les",
+            "highlight1": "sites web",
+            "part2": " haute performance, les",
+            "highlight2": "produits numériques",
+            "part3": " évolutifs, et les",
+            "highlight3": "systèmes SaaS",
+            "part4": " d'entreprise."
+        },
+        "cta": {
+            "primary": "LANCER UN PROJET",
+            "secondary": "EXPLORER LE TRAVAIL"
+        },
+        "systemReady": "Système Prêt"
+    },
+    "selectedWork": {
+        "label": "Exécution / 04",
+        "subLabel": "Travaux Sélectionnés",
+        "heading": {
+            "line1": "Preuve",
+            "line2": "Organisée."
+        },
+        "description": "Une démonstration d'application concrète, construite par la clarté et la retenue.",
+        "labels": {
+            "industry": "Industrie",
+            "platform": "Plateforme",
+            "scope": "Portée"
+        },
+        "projects": [
+            {
+                "id": "01",
+                "title": "Ventriloq",
+                "outcome": "Friction réduite. Conversion augmentée.",
+                "industry": "E-commerce",
+                "platform": "Web / Mobile",
+                "scope": "Conception Système"
+            },
+            {
+                "id": "02",
+                "title": "Agent Voice",
+                "outcome": "Reconstruit pour l'échelle.",
+                "industry": "IA / SaaS",
+                "platform": "App Bureau",
+                "scope": "Infrastructure"
+            },
+            {
+                "id": "03",
+                "title": "Coder OS",
+                "outcome": "Du site marketing au système produit.",
+                "industry": "Outils Dév",
+                "platform": "Plateforme Web",
+                "scope": "Stratégie Produit"
+            },
+            {
+                "id": "04",
+                "title": "Quantum",
+                "outcome": "Conçu pour le trading haute fréquence.",
+                "industry": "Fintech",
+                "platform": "Terminal",
+                "scope": "UI Centrale"
+            }
+        ]
+    },
+    "philosophy": {
+        "label": "Notre philosophie",
+        "principles": [
+            {
+                "label": "Principe 01",
+                "text": "Nous ne suivons pas les tendances.",
+                "highlight": "tendances"
+            },
+            {
+                "label": "Principe 02",
+                "text": "Nous concevons des systèmes, pas des écrans.",
+                "highlight": "systèmes"
+            },
+            {
+                "label": "Principe 03",
+                "text": "La clarté passe avant la beauté.",
+                "highlight": "clarté"
+            },
+            {
+                "label": "Principe 04",
+                "text": "Le mouvement suit le sens.",
+                "highlight": "sens"
+            },
+            {
+                "label": "Principe 05",
+                "text": "L'évolutivité est une décision de conception.",
+                "highlight": "L'évolutivité"
+            },
+            {
+                "label": "Principe 06",
+                "text": "Tout le reste est du bruit.",
+                "highlight": "bruit"
+            }
+        ]
+    },
+    "finalCTA": {
+        "label": "Prochaine étape",
+        "heading": {
+            "line1": "Si cela résonne,",
+            "line2": "nous devrions parler."
+        },
+        "description": "Nous travaillons avec un petit nombre d'équipes chaque année.",
+        "button": "Demander un appel stratégique",
+        "price": "Les projets commencent à 15k$+"
+    },
+    "projectFit": {
+        "progress": "Étape",
+        "questions": [
+            {
+                "text": "Quelle est votre situation ?",
+                "options": {
+                    "s1": "Startup en démarrage",
+                    "s2": "Produit en croissance",
+                    "s3": "Entreprise établie",
+                    "s4": "Entreprise / Équipe interne"
+                }
+            },
+            {
+                "text": "Que souhaitez-vous construire ?",
+                "options": {
+                    "p1": "Site web marketing",
+                    "p2": "SaaS / Plateforme Web",
+                    "p3": "Refonte / Reconstruction",
+                    "p4": "Système numérique long terme"
+                }
+            },
+            {
+                "text": "Quelle est la priorité actuelle ?",
+                "options": {
+                    "m1": "Vitesse",
+                    "m2": "Évolutivité",
+                    "m3": "Qualité du design",
+                    "m4": "Fiabilité technique"
+                }
+            },
+            {
+                "text": "Calendrier",
+                "options": {
+                    "t1": "Dès que possible",
+                    "t2": "1–3 mois",
+                    "t3": "Flexible"
+                }
+            },
+            {
+                "text": "Budget",
+                "options": {
+                    "b1": "10k$–15k$",
+                    "b2": "15k$–30k$",
+                    "b3": "30k$+",
+                    "b4": "Pas encore sûr"
+                }
+            }
+        ],
+        "results": {
+            "success": {
+                "title": "Vous êtes un bon candidat.",
+                "description": "Selon vos besoins et votre budget, notre approche axée sur l'ingénierie est parfaitement alignée avec vos objectifs.",
+                "cta": "Demander un appel stratégique"
+            },
+            "fail": {
+                "title": "Nous ne sommes peut-être pas le bon partenaire.",
+                "description": "Notre flux de travail spécialisé est optimisé pour les systèmes haut de gamme à grande échelle. Pour votre stade actuel, une agence plus agile ou axée sur le marketing pourrait mieux vous servir.",
+                "cta": "Voici ce que vous devriez chercher"
+            }
+        }
+    },
+    "engagement": {
+        "label": "Modèles d'Engagement",
+        "heading": {
+            "line1": "Choisissez votre",
+            "line2": "vélocité."
+        },
+        "models": [
+            {
+                "label": "FONDATION",
+                "title": "Clarté Stratégique.",
+                "positioning": "Pas un site web. Une fondation numérique.",
+                "outcomes": [
+                    "Architecture de Marque",
+                    "Stratégie UX Centrale",
+                    "Feuille de Route Technique"
+                ],
+                "price": "À partir de 25k$",
+                "bestFor": "Startups cherchant à pénétrer le marché."
+            },
+            {
+                "label": "PLATEFORME",
+                "title": "Croissance Technique.",
+                "positioning": "Conçu pour l'échelle. Ingénierie durable.",
+                "outcomes": [
+                    "Design Produit Sur Mesure",
+                    "Infrastructure Évolutive",
+                    "Optimisation Performance"
+                ],
+                "price": "À partir de 60k$",
+                "bestFor": "Équipes en croissance prêtes à dominer leur catégorie."
+            },
+            {
+                "label": "SYSTÈMES",
+                "title": "Vélocité Entreprise.",
+                "positioning": "Au-delà du produit. Un écosystème complet.",
+                "outcomes": [
+                    "Systèmes de Design à l'Échelle",
+                    "Déploiement Multi-plateforme",
+                    "Stratégie Technique Long Terme"
+                ],
+                "price": "À partir de 120k$",
+                "bestFor": "Organisations nécessitant une excellence numérique de haut niveau."
+            }
+        ],
+        "investment": "Investissement",
+        "bestForLabel": "Idéal pour :",
+        "notSure": "Pas sûr du choix ?",
+        "cta": "Répondez à quelques questions et nous vous guiderons"
+    },
+    "process": {
+        "label": "Méthodologie",
+        "heading": {
+            "line1": "LE CHEMIN",
+            "line2": "TECHNIQUE",
+            "line3": "VERS L'ÉCHELLE."
+        },
+        "description": "Nous comblons le fossé entre la vision abstraite et la réalité technique grâce à un processus rigoureux et logique conçu pour la précision et la performance.",
+        "systemVersion": "Version Système : 2.4.0",
+        "explore": "Explorer les Modèles",
+        "steps": [
+            {
+                "title": "Découverte & Alignement Stratégique",
+                "description": "Nous plongeons dans votre logique métier, votre positionnement marché et vos contraintes techniques pour définir la voie optimale.",
+                "input": "Vision Métier & Données Brutes",
+                "output": "Feuille de Route & Cadre KPI",
+                "supporting": [
+                    "Analyse Marché",
+                    "Personas Utilisateurs",
+                    "Audit Technique"
+                ]
+            },
+            {
+                "title": "Architecture Système & Logique",
+                "description": "Définition du moteur central, des structures de données et des modèles d'évolutivité qui propulseront votre écosystème numérique.",
+                "input": "Feuille de Route Stratégique",
+                "output": "Spécifications Techniques & Schéma",
+                "supporting": [
+                    "Modélisation Données",
+                    "Cartographie API",
+                    "Infrastructure Cloud"
+                ]
+            },
+            {
+                "title": "Systèmes de Design Haute Fidélité",
+                "description": "Ingénierie d'un langage visuel évolutif qui équilibre esthétique cinématographique et précision fonctionnelle.",
+                "input": "Spécifications Techniques",
+                "output": "Système Design Atomique & Prototypes",
+                "supporting": [
+                    "Logique Mouvement",
+                    "Composants UI",
+                    "Accessibilité"
+                ]
+            },
+            {
+                "title": "Ingénierie Full-Stack",
+                "description": "Traduction de l'architecture en code propre et performant, axé sur la vitesse, la sécurité et la stabilité.",
+                "input": "Système Design",
+                "output": "Code Prêt pour Production",
+                "supporting": [
+                    "Next.js / React",
+                    "TypeScript",
+                    "Optimisation Performance"
+                ]
+            },
+            {
+                "title": "Assurance Qualité & Tests de Charge",
+                "description": "Tests rigoureux dans tous les environnements pour garantir une expérience sans faille sous n'importe quelle charge.",
+                "input": "Code Production",
+                "output": "Système Vérifié & Optimisé",
+                "supporting": [
+                    "Tests E2E",
+                    "Équilibrage Charge",
+                    "Audit Sécurité"
+                ]
+            },
+            {
+                "title": "Déploiement & Évolution Système",
+                "description": "Lancement en production et mise en œuvre d'une boucle de rétroaction continue pour une croissance systémique à long terme.",
+                "input": "Système Optimisé",
+                "output": "Environnement Live & Données",
+                "supporting": [
+                    "Pipeline CI/CD",
+                    "Analytique",
+                    "Échelle Itérative"
+                ]
+            }
+        ],
+        "labels": {
+            "phase": "Phase",
+            "verified": "Vérifié",
+            "input": "Source_Entrée",
+            "output": "Résultat_Sortie"
+        }
+    },
+    "digitalTransformation": {
+        "label": "L'Évolution",
+        "heading": {
+            "line1": "HÉRITAGE",
+            "line2": "VERS",
+            "line3": "TECHNIQUE"
+        },
+        "before": {
+            "status": "[ Statut : Héritage / Fragmenté ]",
+            "metrics": "Latence : 450ms+ | Conversion : 1.2%"
+        },
+        "after": {
+            "status": "[ Statut : Technique / Évolutif ]",
+            "metrics": "Latence : 12ms | Conversion : 4.8%",
+            "growth": "Croissance",
+            "secure": "Système_Sécurisé"
+        },
+        "dragHint": "Glisser pour comparer"
+    },
+    "interactionShowcase": {
+        "tag": "Lab_Ingénierie_UX",
+        "heading": {
+            "line1": "INTERACTIONS",
+            "line2": "QUI",
+            "line3": "PRENNENT VIE"
+        },
+        "description": "Nous comblons le fossé entre le design statique et l'intention humaine. Chaque micro-interaction est conçue pour fournir un retour tactile et une résonance émotionnelle.",
+        "tiltCard": {
+            "icon": "⚛️",
+            "label": "Physique_Mouvement",
+            "title": "La Science du Mouvement Fluide",
+            "description": "Nos interfaces utilisent une physique de ressort non linéaire, garantissant que chaque transition semble naturelle, prévisible et incroyablement satisfaisante à utiliser.",
+            "activeModules": "Modules_Actifs"
+        },
+        "magneticButton": "Lancer l'Interaction",
+        "microInteraction": {
+            "systemSync": "Synchro_Système",
+            "protocolActive": "Protocole_Actif",
+            "standbyMode": "Mode_Veille",
+            "engineLoad": "Charge_Moteur",
+            "optimized": "Optimisé"
+        },
+        "metadata": {
+            "frameRate": "Fréquence_Image: 120fps",
+            "latency": "Latence: 0.002ms"
+        }
+    },
+    "expertise": {
+        "sectionLabel": "Nos Capacités",
+        "heading": {
+            "line1": "ARCHITECTURER",
+            "line2": "DES SYSTÈMES",
+            "line3": "DE VALEUR."
+        },
+        "items": [
+            {
+                "title": "Ingénierie Web",
+                "label": "Architecture",
+                "description": "Construction d'architectures web évolutives et performantes qui servent de colonne vertébrale à la transformation numérique.",
+                "supporting": [
+                    "Next.js",
+                    "TypeScript",
+                    "Performance"
+                ]
+            },
+            {
+                "title": "Infrastructure SaaS",
+                "label": "Systèmes",
+                "description": "Conception de systèmes multi-locataires complexes et d'infrastructures cloud-native pour une évolutivité mondiale.",
+                "supporting": [
+                    "Cloud Native",
+                    "Évolutivité",
+                    "Sécurité"
+                ]
+            },
+            {
+                "title": "Architecture UI/UX",
+                "label": "Précision",
+                "description": "Ingénierie d'interfaces au pixel près, axées sur le mouvement, alliant excellence esthétique et logique fonctionnelle.",
+                "supporting": [
+                    "Design Mouvement",
+                    "Systèmes Design",
+                    "Logique UX"
+                ]
+            },
+            {
+                "title": "Solutions Entreprise",
+                "label": "Complexité",
+                "description": "Résolution de problèmes commerciaux complexes grâce à des logiciels sur mesure et des écosystèmes numériques intégrés.",
+                "supporting": [
+                    "ERP Sur Mesure",
+                    "Design API",
+                    "Intégration"
+                ]
+            },
+            {
+                "title": "Stratégie Numérique",
+                "label": "Vision",
+                "description": "Alignement de l'architecture technique avec les objectifs commerciaux pour assurer une croissance systémique à long terme.",
+                "supporting": [
+                    "Feuille de Route",
+                    "Conseil",
+                    "Croissance"
+                ]
+            }
+        ],
+        "visuals": {
+            "module": "Module_",
+            "status": "Statut : Actif",
+            "logicGate": "Porte_Logique : 0",
+            "engine": "Moteur : v.2.0"
+        }
+    }
+}

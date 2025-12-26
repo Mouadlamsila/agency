@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 const navLinks = [
     { name: "Work", href: "#work" },
@@ -17,6 +18,7 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const { scrollY } = useScroll();
+    const { i18n } = useTranslation();
 
     // Subtle opacity shift on scroll
     const navBgOpacity = useTransform(scrollY, [0, 100], [0, 0.8]);
@@ -74,6 +76,32 @@ const Navbar = () => {
                             ))}
                         </div>
 
+                        {/* Language Switcher */}
+                        <div className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/10 bg-white/5">
+                            <button
+                                onClick={() => i18n.changeLanguage('en')}
+                                className={cn(
+                                    "px-3 py-1 rounded-full font-mono text-[10px] uppercase tracking-[0.2em] transition-all duration-300",
+                                    i18n.language === 'en'
+                                        ? "bg-brand-blue text-white"
+                                        : "text-white/40 hover:text-white/60"
+                                )}
+                            >
+                                EN
+                            </button>
+                            <button
+                                onClick={() => i18n.changeLanguage('fr')}
+                                className={cn(
+                                    "px-3 py-1 rounded-full font-mono text-[10px] uppercase tracking-[0.2em] transition-all duration-300",
+                                    i18n.language === 'fr'
+                                        ? "bg-brand-blue text-white"
+                                        : "text-white/40 hover:text-white/60"
+                                )}
+                            >
+                                FR
+                            </button>
+                        </div>
+
                         {/* CTA Button */}
                         <MagneticButton>
                             <button className="relative group px-8 py-2.5 rounded-full overflow-hidden border border-white/10 bg-white/5 hover:border-white/20 transition-colors duration-500">
@@ -124,10 +152,42 @@ const Navbar = () => {
                                 </Link>
                             </motion.div>
                         ))}
+
+                        {/* Mobile Language Switcher */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5 }}
+                            className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/5"
+                        >
+                            <button
+                                onClick={() => i18n.changeLanguage('en')}
+                                className={cn(
+                                    "px-4 py-2 rounded-full font-mono text-xs uppercase tracking-widest transition-all duration-300",
+                                    i18n.language === 'en'
+                                        ? "bg-brand-blue text-white"
+                                        : "text-white/40"
+                                )}
+                            >
+                                EN
+                            </button>
+                            <button
+                                onClick={() => i18n.changeLanguage('fr')}
+                                className={cn(
+                                    "px-4 py-2 rounded-full font-mono text-xs uppercase tracking-widest transition-all duration-300",
+                                    i18n.language === 'fr'
+                                        ? "bg-brand-blue text-white"
+                                        : "text-white/40"
+                                )}
+                            >
+                                FR
+                            </button>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.6 }}
                             className="mt-8"
                         >
                             <button className="px-12 py-4 rounded-full border border-white/20 font-mono text-xs uppercase tracking-widest text-white">

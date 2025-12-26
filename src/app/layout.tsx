@@ -3,6 +3,7 @@ import { Inter_Tight, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import NoiseOverlay from "@/components/ui/NoiseOverlay";
+import I18nProvider from "@/components/providers/I18nProvider";
 
 
 // Load Clash Display locally (simulated with localFont for now, assuming file exists or fallback)
@@ -50,7 +51,9 @@ export default function RootLayout({
         className={`${syne.variable} ${interTight.variable} ${geistMono.variable} antialiased bg-brand-dark text-foreground overflow-x-hidden selection:bg-brand-blue selection:text-white`}
       >
         <NoiseOverlay />
-        {children}
+        <I18nProvider>
+          {children}
+        </I18nProvider>
       </body>
     </html>
   );

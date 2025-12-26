@@ -1,0 +1,40 @@
+{
+    "services": {
+        "sectionLabel": "Capacités",
+        "heading": {
+            "line1": "CONÇU",
+            "line2": "POUR",
+            "line3": "L'EXCLUSIVITÉ."
+        },
+        "items": [
+            {
+                "label": "01 / Architecture",
+                "title": "Systèmes Numériques",
+                "description": "Infrastructures numériques fondamentales conçues pour la stabilité et la performance à long terme.",
+                "metadata": "Maîtrise_Structure",
+                "cta": "Explorer_Module"
+            },
+            {
+                "label": "02 / Ingénierie",
+                "title": "Produits Évolutifs",
+                "description": "Applications haute performance qui évoluent avec votre ambition.",
+                "metadata": "Logique_Performance",
+                "cta": "Explorer_Module"
+            },
+            {
+                "label": "03 / Commerce",
+                "title": "Logique Commerce",
+                "description": "Expériences d'achat sur mesure construites sur une logique axée sur la conversion.",
+                "metadata": "Moteur_Conversion",
+                "cta": "Explorer_Module"
+            },
+            {
+                "label": "04 / Stratégie",
+                "title": "Stratégie Technique",
+                "description": "Naviguer dans des paysages numériques complexes avec précision et prévoyance.",
+                "metadata": "Vision_Directionnelle",
+                "cta": "Explorer_Module"
+            }
+        ]
+    }
+}

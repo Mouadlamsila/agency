@@ -2,10 +2,12 @@
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function FinalCTA() {
     const buttonRef = useRef<HTMLButtonElement>(null);
     const [isHovered, setIsHovered] = useState(false);
+    const { t } = useTranslation('common');
 
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
@@ -72,7 +74,7 @@ export default function FinalCTA() {
                     transition={{ duration: 1.5, delay: 0.2, ease: expoOut }}
                     className="mb-8 font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-500"
                 >
-                    Next step
+                    {t('finalCTA.label')}
                 </motion.span>
 
                 {/* Main Statement */}
@@ -83,7 +85,7 @@ export default function FinalCTA() {
                     transition={{ duration: 2, delay: 0.4, ease: expoOut }}
                     className="max-w-4xl font-display text-5xl font-medium tracking-tight text-zinc-100 md:text-7xl lg:text-8xl"
                 >
-                    If this resonates, <br /> we should talk.
+                    {t('finalCTA.heading.line1')} <br /> {t('finalCTA.heading.line2')}
                 </motion.h2>
 
                 {/* Supporting Line */}
@@ -94,7 +96,7 @@ export default function FinalCTA() {
                     transition={{ duration: 2, delay: 0.8, ease: expoOut }}
                     className="mt-12 max-w-lg font-sans text-lg text-zinc-400 md:text-xl"
                 >
-                    We work with a small number of teams each year.
+                    {t('finalCTA.description')}
                 </motion.p>
 
                 {/* Primary CTA */}
@@ -125,7 +127,7 @@ export default function FinalCTA() {
                         {/* Button Content */}
                         <div className="relative z-10 flex flex-col items-center gap-2">
                             <span className="font-sans text-sm font-medium text-zinc-200 transition-colors group-hover:text-white">
-                                Request a strategy call
+                                {t('finalCTA.button')}
                             </span>
                             <motion.div
                                 animate={{ x: isHovered ? 5 : 0 }}
@@ -146,7 +148,7 @@ export default function FinalCTA() {
                     transition={{ duration: 2, delay: 2, ease: expoOut }}
                     className="mt-12 font-mono text-[9px] uppercase tracking-[0.4em] text-zinc-600"
                 >
-                    Projects start at $15k+
+                    {t('finalCTA.price')}
                 </motion.span>
             </div>
 

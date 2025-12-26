@@ -1,42 +1,44 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const statements = [
-    {
-        label: "Principle 01",
-        text: "We don't chase trends.",
-        highlight: "trends"
-    },
-    {
-        label: "Principle 02",
-        text: "We design systems, not screens.",
-        highlight: "systems"
-    },
-    {
-        label: "Principle 03",
-        text: "Clarity comes before beauty.",
-        highlight: "Clarity"
-    },
-    {
-        label: "Principle 04",
-        text: "Motion follows meaning.",
-        highlight: "meaning"
-    },
-    {
-        label: "Principle 05",
-        text: "Scalability is a design decision.",
-        highlight: "Scalability"
-    },
-    {
-        label: "Principle 06",
-        text: "Everything else is noise.",
-        highlight: "noise"
-    }
-];
+import { useTranslation } from "react-i18next";
 
 export default function Philosophy() {
+    const { t } = useTranslation('common');
     const expoOut = [0.16, 1, 0.3, 1] as const;
+
+    const statements = [
+        {
+            label: t('philosophy.principles.0.label'),
+            text: t('philosophy.principles.0.text'),
+            highlight: t('philosophy.principles.0.highlight')
+        },
+        {
+            label: t('philosophy.principles.1.label'),
+            text: t('philosophy.principles.1.text'),
+            highlight: t('philosophy.principles.1.highlight')
+        },
+        {
+            label: t('philosophy.principles.2.label'),
+            text: t('philosophy.principles.2.text'),
+            highlight: t('philosophy.principles.2.highlight')
+        },
+        {
+            label: t('philosophy.principles.3.label'),
+            text: t('philosophy.principles.3.text'),
+            highlight: t('philosophy.principles.3.highlight')
+        },
+        {
+            label: t('philosophy.principles.4.label'),
+            text: t('philosophy.principles.4.text'),
+            highlight: t('philosophy.principles.4.highlight')
+        },
+        {
+            label: t('philosophy.principles.5.label'),
+            text: t('philosophy.principles.5.text'),
+            highlight: t('philosophy.principles.5.highlight')
+        }
+    ];
 
     return (
         <section className="relative w-full py-40 md:py-60 px-6 bg-[#0A0A0A] overflow-hidden">
@@ -63,7 +65,7 @@ export default function Philosophy() {
                         transition={{ duration: 1.2, ease: expoOut }}
                         className="font-mono text-[10px] uppercase tracking-[0.4em] text-zinc-600"
                     >
-                        Our philosophy
+                        {t('philosophy.label')}
                     </motion.span>
 
                     <div className="flex flex-col space-y-24 md:space-y-32 w-full">

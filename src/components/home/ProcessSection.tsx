@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 interface Step {
     id: string;
@@ -15,64 +16,8 @@ interface Step {
     supporting: string[];
 }
 
-const steps: Step[] = [
-    {
-        id: "01",
-        title: "Discovery & Strategic Alignment",
-        description: "We deep-dive into your business logic, market positioning, and technical constraints to define the optimal path forward.",
-        status: "completed",
-        input: "Business Vision & Raw Data",
-        output: "Strategic Roadmap & KPI Framework",
-        supporting: ["Market Analysis", "User Personas", "Technical Audit"]
-    },
-    {
-        id: "02",
-        title: "System Architecture & Logic",
-        description: "Defining the core engine, data structures, and scalability patterns that will power your digital ecosystem.",
-        status: "completed",
-        input: "Strategic Roadmap",
-        output: "Technical Specs & Schema Design",
-        supporting: ["Data Modeling", "API Mapping", "Cloud Infrastructure"]
-    },
-    {
-        id: "03",
-        title: "High-Fidelity Design Systems",
-        description: "Engineering a scalable visual language that balances cinematic aesthetics with functional precision.",
-        status: "active",
-        input: "Technical Specs",
-        output: "Atomic Design System & Prototypes",
-        supporting: ["Motion Logic", "UI Components", "Accessibility"]
-    },
-    {
-        id: "04",
-        title: "Full-Stack Engineering",
-        description: "Translating architecture into high-performance, clean code with a focus on speed, security, and stability.",
-        status: "pending",
-        input: "Design System",
-        output: "Production-Ready Codebase",
-        supporting: ["Next.js / React", "TypeScript", "Performance Tuning"]
-    },
-    {
-        id: "05",
-        title: "Quality Assurance & Stress Testing",
-        description: "Rigorous testing across all environments to ensure a flawless, bug-free experience under any load.",
-        status: "pending",
-        input: "Production Code",
-        output: "Verified & Optimized System",
-        supporting: ["E2E Testing", "Load Balancing", "Security Audit"]
-    },
-    {
-        id: "06",
-        title: "Deployment & System Evolution",
-        description: "Launching to production and implementing a continuous feedback loop for long-term systemic growth.",
-        status: "pending",
-        input: "Optimized System",
-        output: "Live Environment & Growth Data",
-        supporting: ["CI/CD Pipeline", "Analytics", "Iterative Scaling"]
-    },
-];
-
 const ProcessSection = () => {
+    const { t } = useTranslation('common');
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -84,6 +29,87 @@ const ProcessSection = () => {
         damping: 30,
         restDelta: 0.001
     });
+
+    const steps: Step[] = [
+        {
+            id: "01",
+            title: t('process.steps.0.title'),
+            description: t('process.steps.0.description'),
+            status: "completed",
+            input: t('process.steps.0.input'),
+            output: t('process.steps.0.output'),
+            supporting: [
+                t('process.steps.0.supporting.0'),
+                t('process.steps.0.supporting.1'),
+                t('process.steps.0.supporting.2')
+            ]
+        },
+        {
+            id: "02",
+            title: t('process.steps.1.title'),
+            description: t('process.steps.1.description'),
+            status: "completed",
+            input: t('process.steps.1.input'),
+            output: t('process.steps.1.output'),
+            supporting: [
+                t('process.steps.1.supporting.0'),
+                t('process.steps.1.supporting.1'),
+                t('process.steps.1.supporting.2')
+            ]
+        },
+        {
+            id: "03",
+            title: t('process.steps.2.title'),
+            description: t('process.steps.2.description'),
+            status: "active",
+            input: t('process.steps.2.input'),
+            output: t('process.steps.2.output'),
+            supporting: [
+                t('process.steps.2.supporting.0'),
+                t('process.steps.2.supporting.1'),
+                t('process.steps.2.supporting.2')
+            ]
+        },
+        {
+            id: "04",
+            title: t('process.steps.3.title'),
+            description: t('process.steps.3.description'),
+            status: "pending",
+            input: t('process.steps.3.input'),
+            output: t('process.steps.3.output'),
+            supporting: [
+                t('process.steps.3.supporting.0'),
+                t('process.steps.3.supporting.1'),
+                t('process.steps.3.supporting.2')
+            ]
+        },
+        {
+            id: "05",
+            title: t('process.steps.4.title'),
+            description: t('process.steps.4.description'),
+            status: "pending",
+            input: t('process.steps.4.input'),
+            output: t('process.steps.4.output'),
+            supporting: [
+                t('process.steps.4.supporting.0'),
+                t('process.steps.4.supporting.1'),
+                t('process.steps.4.supporting.2')
+            ]
+        },
+        {
+            id: "06",
+            title: t('process.steps.5.title'),
+            description: t('process.steps.5.description'),
+            status: "pending",
+            input: t('process.steps.5.input'),
+            output: t('process.steps.5.output'),
+            supporting: [
+                t('process.steps.5.supporting.0'),
+                t('process.steps.5.supporting.1'),
+                t('process.steps.5.supporting.2')
+            ]
+        },
+    ];
 
     return (
         <section
@@ -111,27 +137,26 @@ const ProcessSection = () => {
                             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         >
                             <span className="font-mono text-[10px] uppercase tracking-[0.5em] text-brand-blue mb-6 block">
-                                Methodology
+                                {t('process.label')}
                             </span>
                             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
-                                THE <span className="text-zinc-500 italic">ENGINEERED</span> <br />
-                                PATH TO SCALE.
+                                {t('process.heading.line1')} <span className="text-zinc-500 italic">{t('process.heading.line2')}</span> <br />
+                                {t('process.heading.line3')}
                             </h2>
                             <p className="text-zinc-400 text-lg leading-relaxed max-w-sm mb-12">
-                                We bridge the gap between abstract vision and technical reality through a rigorous,
-                                logic-driven process designed for precision and performance.
+                                {t('process.description')}
                             </p>
 
                             <div className="flex flex-col gap-6">
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-[1px] bg-brand-blue/30" />
-                                    <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">System Version: 2.4.0</span>
+                                    <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">{t('process.systemVersion')}</span>
                                 </div>
                                 <Link
                                     href="#packages"
                                     className="group inline-flex items-center gap-4 text-[11px] font-mono uppercase tracking-[0.2em] text-white/60 hover:text-brand-blue transition-colors"
                                 >
-                                    <span>Explore Engagement Models</span>
+                                    <span>{t('process.explore')}</span>
                                     <span className="group-hover:translate-x-1 transition-transform">→</span>
                                 </Link>
                             </div>
@@ -150,7 +175,7 @@ const ProcessSection = () => {
 
                         <div className="flex flex-col gap-24 lg:gap-32 pl-8 lg:pl-24">
                             {steps.map((step, index) => (
-                                <StepCard key={step.id} step={step} index={index} />
+                                <StepCard key={step.id} step={step} index={index} t={t} />
                             ))}
                         </div>
                     </div>
@@ -160,7 +185,7 @@ const ProcessSection = () => {
     );
 };
 
-const StepCard = ({ step, index }: { step: Step; index: number }) => {
+const StepCard = ({ step, index, t }: { step: Step; index: number, t: any }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-10% 0px -10% 0px" });
 
@@ -191,11 +216,11 @@ const StepCard = ({ step, index }: { step: Step; index: number }) => {
                     <div className="flex items-center gap-4">
                         <span className={`font-mono text-[10px] uppercase tracking-widest ${step.status === "active" ? "text-brand-blue" : "text-zinc-600"
                             }`}>
-                            Phase_{step.id}
+                            {t('process.labels.phase')}_{step.id}
                         </span>
                         {step.status === "completed" && (
                             <span className="font-mono text-[8px] uppercase tracking-widest text-emerald-500/60 border border-emerald-500/20 px-2 py-0.5 rounded">
-                                Verified
+                                {t('process.labels.verified')}
                             </span>
                         )}
                     </div>
@@ -213,11 +238,11 @@ const StepCard = ({ step, index }: { step: Step; index: number }) => {
                 {/* Technical Metadata Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                     <div className="p-4 rounded-lg border border-white/5 bg-white/[0.01] group-hover:border-white/10 transition-colors">
-                        <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-500 block mb-2">Input_Source</span>
+                        <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-500 block mb-2">{t('process.labels.input')}</span>
                         <span className="text-xs text-zinc-300 font-medium">{step.input}</span>
                     </div>
                     <div className="p-4 rounded-lg border border-white/5 bg-white/[0.01] group-hover:border-white/10 transition-colors">
-                        <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-500 block mb-2">Output_Result</span>
+                        <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-500 block mb-2">{t('process.labels.output')}</span>
                         <span className="text-xs text-brand-blue font-medium">{step.output}</span>
                     </div>
                 </div>

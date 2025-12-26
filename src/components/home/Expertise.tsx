@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import { div } from "framer-motion/client";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 interface ExpertiseItem {
     id: string;
@@ -14,54 +15,55 @@ interface ExpertiseItem {
     image: string;
 }
 
-const expertiseData: ExpertiseItem[] = [
-    {
-        id: "web",
-        title: "Web Engineering",
-        label: "Architecture",
-        description: "Building high-performance, scalable web architectures that serve as the backbone of digital transformation.",
-        supporting: ["Next.js", "TypeScript", "Performance"],
-        image: "image1.jpg"
-    },
-    {
-        id: "saas",
-        title: "SaaS Infrastructure",
-        label: "Systems",
-        description: "Designing complex multi-tenant systems and cloud-native infrastructures for global scalability.",
-        supporting: ["Cloud Native", "Scalability", "Security"],
-        image: "image2.jpg"
-    },
-    {
-        id: "uiux",
-        title: "UI/UX Architecture",
-        label: "Precision",
-        description: "Engineering pixel-perfect, motion-driven interfaces that blend aesthetic excellence with functional logic.",
-        supporting: ["Motion Design", "Design Systems", "UX Logic"],
-        image: "image3.jpg"
-    },
-    {
-        id: "enterprise",
-        title: "Enterprise Solutions",
-        label: "Complexity",
-        description: "Solving intricate business problems through custom-engineered software and integrated digital ecosystems.",
-        supporting: ["Custom ERP", "API Design", "Integration"],
-        image: "image4.jpg"
-    },
-    {
-        id: "strategy",
-        title: "Digital Strategy",
-        label: "Vision",
-        description: "Aligning technical architecture with business objectives to ensure long-term systemic growth.",
-        supporting: ["Roadmapping", "Consultancy", "Growth"],
-        image: "image5.jpg"
-    }
-];
-
 export default function Expertise() {
+    const { t } = useTranslation('common');
     const [activeIndex, setActiveIndex] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
 
     const expoOut = [0.16, 1, 0.3, 1] as const;
+
+    const expertiseData: ExpertiseItem[] = [
+        {
+            id: "web",
+            title: t('expertise.items.0.title'),
+            label: t('expertise.items.0.label'),
+            description: t('expertise.items.0.description'),
+            supporting: t('expertise.items.0.supporting', { returnObjects: true }) as string[],
+            image: "image1.jpg"
+        },
+        {
+            id: "saas",
+            title: t('expertise.items.1.title'),
+            label: t('expertise.items.1.label'),
+            description: t('expertise.items.1.description'),
+            supporting: t('expertise.items.1.supporting', { returnObjects: true }) as string[],
+            image: "image2.jpg"
+        },
+        {
+            id: "uiux",
+            title: t('expertise.items.2.title'),
+            label: t('expertise.items.2.label'),
+            description: t('expertise.items.2.description'),
+            supporting: t('expertise.items.2.supporting', { returnObjects: true }) as string[],
+            image: "image3.jpg"
+        },
+        {
+            id: "enterprise",
+            title: t('expertise.items.3.title'),
+            label: t('expertise.items.3.label'),
+            description: t('expertise.items.3.description'),
+            supporting: t('expertise.items.3.supporting', { returnObjects: true }) as string[],
+            image: "image4.jpg"
+        },
+        {
+            id: "strategy",
+            title: t('expertise.items.4.title'),
+            label: t('expertise.items.4.label'),
+            description: t('expertise.items.4.description'),
+            supporting: t('expertise.items.4.supporting', { returnObjects: true }) as string[],
+            image: "image5.jpg"
+        }
+    ];
 
     return (
         <section className="relative w-full sm:px-26 px-2 bg-[#0E0E11] pt-32 md:pt-48 pb-0">
@@ -81,7 +83,7 @@ export default function Expertise() {
                                 transition={{ duration: 1, ease: expoOut }}
                                 className="font-mono text-[10px] uppercase tracking-[0.5em] text-brand-blue"
                             >
-                                Our Capabilities
+                                {t('expertise.sectionLabel')}
                             </motion.span>
                             <motion.h2
                                 initial={{ opacity: 0, y: 20 }}
@@ -90,7 +92,7 @@ export default function Expertise() {
                                 transition={{ duration: 1.2, delay: 0.1, ease: expoOut }}
                                 className="max-w-md font-display text-4xl font-bold text-white md:text-5xl tracking-tight"
                             >
-                                ARCHITECTING <span className="text-zinc-500 italic">SYSTEMS</span> OF VALUE.
+                                {t('expertise.heading.line1')} <span className="text-zinc-500 italic">{t('expertise.heading.line2')}</span> {t('expertise.heading.line3')}
                             </motion.h2>
                         </div>
 
@@ -144,12 +146,12 @@ export default function Expertise() {
                                             {/* Technical Labels Overlay */}
                                             <div className="absolute inset-0 p-8 flex flex-col justify-between pointer-events-none z-20">
                                                 <div className="flex justify-between font-mono text-[8px] uppercase tracking-widest text-zinc-400">
-                                                    <span>Module_{expertiseData[activeIndex].id}</span>
-                                                    <span>Status: Active</span>
+                                                    <span>{t('expertise.visuals.module')}{expertiseData[activeIndex].id}</span>
+                                                    <span>{t('expertise.visuals.status')}</span>
                                                 </div>
                                                 <div className="flex justify-between font-mono text-[8px] uppercase tracking-widest text-zinc-400">
-                                                    <span>Logic_Gate: 0{activeIndex + 1}</span>
-                                                    <span>Engine: v.2.0</span>
+                                                    <span>{t('expertise.visuals.logicGate')}{activeIndex + 1}</span>
+                                                    <span>{t('expertise.visuals.engine')}</span>
                                                 </div>
                                             </div>
                                         </motion.div>
@@ -239,4 +241,3 @@ function ExpertiseRow({ item, index, activeIndex, setActiveIndex }: {
         </motion.div>
     );
 }
-

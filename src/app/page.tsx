@@ -7,6 +7,7 @@ import Impact from "@/components/home/Impact";
 import Expertise from "@/components/home/Expertise";
 import Services from "@/components/home/Services";
 import DigitalTransformation from "@/components/home/DigitalTransformation";
+import InteractionShowcase from "@/components/home/InteractionShowcase";
 import ProcessSection from "@/components/home/ProcessSection";
 import Engagement from "@/components/home/Engagement";
 import SelectedWork from "@/components/home/SelectedWork";
@@ -48,6 +49,7 @@ export default function Home() {
       <Impact />
       <Expertise />
       <Services />
+      <InteractionShowcase />
       <DigitalTransformation />
       <ProcessSection />
       <Engagement />

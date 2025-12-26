@@ -3,8 +3,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
-const BeforeUI = () => (
+const BeforeUI = ({ t }: { t: any }) => (
     <div className="relative w-full h-full bg-[#0E0E11] flex items-center justify-center p-4 md:p-12 opacity-40 grayscale">
         <div className="w-full max-w-5xl aspect-[16/10] md:aspect-video border border-white/10 rounded-lg p-4 md:p-8 flex flex-col gap-4 md:gap-8 bg-[#16161A]">
             {/* Messy Header */}
@@ -44,15 +45,15 @@ const BeforeUI = () => (
 
         {/* Technical Labels */}
         <div className="absolute top-6 left-6 md:top-12 md:left-12 font-mono text-[8px] md:text-[10px] uppercase tracking-widest text-white/20">
-            [ Status: Legacy / Fragmented ]
+            {t('digitalTransformation.before.status')}
         </div>
         <div className="absolute bottom-6 left-6 md:bottom-12 md:left-12 font-mono text-[8px] md:text-[10px] uppercase tracking-widest text-white/10">
-            Latency: 450ms+ | Conversion: 1.2%
+            {t('digitalTransformation.before.metrics')}
         </div>
     </div>
 );
 
-const AfterUI = () => (
+const AfterUI = ({ t }: { t: any }) => (
     <div className="relative w-full h-full bg-[#0E0E11] flex items-center justify-center p-4 md:p-12">
         {/* Subtle Glow Leak */}
         <div className="absolute inset-0 bg-radial-gradient from-brand-blue/10 via-transparent to-transparent pointer-events-none" />
@@ -117,7 +118,7 @@ const AfterUI = () => (
                             </div>
                             <div className="text-right">
                                 <div className="text-[10px] font-mono text-brand-blue">+300%</div>
-                                <div className="text-[8px] font-mono text-zinc-500 uppercase">Growth</div>
+                                <div className="text-[8px] font-mono text-zinc-500 uppercase">{t('digitalTransformation.after.growth')}</div>
                             </div>
                         </div>
                         <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
@@ -139,7 +140,7 @@ const AfterUI = () => (
                     <div className="w-16 md:w-32 h-1.5 md:h-2.5 bg-white/5 rounded-full" />
                 </div>
                 <div className="flex items-center gap-3">
-                    <div className="hidden sm:block text-[8px] md:text-[10px] font-mono text-zinc-500 uppercase tracking-widest">System_Secure</div>
+                    <div className="hidden sm:block text-[8px] md:text-[10px] font-mono text-zinc-500 uppercase tracking-widest">{t('digitalTransformation.after.secure')}</div>
                     <div className="w-6 h-6 md:w-10 md:h-10 rounded-full bg-brand-blue/10 border border-brand-blue/20" />
                 </div>
             </div>
@@ -147,15 +148,16 @@ const AfterUI = () => (
 
         {/* Technical Labels */}
         <div className="absolute top-6 right-6 md:top-12 md:right-12 font-mono text-[8px] md:text-[10px] uppercase tracking-widest text-brand-blue">
-            [ Status: Engineered / Scalable ]
+            {t('digitalTransformation.after.status')}
         </div>
         <div className="absolute bottom-6 right-6 md:bottom-12 md:right-12 font-mono text-[8px] md:text-[10px] uppercase tracking-widest text-brand-blue/60">
-            Latency: 12ms | Conversion: 4.8%
+            {t('digitalTransformation.after.metrics')}
         </div>
     </div>
 );
 
 const DigitalTransformation = () => {
+    const { t } = useTranslation('common');
     const containerRef = useRef<HTMLDivElement>(null);
     const [sliderPos, setSliderPos] = useState(50);
     const [isDragging, setIsDragging] = useState(false);
@@ -222,7 +224,7 @@ const DigitalTransformation = () => {
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     className="font-mono text-[8px] md:text-[10px] uppercase tracking-[0.4em] text-brand-blue mb-2 md:mb-4 block"
                 >
-                    The Evolution
+                    {t('digitalTransformation.label')}
                 </motion.span>
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
@@ -230,7 +232,7 @@ const DigitalTransformation = () => {
                     transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                     className="font-display font-bold text-3xl md:text-5xl lg:text-7xl text-white tracking-tight"
                 >
-                    LEGACY <span className="text-zinc-500 italic">TO</span> <span className="text-brand-blue">ENGINEERED</span>
+                    {t('digitalTransformation.heading.line1')} <span className="text-zinc-500 italic">{t('digitalTransformation.heading.line2')}</span> <span className="text-brand-blue">{t('digitalTransformation.heading.line3')}</span>
                 </motion.h2>
             </div>
 
@@ -238,7 +240,7 @@ const DigitalTransformation = () => {
             <div className="relative flex-1 w-full flex items-center justify-center min-h-[500px] md:min-h-[600px]">
                 {/* Before Layer (Static) */}
                 <div className="absolute inset-0 z-10">
-                    <BeforeUI />
+                    <BeforeUI t={t} />
                 </div>
 
                 {/* After Layer (Clipped) */}
@@ -246,7 +248,7 @@ const DigitalTransformation = () => {
                     className="absolute inset-0 z-20 overflow-hidden"
                     style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
                 >
-                    <AfterUI />
+                    <AfterUI t={t} />
                 </motion.div>
 
                 {/* Slider Handle */}
@@ -283,7 +285,7 @@ const DigitalTransformation = () => {
                                 className="absolute bottom-16 md:bottom-24 left-1/2 -translate-x-1/2 whitespace-nowrap flex flex-col items-center gap-4"
                             >
                                 <span className="font-mono text-[8px] md:text-[10px] uppercase tracking-[0.3em] text-brand-blue/50">
-                                    Drag to compare
+                                    {t('digitalTransformation.dragHint')}
                                 </span>
                                 <motion.div
                                     animate={{ x: [-10, 10, -10] }}

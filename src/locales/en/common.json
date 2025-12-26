@@ -1,0 +1,493 @@
+{
+    "services": {
+        "sectionLabel": "Capabilities",
+        "heading": {
+            "line1": "ENGINEERED",
+            "line2": "FOR",
+            "line3": "EXCLUSIVITY."
+        },
+        "items": [
+            {
+                "label": "01 / Architecture",
+                "title": "Digital Systems",
+                "description": "Foundational digital infrastructures designed for long-term stability and performance.",
+                "metadata": "Structure_Mastery",
+                "cta": "Explore_Module"
+            },
+            {
+                "label": "02 / Engineering",
+                "title": "Scalable Products",
+                "description": "High-performance applications that grow with your ambition.",
+                "metadata": "Performance_Logic",
+                "cta": "Explore_Module"
+            },
+            {
+                "label": "03 / Commerce",
+                "title": "Commerce Logic",
+                "description": "Bespoke shopping experiences built on robust, conversion-first logic.",
+                "metadata": "Conversion_Engine",
+                "cta": "Explore_Module"
+            },
+            {
+                "label": "04 / Strategy",
+                "title": "Technical Strategy",
+                "description": "Navigating complex digital landscapes with precision and foresight.",
+                "metadata": "Directional_Insight",
+                "cta": "Explore_Module"
+            }
+        ]
+    },
+    "impact": {
+        "sectionLabel": "Impact & Outcomes",
+        "heading": {
+            "part1": "WE MEASURE",
+            "part2": "SUCCESS",
+            "part3": "BY THE SYSTEMS WE",
+            "part4": "BUILD"
+        },
+        "metrics": [
+            {
+                "label": "System Stability",
+                "description": "Average client retention rate across enterprise partnerships."
+            },
+            {
+                "label": "Architectural Scale",
+                "description": "High-performance digital systems deployed globally."
+            },
+            {
+                "label": "Optimization",
+                "description": "Average performance increase post-system architecture."
+            },
+            {
+                "label": "Quality Standard",
+                "description": "International design and engineering excellence awards."
+            }
+        ],
+        "visual": {
+            "alt": "Impact Visual System",
+            "label1": "System_v.04",
+            "label2": "Architecture_Core",
+            "status": "Status: Optimized",
+            "load": "Load: 0.04ms"
+        }
+    },
+    "hero": {
+        "label": "EST. 2024 — DIGITAL ARCHITECTURE",
+        "headline": "WE BUILD THE SYSTEMS THAT POWER DIGITAL AMBITION.",
+        "description": {
+            "part1": "Specializing in high-performance",
+            "highlight1": "websites",
+            "part2": ", scalable",
+            "highlight2": "digital products",
+            "part3": ", and enterprise",
+            "highlight3": "SaaS systems",
+            "part4": "."
+        },
+        "cta": {
+            "primary": "START A PROJECT",
+            "secondary": "EXPLORE WORK"
+        },
+        "systemReady": "System Ready"
+    },
+    "selectedWork": {
+        "label": "Execution / 04",
+        "subLabel": "Selected Work",
+        "heading": {
+            "line1": "Curated",
+            "line2": "Proof."
+        },
+        "description": "A demonstration of real-world application, built through clarity and restraint.",
+        "labels": {
+            "industry": "Industry",
+            "platform": "Platform",
+            "scope": "Scope"
+        },
+        "projects": [
+            {
+                "id": "01",
+                "title": "Ventriloq",
+                "outcome": "Reduced friction. Increased conversion.",
+                "industry": "E-commerce",
+                "platform": "Web / Mobile",
+                "scope": "System Design"
+            },
+            {
+                "id": "02",
+                "title": "Agent Voice",
+                "outcome": "Rebuilt for scale.",
+                "industry": "AI / SaaS",
+                "platform": "Desktop App",
+                "scope": "Infrastructure"
+            },
+            {
+                "id": "03",
+                "title": "Coder OS",
+                "outcome": "From marketing site to product system.",
+                "industry": "DevTools",
+                "platform": "Web Platform",
+                "scope": "Product Strategy"
+            },
+            {
+                "id": "04",
+                "title": "Quantum",
+                "outcome": "Engineered for high-frequency trade.",
+                "industry": "Fintech",
+                "platform": "Terminal",
+                "scope": "Core UI"
+            }
+        ]
+    },
+    "philosophy": {
+        "label": "Our philosophy",
+        "principles": [
+            {
+                "label": "Principle 01",
+                "text": "We don't chase trends.",
+                "highlight": "trends"
+            },
+            {
+                "label": "Principle 02",
+                "text": "We design systems, not screens.",
+                "highlight": "systems"
+            },
+            {
+                "label": "Principle 03",
+                "text": "Clarity comes before beauty.",
+                "highlight": "Clarity"
+            },
+            {
+                "label": "Principle 04",
+                "text": "Motion follows meaning.",
+                "highlight": "meaning"
+            },
+            {
+                "label": "Principle 05",
+                "text": "Scalability is a design decision.",
+                "highlight": "Scalability"
+            },
+            {
+                "label": "Principle 06",
+                "text": "Everything else is noise.",
+                "highlight": "noise"
+            }
+        ]
+    },
+    "finalCTA": {
+        "label": "Next step",
+        "heading": {
+            "line1": "If this resonates,",
+            "line2": "we should talk."
+        },
+        "description": "We work with a small number of teams each year.",
+        "button": "Request a strategy call",
+        "price": "Projects start at $15k+"
+    },
+    "projectFit": {
+        "progress": "Step",
+        "questions": [
+            {
+                "text": "What best describes your situation?",
+                "options": {
+                    "s1": "Early-stage startup",
+                    "s2": "Growing product",
+                    "s3": "Established business",
+                    "s4": "Enterprise / Internal team"
+                }
+            },
+            {
+                "text": "What are you trying to build?",
+                "options": {
+                    "p1": "Marketing website",
+                    "p2": "SaaS / Web platform",
+                    "p3": "Redesign / Rebuild",
+                    "p4": "Long-term digital system"
+                }
+            },
+            {
+                "text": "What matters most right now?",
+                "options": {
+                    "m1": "Speed",
+                    "m2": "Scalability",
+                    "m3": "Design quality",
+                    "m4": "Technical reliability"
+                }
+            },
+            {
+                "text": "Timeline",
+                "options": {
+                    "t1": "ASAP",
+                    "t2": "1–3 months",
+                    "t3": "Flexible"
+                }
+            },
+            {
+                "text": "Budget range",
+                "options": {
+                    "b1": "$10k–15k",
+                    "b2": "$15k–30k",
+                    "b3": "$30k+",
+                    "b4": "Not sure yet"
+                }
+            }
+        ],
+        "results": {
+            "success": {
+                "title": "You’re a strong fit.",
+                "description": "Based on your requirements and budget, our engineering-first approach is perfectly aligned with your goals.",
+                "cta": "Request a strategy call"
+            },
+            "fail": {
+                "title": "We may not be the right partner — and that’s okay.",
+                "description": "Our specialized workflow is optimized for high-scale, premium systems. For your current stage, a more agile or marketing-focused agency might serve you better.",
+                "cta": "Here’s what you should look for instead"
+            }
+        }
+    },
+    "engagement": {
+        "label": "Engagement Models",
+        "heading": {
+            "line1": "Select your",
+            "line2": "velocity."
+        },
+        "models": [
+            {
+                "label": "FOUNDATION",
+                "title": "Strategic Clarity.",
+                "positioning": "Not a website. A digital foundation.",
+                "outcomes": [
+                    "Brand Architecture",
+                    "Core UX Strategy",
+                    "Technical Roadmap"
+                ],
+                "price": "Starting from $25k",
+                "bestFor": "Early-stage ventures seeking market entry."
+            },
+            {
+                "label": "PLATFORM",
+                "title": "Engineered Growth.",
+                "positioning": "Built to scale. Engineered to last.",
+                "outcomes": [
+                    "Custom Product Design",
+                    "Scalable Infrastructure",
+                    "Performance Optimization"
+                ],
+                "price": "Starting from $60k",
+                "bestFor": "Scaling teams ready to dominate their category."
+            },
+            {
+                "label": "SYSTEMS",
+                "title": "Enterprise Velocity.",
+                "positioning": "Beyond the product. A complete ecosystem.",
+                "outcomes": [
+                    "Design Systems at Scale",
+                    "Multi-platform Deployment",
+                    "Long-term Technical Strategy"
+                ],
+                "price": "Starting from $120k",
+                "bestFor": "Organizations requiring high-level digital excellence."
+            }
+        ],
+        "investment": "Investment",
+        "bestForLabel": "Best for:",
+        "notSure": "Not sure which fits?",
+        "cta": "Answer a few questions and we’ll guide you"
+    },
+    "process": {
+        "label": "Methodology",
+        "heading": {
+            "line1": "THE",
+            "line2": "ENGINEERED",
+            "line3": "PATH TO SCALE."
+        },
+        "description": "We bridge the gap between abstract vision and technical reality through a rigorous, logic-driven process designed for precision and performance.",
+        "systemVersion": "System Version: 2.4.0",
+        "explore": "Explore Engagement Models",
+        "steps": [
+            {
+                "title": "Discovery & Strategic Alignment",
+                "description": "We deep-dive into your business logic, market positioning, and technical constraints to define the optimal path forward.",
+                "input": "Business Vision & Raw Data",
+                "output": "Strategic Roadmap & KPI Framework",
+                "supporting": [
+                    "Market Analysis",
+                    "User Personas",
+                    "Technical Audit"
+                ]
+            },
+            {
+                "title": "System Architecture & Logic",
+                "description": "Defining the core engine, data structures, and scalability patterns that will power your digital ecosystem.",
+                "input": "Strategic Roadmap",
+                "output": "Technical Specs & Schema Design",
+                "supporting": [
+                    "Data Modeling",
+                    "API Mapping",
+                    "Cloud Infrastructure"
+                ]
+            },
+            {
+                "title": "High-Fidelity Design Systems",
+                "description": "Engineering a scalable visual language that balances cinematic aesthetics with functional precision.",
+                "input": "Technical Specs",
+                "output": "Atomic Design System & Prototypes",
+                "supporting": [
+                    "Motion Logic",
+                    "UI Components",
+                    "Accessibility"
+                ]
+            },
+            {
+                "title": "Full-Stack Engineering",
+                "description": "Translating architecture into high-performance, clean code with a focus on speed, security, and stability.",
+                "input": "Design System",
+                "output": "Production-Ready Codebase",
+                "supporting": [
+                    "Next.js / React",
+                    "TypeScript",
+                    "Performance Tuning"
+                ]
+            },
+            {
+                "title": "Quality Assurance & Stress Testing",
+                "description": "Rigorous testing across all environments to ensure a flawless, bug-free experience under any load.",
+                "input": "Production Code",
+                "output": "Verified & Optimized System",
+                "supporting": [
+                    "E2E Testing",
+                    "Load Balancing",
+                    "Security Audit"
+                ]
+            },
+            {
+                "title": "Deployment & System Evolution",
+                "description": "Launching to production and implementing a continuous feedback loop for long-term systemic growth.",
+                "input": "Optimized System",
+                "output": "Live Environment & Growth Data",
+                "supporting": [
+                    "CI/CD Pipeline",
+                    "Analytics",
+                    "Iterative Scaling"
+                ]
+            }
+        ],
+        "labels": {
+            "phase": "Phase",
+            "verified": "Verified",
+            "input": "Input_Source",
+            "output": "Output_Result"
+        }
+    },
+    "digitalTransformation": {
+        "label": "The Evolution",
+        "heading": {
+            "line1": "LEGACY",
+            "line2": "TO",
+            "line3": "ENGINEERED"
+        },
+        "before": {
+            "status": "[ Status: Legacy / Fragmented ]",
+            "metrics": "Latency: 450ms+ | Conversion: 1.2%"
+        },
+        "after": {
+            "status": "[ Status: Engineered / Scalable ]",
+            "metrics": "Latency: 12ms | Conversion: 4.8%",
+            "growth": "Growth",
+            "secure": "System_Secure"
+        },
+        "dragHint": "Drag to compare"
+    },
+    "interactionShowcase": {
+        "tag": "UX_Engineering_Lab",
+        "heading": {
+            "line1": "INTERACTIONS",
+            "line2": "THAT",
+            "line3": "FEEL ALIVE"
+        },
+        "description": "We bridge the gap between static design and human intent. Every micro-interaction is engineered to provide tactile feedback and emotional resonance.",
+        "tiltCard": {
+            "icon": "⚛️",
+            "label": "Motion_Physics",
+            "title": "The Science of Fluid Motion",
+            "description": "Our interfaces utilize non-linear spring physics, ensuring that every transition feels natural, predictable, and incredibly satisfying to interact with.",
+            "activeModules": "Active_Modules"
+        },
+        "magneticButton": "Start Interaction",
+        "microInteraction": {
+            "systemSync": "System_Sync",
+            "protocolActive": "Protocol_Active",
+            "standbyMode": "Standby_Mode",
+            "engineLoad": "Engine_Load",
+            "optimized": "Optimized"
+        },
+        "metadata": {
+            "frameRate": "Frame_Rate: 120fps",
+            "latency": "Latency: 0.002ms"
+        }
+    },
+    "expertise": {
+        "sectionLabel": "Our Capabilities",
+        "heading": {
+            "line1": "ARCHITECTING",
+            "line2": "SYSTEMS",
+            "line3": "OF VALUE."
+        },
+        "items": [
+            {
+                "title": "Web Engineering",
+                "label": "Architecture",
+                "description": "Building high-performance, scalable web architectures that serve as the backbone of digital transformation.",
+                "supporting": [
+                    "Next.js",
+                    "TypeScript",
+                    "Performance"
+                ]
+            },
+            {
+                "title": "SaaS Infrastructure",
+                "label": "Systems",
+                "description": "Designing complex multi-tenant systems and cloud-native infrastructures for global scalability.",
+                "supporting": [
+                    "Cloud Native",
+                    "Scalability",
+                    "Security"
+                ]
+            },
+            {
+                "title": "UI/UX Architecture",
+                "label": "Precision",
+                "description": "Engineering pixel-perfect, motion-driven interfaces that blend aesthetic excellence with functional logic.",
+                "supporting": [
+                    "Motion Design",
+                    "Design Systems",
+                    "UX Logic"
+                ]
+            },
+            {
+                "title": "Enterprise Solutions",
+                "label": "Complexity",
+                "description": "Solving intricate business problems through custom-engineered software and integrated digital ecosystems.",
+                "supporting": [
+                    "Custom ERP",
+                    "API Design",
+                    "Integration"
+                ]
+            },
+            {
+                "title": "Digital Strategy",
+                "label": "Vision",
+                "description": "Aligning technical architecture with business objectives to ensure long-term systemic growth.",
+                "supporting": [
+                    "Roadmapping",
+                    "Consultancy",
+                    "Growth"
+                ]
+            }
+        ],
+        "visuals": {
+            "module": "Module_",
+            "status": "Status: Active",
+            "logicGate": "Logic_Gate: 0",
+            "engine": "Engine: v.2.0"
+        }
+    }
+}

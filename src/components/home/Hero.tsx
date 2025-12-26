@@ -2,15 +2,17 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
+    const { t } = useTranslation('common');
     const { scrollY } = useScroll();
 
     const y1 = useTransform(scrollY, [0, 500], [0, 200]);
     const y2 = useTransform(scrollY, [0, 500], [0, -150]);
 
-    const headline = "WE BUILD THE SYSTEMS THAT POWER DIGITAL AMBITION.";
+    const headline = t('hero.headline');
     const words = headline.split(" ");
 
     const expoOut = [0.16, 1, 0.3, 1] as const;
@@ -70,7 +72,7 @@ export default function Hero() {
                         transition={{ duration: 1.2, delay: 0.2, ease: expoOut }}
                         className="font-mono text-[10px] font-medium tracking-[0.4em] text-zinc-500 uppercase"
                     >
-                        EST. 2024 — DIGITAL ARCHITECTURE
+                        {t('hero.label')}
                     </motion.span>
                 </div>
 
@@ -102,9 +104,7 @@ export default function Hero() {
                         transition={{ duration: 1.5, delay: 1.2, ease: expoOut }}
                         className="text-lg text-zinc-400 md:text-xl font-sans leading-relaxed tracking-tight"
                     >
-                        Specializing in high-performance <span className="text-brand-blue font-medium cursor-help transition-opacity hover:opacity-80">websites</span>,
-                        scalable <span className="text-brand-blue font-medium cursor-help transition-opacity hover:opacity-80">digital products</span>,
-                        and enterprise <span className="text-brand-blue font-medium cursor-help transition-opacity hover:opacity-80">SaaS systems</span>.
+                        {t('hero.description.part1')} <span className="text-brand-blue font-medium cursor-help transition-opacity hover:opacity-80">{t('hero.description.highlight1')}</span>{t('hero.description.part2')} <span className="text-brand-blue font-medium cursor-help transition-opacity hover:opacity-80">{t('hero.description.highlight2')}</span>{t('hero.description.part3')} <span className="text-brand-blue font-medium cursor-help transition-opacity hover:opacity-80">{t('hero.description.highlight3')}</span>{t('hero.description.part4')}
                     </motion.p>
                 </div>
 
@@ -116,12 +116,12 @@ export default function Hero() {
                     className="mt-16 flex flex-col sm:flex-row items-center gap-6"
                 >
                     <button className="group relative px-8 py-4 bg-brand-blue text-white font-sans text-sm font-medium tracking-wide overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98]">
-                        <span className="relative z-10">START A PROJECT</span>
+                        <span className="relative z-10">{t('hero.cta.primary')}</span>
                         <div className="absolute inset-0 bg-white/10 translate-y-full transition-transform group-hover:translate-y-0" />
                     </button>
 
                     <button className="group flex items-center gap-2 text-zinc-500 hover:text-white transition-colors font-sans text-sm font-medium tracking-wide">
-                        EXPLORE WORK
+                        {t('hero.cta.secondary')}
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform group-hover:translate-x-1">
                             <path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
@@ -143,7 +143,7 @@ export default function Hero() {
                                 className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-transparent via-brand-blue to-transparent"
                             />
                         </div>
-                        <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-zinc-600">System Ready</span>
+                        <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-zinc-600">{t('hero.systemReady')}</span>
                     </div>
                 </motion.div>
             </div>

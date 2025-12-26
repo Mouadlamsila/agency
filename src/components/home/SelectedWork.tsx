@@ -2,48 +2,50 @@
 
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
-
-const projects = [
-    {
-        id: "01",
-        title: "Ventriloq",
-        outcome: "Reduced friction. Increased conversion.",
-        industry: "E-commerce",
-        platform: "Web / Mobile",
-        scope: "System Design",
-        color: "#0066FF"
-    },
-    {
-        id: "02",
-        title: "Agent Voice",
-        outcome: "Rebuilt for scale.",
-        industry: "AI / SaaS",
-        platform: "Desktop App",
-        scope: "Infrastructure",
-        color: "#0066FF"
-    },
-    {
-        id: "03",
-        title: "Coder OS",
-        outcome: "From marketing site to product system.",
-        industry: "DevTools",
-        platform: "Web Platform",
-        scope: "Product Strategy",
-        color: "#0066FF"
-    },
-    {
-        id: "04",
-        title: "Quantum",
-        outcome: "Engineered for high-frequency trade.",
-        industry: "Fintech",
-        platform: "Terminal",
-        scope: "Core UI",
-        color: "#0066FF"
-    }
-];
+import { useTranslation } from "react-i18next";
 
 export default function SelectedWork() {
     const sectionRef = useRef<HTMLDivElement>(null);
+    const { t } = useTranslation('common');
+
+    const projects = [
+        {
+            id: "01",
+            title: t('selectedWork.projects.0.title'),
+            outcome: t('selectedWork.projects.0.outcome'),
+            industry: t('selectedWork.projects.0.industry'),
+            platform: t('selectedWork.projects.0.platform'),
+            scope: t('selectedWork.projects.0.scope'),
+            color: "#0066FF"
+        },
+        {
+            id: "02",
+            title: t('selectedWork.projects.1.title'),
+            outcome: t('selectedWork.projects.1.outcome'),
+            industry: t('selectedWork.projects.1.industry'),
+            platform: t('selectedWork.projects.1.platform'),
+            scope: t('selectedWork.projects.1.scope'),
+            color: "#0066FF"
+        },
+        {
+            id: "03",
+            title: t('selectedWork.projects.2.title'),
+            outcome: t('selectedWork.projects.2.outcome'),
+            industry: t('selectedWork.projects.2.industry'),
+            platform: t('selectedWork.projects.2.platform'),
+            scope: t('selectedWork.projects.2.scope'),
+            color: "#0066FF"
+        },
+        {
+            id: "04",
+            title: t('selectedWork.projects.3.title'),
+            outcome: t('selectedWork.projects.3.outcome'),
+            industry: t('selectedWork.projects.3.industry'),
+            platform: t('selectedWork.projects.3.platform'),
+            scope: t('selectedWork.projects.3.scope'),
+            color: "#0066FF"
+        }
+    ];
     const { scrollYProgress } = useScroll({
         target: sectionRef,
         offset: ["start start", "end end"]
@@ -76,7 +78,7 @@ export default function SelectedWork() {
                         style={{ width: useTransform(scrollYProgress, [0, 1], ["0px", "200px"]) }}
                     />
                     <span className="mt-2 block font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-500">
-                        Execution / 04
+                        {t('selectedWork.label')}
                     </span>
                 </div>
 
@@ -89,7 +91,7 @@ export default function SelectedWork() {
                             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                             className="font-mono text-[10px] uppercase tracking-[0.4em] text-[#0066FF]"
                         >
-                            Selected Work
+                            {t('selectedWork.subLabel')}
                         </motion.span>
                         <motion.h2
                             initial={{ opacity: 0, y: 30 }}
@@ -97,8 +99,8 @@ export default function SelectedWork() {
                             transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                             className="mt-8 text-7xl font-bold tracking-tighter md:text-9xl font-display leading-[0.85]"
                         >
-                            Curated <br />
-                            <span className="text-zinc-800">Proof.</span>
+                            {t('selectedWork.heading.line1')} <br />
+                            <span className="text-zinc-800">{t('selectedWork.heading.line2')}</span>
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0 }}
@@ -106,7 +108,7 @@ export default function SelectedWork() {
                             transition={{ duration: 1, delay: 0.4 }}
                             className="mt-12 max-w-xs text-sm leading-relaxed text-zinc-500"
                         >
-                            A demonstration of real-world application, built through clarity and restraint.
+                            {t('selectedWork.description')}
                         </motion.p>
                     </div>
 
@@ -136,9 +138,10 @@ export default function SelectedWork() {
     );
 }
 
-function ProjectCard({ project, index }: { project: typeof projects[0], index: number }) {
+function ProjectCard({ project, index }: { project: any, index: number }) {
     const [isHovered, setIsHovered] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
+    const { t } = useTranslation('common');
 
     // Parallax effect for the internal UI
     const { scrollYProgress } = useScroll({
@@ -181,15 +184,15 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
 
                 <div className="col-span-4 flex flex-col justify-end space-y-2 border-l border-zinc-800 pl-8">
                     <div className="space-y-1">
-                        <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600">Industry</p>
+                        <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600">{t('selectedWork.labels.industry')}</p>
                         <p className="font-mono text-[10px] text-zinc-400">{project.industry}</p>
                     </div>
                     <div className="space-y-1">
-                        <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600">Platform</p>
+                        <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600">{t('selectedWork.labels.platform')}</p>
                         <p className="font-mono text-[10px] text-zinc-400">{project.platform}</p>
                     </div>
                     <div className="space-y-1">
-                        <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600">Scope</p>
+                        <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600">{t('selectedWork.labels.scope')}</p>
                         <p className="font-mono text-[10px] text-zinc-400">{project.scope}</p>
                     </div>
                 </div>

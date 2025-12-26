@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 interface Option {
     id: string;
@@ -16,67 +17,68 @@ interface Question {
     key: string;
 }
 
-const questions: Question[] = [
-    {
-        id: 1,
-        text: "What best describes your situation?",
-        key: "situation",
-        options: [
-            { id: "s1", label: "Early-stage startup", value: "startup" },
-            { id: "s2", label: "Growing product", value: "growing" },
-            { id: "s3", label: "Established business", value: "established" },
-            { id: "s4", label: "Enterprise / Internal team", value: "enterprise" },
-        ],
-    },
-    {
-        id: 2,
-        text: "What are you trying to build?",
-        key: "product",
-        options: [
-            { id: "p1", label: "Marketing website", value: "marketing" },
-            { id: "p2", label: "SaaS / Web platform", value: "saas" },
-            { id: "p3", label: "Redesign / Rebuild", value: "redesign" },
-            { id: "p4", label: "Long-term digital system", value: "system" },
-        ],
-    },
-    {
-        id: 3,
-        text: "What matters most right now?",
-        key: "priority",
-        options: [
-            { id: "m1", label: "Speed", value: "speed" },
-            { id: "m2", label: "Scalability", value: "scalability" },
-            { id: "m3", label: "Design quality", value: "design" },
-            { id: "m4", label: "Technical reliability", value: "reliability" },
-        ],
-    },
-    {
-        id: 4,
-        text: "Timeline",
-        key: "timeline",
-        options: [
-            { id: "t1", label: "ASAP", value: "asap" },
-            { id: "t2", label: "1–3 months", value: "1-3m" },
-            { id: "t3", label: "Flexible", value: "flexible" },
-        ],
-    },
-    {
-        id: 5,
-        text: "Budget range",
-        key: "budget",
-        options: [
-            { id: "b1", label: "$10k–15k", value: "10-15k" },
-            { id: "b2", label: "$15k–30k", value: "15-30k" },
-            { id: "b3", label: "$30k+", value: "30k+" },
-            { id: "b4", label: "Not sure yet", value: "not-sure" },
-        ],
-    },
-];
-
 const ProjectFit = () => {
+    const { t } = useTranslation('common');
     const [currentStep, setCurrentStep] = useState(0);
     const [answers, setAnswers] = useState<Record<string, string>>({});
     const [isFinished, setIsFinished] = useState(false);
+
+    const questions: Question[] = [
+        {
+            id: 1,
+            text: t('projectFit.questions.0.text'),
+            key: "situation",
+            options: [
+                { id: "s1", label: t('projectFit.questions.0.options.s1'), value: "startup" },
+                { id: "s2", label: t('projectFit.questions.0.options.s2'), value: "growing" },
+                { id: "s3", label: t('projectFit.questions.0.options.s3'), value: "established" },
+                { id: "s4", label: t('projectFit.questions.0.options.s4'), value: "enterprise" },
+            ],
+        },
+        {
+            id: 2,
+            text: t('projectFit.questions.1.text'),
+            key: "product",
+            options: [
+                { id: "p1", label: t('projectFit.questions.1.options.p1'), value: "marketing" },
+                { id: "p2", label: t('projectFit.questions.1.options.p2'), value: "saas" },
+                { id: "p3", label: t('projectFit.questions.1.options.p3'), value: "redesign" },
+                { id: "p4", label: t('projectFit.questions.1.options.p4'), value: "system" },
+            ],
+        },
+        {
+            id: 3,
+            text: t('projectFit.questions.2.text'),
+            key: "priority",
+            options: [
+                { id: "m1", label: t('projectFit.questions.2.options.m1'), value: "speed" },
+                { id: "m2", label: t('projectFit.questions.2.options.m2'), value: "scalability" },
+                { id: "m3", label: t('projectFit.questions.2.options.m3'), value: "design" },
+                { id: "m4", label: t('projectFit.questions.2.options.m4'), value: "reliability" },
+            ],
+        },
+        {
+            id: 4,
+            text: t('projectFit.questions.3.text'),
+            key: "timeline",
+            options: [
+                { id: "t1", label: t('projectFit.questions.3.options.t1'), value: "asap" },
+                { id: "t2", label: t('projectFit.questions.3.options.t2'), value: "1-3m" },
+                { id: "t3", label: t('projectFit.questions.3.options.t3'), value: "flexible" },
+            ],
+        },
+        {
+            id: 5,
+            text: t('projectFit.questions.4.text'),
+            key: "budget",
+            options: [
+                { id: "b1", label: t('projectFit.questions.4.options.b1'), value: "10-15k" },
+                { id: "b2", label: t('projectFit.questions.4.options.b2'), value: "15-30k" },
+                { id: "b3", label: t('projectFit.questions.4.options.b3'), value: "30k+" },
+                { id: "b4", label: t('projectFit.questions.4.options.b4'), value: "not-sure" },
+            ],
+        },
+    ];
 
     const handleOptionClick = (key: string, value: string) => {
         setAnswers((prev) => ({ ...prev, [key]: value }));
@@ -170,13 +172,13 @@ const ProjectFit = () => {
                                             <div className="w-3 h-3 rounded-full bg-brand-blue animate-pulse shadow-[0_0_15px_#2E5CFF]" />
                                         </div>
                                         <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
-                                            You’re a strong fit.
+                                            {t('projectFit.results.success.title')}
                                         </h2>
                                         <p className="text-foreground/60 text-lg mb-12 max-w-md leading-relaxed">
-                                            Based on your requirements and budget, our engineering-first approach is perfectly aligned with your goals.
+                                            {t('projectFit.results.success.description')}
                                         </p>
                                         <button className="group relative px-8 py-4 bg-brand-blue text-white font-mono text-sm uppercase tracking-widest rounded-full overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(46,92,255,0.4)]">
-                                            <span className="relative z-10">Request a strategy call</span>
+                                            <span className="relative z-10">{t('projectFit.results.success.cta')}</span>
                                             <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                                         </button>
                                     </>
@@ -186,16 +188,16 @@ const ProjectFit = () => {
                                             <div className="w-3 h-3 rounded-full bg-white/20" />
                                         </div>
                                         <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
-                                            We may not be the right partner — and that’s okay.
+                                            {t('projectFit.results.fail.title')}
                                         </h2>
                                         <p className="text-foreground/60 font-medium text-lg mb-12 max-w-md leading-relaxed">
-                                            Our specialized workflow is optimized for high-scale, premium systems. For your current stage, a more agile or marketing-focused agency might serve you better.
+                                            {t('projectFit.results.fail.description')}
                                         </p>
                                         <button
                                             onClick={reset}
                                             className="font-mono text-xs uppercase tracking-widest text-foreground/40 hover:text-brand-blue transition-colors"
                                         >
-                                            Here’s what you should look for instead
+                                            {t('projectFit.results.fail.cta')}
                                         </button>
                                     </>
                                 )}

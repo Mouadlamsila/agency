@@ -2,39 +2,53 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-
-const engagementModels = [
-    {
-        id: "01",
-        label: "FOUNDATION",
-        title: "Strategic Clarity.",
-        positioning: "Not a website. A digital foundation.",
-        outcomes: ["Brand Architecture", "Core UX Strategy", "Technical Roadmap"],
-        price: "Starting from $25k",
-        bestFor: "Early-stage ventures seeking market entry."
-    },
-    {
-        id: "02",
-        label: "PLATFORM",
-        title: "Engineered Growth.",
-        positioning: "Built to scale. Engineered to last.",
-        outcomes: ["Custom Product Design", "Scalable Infrastructure", "Performance Optimization"],
-        price: "Starting from $60k",
-        bestFor: "Scaling teams ready to dominate their category."
-    },
-    {
-        id: "03",
-        label: "SYSTEMS",
-        title: "Enterprise Velocity.",
-        positioning: "Beyond the product. A complete ecosystem.",
-        outcomes: ["Design Systems at Scale", "Multi-platform Deployment", "Long-term Technical Strategy"],
-        price: "Starting from $120k",
-        bestFor: "Organizations requiring high-level digital excellence."
-    }
-];
+import { useTranslation } from "react-i18next";
 
 export default function Engagement() {
+    const { t } = useTranslation('common');
     const expoOut = [0.16, 1, 0.3, 1] as const;
+
+    const engagementModels = [
+        {
+            id: "01",
+            label: t('engagement.models.0.label'),
+            title: t('engagement.models.0.title'),
+            positioning: t('engagement.models.0.positioning'),
+            outcomes: [
+                t('engagement.models.0.outcomes.0'),
+                t('engagement.models.0.outcomes.1'),
+                t('engagement.models.0.outcomes.2')
+            ],
+            price: t('engagement.models.0.price'),
+            bestFor: t('engagement.models.0.bestFor')
+        },
+        {
+            id: "02",
+            label: t('engagement.models.1.label'),
+            title: t('engagement.models.1.title'),
+            positioning: t('engagement.models.1.positioning'),
+            outcomes: [
+                t('engagement.models.1.outcomes.0'),
+                t('engagement.models.1.outcomes.1'),
+                t('engagement.models.1.outcomes.2')
+            ],
+            price: t('engagement.models.1.price'),
+            bestFor: t('engagement.models.1.bestFor')
+        },
+        {
+            id: "03",
+            label: t('engagement.models.2.label'),
+            title: t('engagement.models.2.title'),
+            positioning: t('engagement.models.2.positioning'),
+            outcomes: [
+                t('engagement.models.2.outcomes.0'),
+                t('engagement.models.2.outcomes.1'),
+                t('engagement.models.2.outcomes.2')
+            ],
+            price: t('engagement.models.2.price'),
+            bestFor: t('engagement.models.2.bestFor')
+        }
+    ];
 
     return (
         <section id="engagement" className="w-full py-40 px-6 bg-[#111216] relative overflow-hidden">
@@ -51,7 +65,7 @@ export default function Engagement() {
                         transition={{ duration: 1, ease: expoOut }}
                         className="font-mono text-[10px] uppercase tracking-[0.4em] text-zinc-500"
                     >
-                        Engagement Models
+                        {t('engagement.label')}
                     </motion.span>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -60,7 +74,7 @@ export default function Engagement() {
                         transition={{ duration: 1.2, delay: 0.1, ease: expoOut }}
                         className="mt-6 text-5xl font-bold tracking-tight md:text-8xl font-display text-white"
                     >
-                        Select your <span className="text-zinc-600">velocity.</span>
+                        {t('engagement.heading.line1')} <span className="text-zinc-600">{t('engagement.heading.line2')}</span>
                     </motion.h2>
                 </div>
 
@@ -108,14 +122,14 @@ export default function Engagement() {
                                 <div className="flex flex-col gap-6">
                                     <div>
                                         <span className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest block mb-2">
-                                            Investment
+                                            {t('engagement.investment')}
                                         </span>
                                         <span className="text-2xl font-display font-medium text-brand-blue">
                                             {model.price}
                                         </span>
                                     </div>
                                     <div className="text-[11px] text-zinc-500 font-sans italic">
-                                        Best for: {model.bestFor}
+                                        {t('engagement.bestForLabel')} {model.bestFor}
                                     </div>
                                 </div>
                             </div>
@@ -131,9 +145,9 @@ export default function Engagement() {
                     transition={{ duration: 1.2, delay: 0.8, ease: expoOut }}
                     className="mt-32 text-center"
                 >
-                    <p className="text-zinc-500 font-sans mb-4">Not sure which fits?</p>
+                    <p className="text-zinc-500 font-sans mb-4">{t('engagement.notSure')}</p>
                     <button className="group relative inline-flex items-center gap-2 text-white font-display text-xl hover:text-brand-blue transition-colors duration-300">
-                        Answer a few questions and we’ll guide you
+                        {t('engagement.cta')}
                         <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                         <div className="absolute -bottom-2 left-0 w-full h-[1px] bg-zinc-800 group-hover:bg-brand-blue transition-colors duration-300" />
                     </button>

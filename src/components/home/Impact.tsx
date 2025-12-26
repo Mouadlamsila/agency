@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform, useInView, useSpring } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface MetricProps {
     value: number;
@@ -71,6 +72,7 @@ function Metric({ value, suffix, label, description, delay }: MetricProps) {
 
 export default function Impact() {
     const containerRef = useRef<HTMLDivElement>(null);
+    const { t } = useTranslation('common');
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start end", "end start"]
@@ -80,10 +82,10 @@ export default function Impact() {
     const expoOut = [0.16, 1, 0.3, 1] as const;
 
     const metrics = [
-        { value: 98, suffix: "%", label: "System Stability", description: "Average client retention rate across enterprise partnerships.", delay: 0.2 },
-        { value: 250, suffix: "+", label: "Architectural Scale", description: "High-performance digital systems deployed globally.", delay: 0.4 },
-        { value: 40, suffix: "%", label: "Optimization", description: "Average performance increase post-system architecture.", delay: 0.6 },
-        { value: 12, label: "Quality Standard", description: "International design and engineering excellence awards.", delay: 0.8 },
+        { value: 98, suffix: "%", delay: 0.2, index: 0 },
+        { value: 250, suffix: "+", delay: 0.4, index: 1 },
+        { value: 40, suffix: "%", delay: 0.6, index: 2 },
+        { value: 12, delay: 0.8, index: 3 },
     ];
 
     return (
@@ -103,7 +105,7 @@ export default function Impact() {
                                 transition={{ duration: 1, ease: expoOut }}
                                 className="font-mono text-[10px] uppercase tracking-[0.5em] text-brand-blue"
                             >
-                                Impact & Outcomes
+                                {t('impact.sectionLabel')}
                             </motion.span>
                             <motion.h2
                                 initial={{ opacity: 0, y: 20 }}
@@ -112,13 +114,20 @@ export default function Impact() {
                                 transition={{ duration: 1.2, delay: 0.1, ease: expoOut }}
                                 className="max-w-md font-display text-4xl font-bold text-white md:text-5xl tracking-tight"
                             >
-                                WE MEASURE <span className="text-zinc-500 italic">SUCCESS</span> BY THE SYSTEMS WE <span className="text-zinc-500 italic">BUILD</span>.
+                                {t('impact.heading.part1')} <span className="text-zinc-500 italic">{t('impact.heading.part2')}</span> {t('impact.heading.part3')} <span className="text-zinc-500 italic">{t('impact.heading.part4')}</span>.
                             </motion.h2>
                         </div>
 
                         <div className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2">
                             {metrics.map((metric, i) => (
-                                <Metric key={i} {...metric} />
+                                <Metric
+                                    key={i}
+                                    value={metric.value}
+                                    suffix={metric.suffix}
+                                    label={t(`impact.metrics.${metric.index}.label`)}
+                                    description={t(`impact.metrics.${metric.index}.description`)}
+                                    delay={metric.delay}
+                                />
                             ))}
                         </div>
                     </div>
@@ -132,7 +141,7 @@ export default function Impact() {
                             {/* Generated Visual System Image */}
                             <motion.img
                                 src="/resource/image1.png"
-                                alt="Impact Visual System"
+                                alt={t('impact.visual.alt')}
                                 className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity"
                                 initial={{ scale: 1.1, opacity: 0 }}
                                 whileInView={{ scale: 1, opacity: 0.4 }}
@@ -145,12 +154,12 @@ export default function Impact() {
                             {/* Floating Labels */}
                             <div className="absolute inset-0 p-12 flex flex-col justify-between pointer-events-none z-20">
                                 <div className="flex justify-between font-mono text-[8px] uppercase tracking-widest text-zinc-400">
-                                    <span>System_v.04</span>
-                                    <span>Architecture_Core</span>
+                                    <span>{t('impact.visual.label1')}</span>
+                                    <span>{t('impact.visual.label2')}</span>
                                 </div>
                                 <div className="flex justify-between font-mono text-[8px] uppercase tracking-widest text-zinc-400">
-                                    <span>Status: Optimized</span>
-                                    <span>Load: 0.04ms</span>
+                                    <span>{t('impact.visual.status')}</span>
+                                    <span>{t('impact.visual.load')}</span>
                                 </div>
                             </div>
                         </motion.div>

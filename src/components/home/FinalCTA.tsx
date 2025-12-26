@@ -150,14 +150,6 @@ export default function FinalCTA() {
                 </motion.span>
             </div>
 
-            {/* Cursor Expansion Logic (Conceptual - would typically be handled by a global cursor component) */}
-            {isHovered && (
-                <style jsx global>{`
-                    body {
-                        cursor: none;
-                    }
-                `}</style>
-            )}
         </section>
     );
 }

@@ -163,22 +163,6 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
                 >
                     <AbstractUI isHovered={isHovered} />
                 </motion.div>
-
-                {/* View Cursor Overlay (Simplified for React) */}
-                <AnimatePresence>
-                    {isHovered && (
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.8 }}
-                            className="absolute inset-0 z-20 flex items-center justify-center bg-black/20 backdrop-blur-[2px]"
-                        >
-                            <div className="flex h-20 w-20 items-center justify-center rounded-full border border-[#0066FF] bg-black/80 text-[10px] font-mono uppercase tracking-widest text-[#0066FF]">
-                                View
-                            </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
             </div>
 
             {/* Content */}

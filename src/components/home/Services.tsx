@@ -5,28 +5,36 @@ import { useRef } from "react";
 
 const services = [
     {
+        id: "architecture",
         label: "01 / Architecture",
         title: "Digital Systems",
         description: "Foundational digital infrastructures designed for long-term stability and performance.",
         className: "md:col-span-2 md:row-span-2 min-h-[400px]",
+        image: "image1.jpg"
     },
     {
+        id: "engineering",
         label: "02 / Engineering",
         title: "Scalable Products",
         description: "High-performance applications that grow with your ambition.",
         className: "md:col-span-1 md:row-span-1 min-h-[300px]",
+        image: "image2.jpg"
     },
     {
+        id: "commerce",
         label: "03 / Commerce",
         title: "E-commerce Infrastructure",
         description: "Bespoke shopping experiences built on robust, conversion-first logic.",
         className: "md:col-span-1 md:row-span-2 min-h-[400px]",
+        image: "image3.jpg"
     },
     {
+        id: "strategy",
         label: "04 / Strategy",
         title: "Technical Consulting",
         description: "Navigating complex digital landscapes with precision and foresight.",
         className: "md:col-span-1 md:row-span-1 min-h-[300px]",
+        image: "image4.jpg"
     }
 ];
 
@@ -75,7 +83,14 @@ export default function Services() {
                             whileHover={{ y: -4 }}
                             className={`group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/5 bg-zinc-900/20 p-10 transition-colors hover:border-white/10 ${service.className}`}
                         >
-                            <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-blue/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                            {/* Background Image */}
+                            <motion.img
+                                src={`/domaine/${service.image}`}
+                                alt={service.title}
+                                className="absolute inset-0 -z-20 h-full w-full object-cover opacity-20 mix-blend-luminosity transition-all duration-700 group-hover:scale-110 group-hover:opacity-40"
+                            />
+
+                            <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-blue/10 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
                             <div className="flex flex-col gap-2">
                                 <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-zinc-600">

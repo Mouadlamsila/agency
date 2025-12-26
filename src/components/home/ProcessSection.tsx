@@ -1,217 +1,240 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Step {
     id: string;
     title: string;
     description: string;
     status: "completed" | "active" | "pending";
-    outcome?: string;
-    isClientEntry?: boolean;
+    input: string;
+    output: string;
+    supporting: string[];
 }
 
 const steps: Step[] = [
     {
         id: "01",
-        title: "Discovery & Input",
-        description: "Deep-diving into your vision, market dynamics, and technical constraints.",
+        title: "Discovery & Strategic Alignment",
+        description: "We deep-dive into your business logic, market positioning, and technical constraints to define the optimal path forward.",
         status: "completed",
-        isClientEntry: true,
+        input: "Business Vision & Raw Data",
+        output: "Strategic Roadmap & KPI Framework",
+        supporting: ["Market Analysis", "User Personas", "Technical Audit"]
     },
     {
         id: "02",
-        title: "Strategy & Architecture",
-        description: "Defining the logic, data structures, and scalability roadmap.",
+        title: "System Architecture & Logic",
+        description: "Defining the core engine, data structures, and scalability patterns that will power your digital ecosystem.",
         status: "completed",
-        outcome: "Prevents future technical debt",
+        input: "Strategic Roadmap",
+        output: "Technical Specs & Schema Design",
+        supporting: ["Data Modeling", "API Mapping", "Cloud Infrastructure"]
     },
     {
         id: "03",
-        title: "Design System",
-        description: "Engineering a scalable visual language that balances form and function.",
+        title: "High-Fidelity Design Systems",
+        description: "Engineering a scalable visual language that balances cinematic aesthetics with functional precision.",
         status: "active",
-        outcome: "Ensures long-term brand consistency",
+        input: "Technical Specs",
+        output: "Atomic Design System & Prototypes",
+        supporting: ["Motion Logic", "UI Components", "Accessibility"]
     },
     {
         id: "04",
-        title: "Development & Integration",
-        description: "Writing clean, performant code with seamless third-party connectivity.",
+        title: "Full-Stack Engineering",
+        description: "Translating architecture into high-performance, clean code with a focus on speed, security, and stability.",
         status: "pending",
+        input: "Design System",
+        output: "Production-Ready Codebase",
+        supporting: ["Next.js / React", "TypeScript", "Performance Tuning"]
     },
     {
         id: "05",
-        title: "Optimization & Testing",
-        description: "Rigorous QA and performance tuning for a flawless user experience.",
+        title: "Quality Assurance & Stress Testing",
+        description: "Rigorous testing across all environments to ensure a flawless, bug-free experience under any load.",
         status: "pending",
+        input: "Production Code",
+        output: "Verified & Optimized System",
+        supporting: ["E2E Testing", "Load Balancing", "Security Audit"]
     },
     {
         id: "06",
-        title: "Launch & Scale",
-        description: "Deploying to production and iterating based on real-world data.",
+        title: "Deployment & System Evolution",
+        description: "Launching to production and implementing a continuous feedback loop for long-term systemic growth.",
         status: "pending",
+        input: "Optimized System",
+        output: "Live Environment & Growth Data",
+        supporting: ["CI/CD Pipeline", "Analytics", "Iterative Scaling"]
     },
 ];
 
-const SectionIntro = ({ isInView }: { isInView: boolean }) => (
-    <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={isInView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="lg:w-1/3 "
-    >
-        <span className="font-mono text-xs uppercase tracking-widest text-brand-blue mb-4 block">
-            Workflow
-        </span>
-        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight">
-            Digital <br />
-
-            Transformation <br />
-            <span className="text-brand-blue">Process</span>
-        </h2>
-        <p className="text-foreground/60 text-lg leading-relaxed max-w-md">
-            We bridge the gap between abstract ideas and engineered reality through a structured,
-            logic-driven methodology designed for scale.
-        </p>
-    </motion.div>
-);
-
-const ProcessStep = ({ step, index, isInView }: { step: Step; index: number; isInView: boolean }) => (
-    <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{
-            duration: 0.8,
-            delay: index * 0.15,
-            ease: [0.16, 1, 0.3, 1]
-        }}
-        className={`relative p-8 rounded-2xl border transition-all duration-500 group ${step.status === "active"
-            ? "bg-brand-blue/5 border-brand-blue/40 shadow-[0_0_40px_rgba(46,92,255,0.1)]"
-            : step.status === "completed"
-                ? "bg-white/[0.03] border-emerald-500/20"
-                : "bg-white/[0.02] border-white/5 opacity-60"
-            }`}
-    >
-        {/* Step Indicator */}
-        <div className="flex items-center justify-between mb-6">
-            <span className={`font-mono text-sm ${step.status === "active" ? "text-brand-blue" : "text-foreground/40"
-                }`}>
-                {step.id}
-            </span>
-            {step.status === "completed" && (
-                <span className="text-[10px] uppercase tracking-wider text-emerald-500 font-mono">
-                    Completed
-                </span>
-            )}
-            {step.status === "active" && (
-                <motion.div
-                    animate={{ opacity: [0.4, 1, 0.4] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="w-2 h-2 rounded-full bg-brand-blue shadow-[0_0_10px_#2E5CFF]"
-                />
-            )}
-        </div>
-
-        <h3 className={`text-xl font-display mb-3 ${step.status === "active" ? "text-foreground" : "text-foreground/80"
-            }`}>
-            {step.title}
-        </h3>
-        <p className="text-sm text-foreground/50 leading-relaxed mb-4">
-            {step.description}
-        </p>
-
-        {/* Outcome Micro-copy */}
-        {step.outcome && (
-            <motion.p
-                initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : {}}
-                transition={{ duration: 1, delay: (index * 0.15) + 0.5 }}
-                className="text-[11px] font-mono uppercase tracking-wider text-brand-blue/60 italic"
-            >
-                — {step.outcome}
-            </motion.p>
-        )}
-
-        {/* Client Entry Indicator */}
-        {step.isClientEntry && (
-            <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.8, delay: 1.5, ease: "easeOut" }}
-                className="absolute -top-3 -right-3 bg-brand-blue text-white text-[10px] font-mono px-3 py-1 rounded-full shadow-lg z-20"
-            >
-                [ YOU START HERE ]
-            </motion.div>
-        )}
-
-        {/* Subtle Glow for Active Step */}
-        {step.status === "active" && (
-            <div className="absolute inset-0 rounded-2xl bg-brand-blue/5 blur-xl pointer-events-none" />
-        )}
-    </motion.div>
-);
-
-const CTABridge = ({ isInView }: { isInView: boolean }) => (
-    <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, delay: 1.2 }}
-        className="mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8"
-    >
-        <div className="max-w-md">
-            <p className="text-foreground/60 text-lg italic font-display">
-                “The exact path depends on your goals.”
-            </p>
-        </div>
-        <Link
-            href="#packages"
-            className="group flex items-center gap-4 text-sm font-mono uppercase tracking-widest text-foreground/40 hover:text-brand-blue transition-colors"
-        >
-            <span>View Pricing & Packages</span>
-            <motion.span
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            >
-                →
-            </motion.span>
-        </Link>
-    </motion.div>
-);
-
 const ProcessSection = () => {
     const containerRef = useRef<HTMLDivElement>(null);
-    const isInView = useInView(containerRef, { once: true, amount: 0.1 });
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start center", "end center"]
+    });
+
+    const scaleY = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    });
 
     return (
         <section
             ref={containerRef}
-            className="relative min-h-screen bg-brand-charcoal sm:px-26 px-2 py-24 lg:py-32 overflow-hidden"
+            className="relative min-h-screen bg-[#0E0E11] sm:px-26 px-2 py-32 lg:py-48"
             id="process"
         >
+            {/* Subtle Noise Overlay */}
+            <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none bg-[url('/noise.png')] bg-repeat" />
+
             {/* Background Grid */}
-            <div className="absolute inset-0 opacity-20 pointer-events-none">
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]" />
-                <div className="absolute inset-0 bg-radial-gradient from-brand-blue/5 via-transparent to-transparent" />
+            <div className="absolute inset-0 opacity-10 pointer-events-none">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:60px_60px]" />
             </div>
 
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
-                    <SectionIntro isInView={isInView} />
+            <div className="container relative z-10 mx-auto px-6">
+                <div className="flex flex-col lg:flex-row gap-24 lg:gap-32">
 
-                    <div className="lg:w-2/3">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+                    {/* Left: Sticky Intro */}
+                    <div className="lg:w-1/3 lg:sticky lg:top-32 h-fit">
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                        >
+                            <span className="font-mono text-[10px] uppercase tracking-[0.5em] text-brand-blue mb-6 block">
+                                Methodology
+                            </span>
+                            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
+                                THE <span className="text-zinc-500 italic">ENGINEERED</span> <br />
+                                PATH TO SCALE.
+                            </h2>
+                            <p className="text-zinc-400 text-lg leading-relaxed max-w-sm mb-12">
+                                We bridge the gap between abstract vision and technical reality through a rigorous,
+                                logic-driven process designed for precision and performance.
+                            </p>
+
+                            <div className="flex flex-col gap-6">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-12 h-[1px] bg-brand-blue/30" />
+                                    <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">System Version: 2.4.0</span>
+                                </div>
+                                <Link
+                                    href="#packages"
+                                    className="group inline-flex items-center gap-4 text-[11px] font-mono uppercase tracking-[0.2em] text-white/60 hover:text-brand-blue transition-colors"
+                                >
+                                    <span>Explore Engagement Models</span>
+                                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                                </Link>
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    {/* Right: Vertical Timeline */}
+                    <div className="lg:w-2/3 relative">
+                        {/* Vertical Progress Line */}
+                        <div className="absolute left-0 lg:left-8 top-0 bottom-0 w-[1px] bg-white/5">
+                            <motion.div
+                                className="absolute top-0 left-0 right-0 w-full bg-brand-blue origin-top"
+                                style={{ scaleY }}
+                            />
+                        </div>
+
+                        <div className="flex flex-col gap-24 lg:gap-32 pl-8 lg:pl-24">
                             {steps.map((step, index) => (
-                                <ProcessStep key={step.id} step={step} index={index} isInView={isInView} />
+                                <StepCard key={step.id} step={step} index={index} />
                             ))}
                         </div>
                     </div>
                 </div>
-
-                <CTABridge isInView={isInView} />
             </div>
         </section>
+    );
+};
+
+const StepCard = ({ step, index }: { step: Step; index: number }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-10% 0px -10% 0px" });
+
+    return (
+        <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="group relative"
+        >
+            {/* Step Dot */}
+            <div className="absolute -left-[33px] lg:-left-[97px] top-2 flex items-center justify-center">
+                <div className={`w-2 h-2 rounded-full transition-all duration-500 ${step.status === "active" ? "bg-brand-blue scale-150 shadow-[0_0_15px_#2E5CFF]" :
+                    step.status === "completed" ? "bg-emerald-500" : "bg-zinc-800"
+                    }`} />
+                {step.status === "active" && (
+                    <motion.div
+                        animate={{ scale: [1, 2.5, 1], opacity: [0.5, 0, 0.5] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        className="absolute w-2 h-2 rounded-full bg-brand-blue"
+                    />
+                )}
+            </div>
+
+            <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-2">
+                    <div className="flex items-center gap-4">
+                        <span className={`font-mono text-[10px] uppercase tracking-widest ${step.status === "active" ? "text-brand-blue" : "text-zinc-600"
+                            }`}>
+                            Phase_{step.id}
+                        </span>
+                        {step.status === "completed" && (
+                            <span className="font-mono text-[8px] uppercase tracking-widest text-emerald-500/60 border border-emerald-500/20 px-2 py-0.5 rounded">
+                                Verified
+                            </span>
+                        )}
+                    </div>
+                    <h3 className={`font-display text-2xl md:text-3xl font-bold transition-colors duration-500 ${step.status === "active" ? "text-white" : "text-zinc-400"
+                        }`}>
+                        {step.title}
+                    </h3>
+                </div>
+
+                <p className={`text-base leading-relaxed max-w-xl transition-colors duration-500 ${step.status === "active" ? "text-zinc-300" : "text-zinc-400"
+                    }`}>
+                    {step.description}
+                </p>
+
+                {/* Technical Metadata Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div className="p-4 rounded-lg border border-white/5 bg-white/[0.01] group-hover:border-white/10 transition-colors">
+                        <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-500 block mb-2">Input_Source</span>
+                        <span className="text-xs text-zinc-300 font-medium">{step.input}</span>
+                    </div>
+                    <div className="p-4 rounded-lg border border-white/5 bg-white/[0.01] group-hover:border-white/10 transition-colors">
+                        <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-500 block mb-2">Output_Result</span>
+                        <span className="text-xs text-brand-blue font-medium">{step.output}</span>
+                    </div>
+                </div>
+
+                {/* Supporting Capabilities */}
+                <div className="flex flex-wrap gap-2 mt-2">
+                    {step.supporting.map((item) => (
+                        <span key={item} className="font-mono text-[8px] uppercase tracking-widest text-zinc-500 px-2 py-1 border border-white/5 bg-white/[0.02]">
+                            {item}
+                        </span>
+                    ))}
+                </div>
+            </div>
+
+            {/* Hover Background Glow */}
+            <div className="absolute -inset-8 -z-10 bg-gradient-to-r from-brand-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl" />
+        </motion.div>
     );
 };
 

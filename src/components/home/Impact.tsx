@@ -129,56 +129,26 @@ export default function Impact() {
                             style={{ y }}
                             className="sticky top-48 flex h-[600px] w-full items-center justify-center rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-sm overflow-hidden"
                         >
-                            {/* Abstract Architectural SVG */}
-                            <svg width="100%" height="100%" viewBox="0 0 400 600" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-20">
-                                <motion.path
-                                    d="M50 100V500M350 100V500M50 150H350M50 300H350M50 450H350"
-                                    stroke="white"
-                                    strokeWidth="0.5"
-                                    initial={{ pathLength: 0 }}
-                                    whileInView={{ pathLength: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 3, ease: expoOut }}
-                                />
-                                <motion.circle
-                                    cx="200"
-                                    cy="300"
-                                    r="150"
-                                    stroke="#2E5CFF"
-                                    strokeWidth="1"
-                                    strokeDasharray="4 4"
-                                    initial={{ rotate: 0, opacity: 0 }}
-                                    animate={{ rotate: 360, opacity: 1 }}
-                                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                                />
-                                <motion.path
-                                    d="M200 150V450M100 300H300"
-                                    stroke="#2E5CFF"
-                                    strokeWidth="1"
-                                    initial={{ pathLength: 0 }}
-                                    whileInView={{ pathLength: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 2, delay: 1, ease: expoOut }}
-                                />
-                                {/* Scanning Line */}
-                                <motion.rect
-                                    width="300"
-                                    height="1"
-                                    x="50"
-                                    fill="#2E5CFF"
-                                    initial={{ y: 100 }}
-                                    animate={{ y: 500 }}
-                                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                />
-                            </svg>
+                            {/* Generated Visual System Image */}
+                            <motion.img
+                                src="/resource/image1.png"
+                                alt="Impact Visual System"
+                                className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity"
+                                initial={{ scale: 1.1, opacity: 0 }}
+                                whileInView={{ scale: 1, opacity: 0.4 }}
+                                transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
+                            />
+
+                            {/* Overlay Gradient for depth */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#0E0E11] via-transparent to-transparent opacity-60" />
 
                             {/* Floating Labels */}
-                            <div className="absolute inset-0 p-12 flex flex-col justify-between pointer-events-none">
-                                <div className="flex justify-between font-mono text-[8px] uppercase tracking-widest text-zinc-600">
+                            <div className="absolute inset-0 p-12 flex flex-col justify-between pointer-events-none z-20">
+                                <div className="flex justify-between font-mono text-[8px] uppercase tracking-widest text-zinc-400">
                                     <span>System_v.04</span>
                                     <span>Architecture_Core</span>
                                 </div>
-                                <div className="flex justify-between font-mono text-[8px] uppercase tracking-widest text-zinc-600">
+                                <div className="flex justify-between font-mono text-[8px] uppercase tracking-widest text-zinc-400">
                                     <span>Status: Optimized</span>
                                     <span>Load: 0.04ms</span>
                                 </div>

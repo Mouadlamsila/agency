@@ -145,7 +145,7 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
     return (
         <Link
             href={href}
-            className="group relative font-mono text-[10px] uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors duration-500 mix-blend-difference"
+            className="group relative font-mono text-[12px] uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors duration-500 mix-blend-difference"
         >
             {children}
             <motion.span

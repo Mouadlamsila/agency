@@ -188,7 +188,7 @@ const ProjectFit = () => {
                                         <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
                                             We may not be the right partner — and that’s okay.
                                         </h2>
-                                        <p className="text-foreground/60 text-lg mb-12 max-w-md leading-relaxed">
+                                        <p className="text-foreground/60 font-medium text-lg mb-12 max-w-md leading-relaxed">
                                             Our specialized workflow is optimized for high-scale, premium systems. For your current stage, a more agile or marketing-focused agency might serve you better.
                                         </p>
                                         <button

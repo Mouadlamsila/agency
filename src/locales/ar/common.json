@@ -576,13 +576,24 @@
             }
         ]
     },
+    "nav": {
+        "work": "أعمالنا",
+        "services": "خدماتنا",
+        "about": "من نحن",
+        "journal": "المدونة",
+        "team": "الفريق",
+        "testimonials": "آراء العملاء",
+        "pricing": "الأسعار",
+        "process": "المنهجية",
+        "contact": "تواصل معنا"
+    },
     "footer": {
         "nav": {
-            "services": "خدمات",
-            "process": "منهجية",
-            "work": "أعمال",
-            "team": "فريق",
-            "transaction": "معاملة"
+            "services": "خدماتنا",
+            "process": "العملية",
+            "work": "أعمالنا",
+            "team": "الفريق",
+            "transaction": "المعاملات"
         }
     }
 }

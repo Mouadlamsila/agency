@@ -112,6 +112,7 @@ const TestimonialsSection = () => {
 
     return (
         <section
+            id="testimonials"
             aria-labelledby="testimonials-heading"
             className="bg-transparent py-24 relative overflow-hidden"
         >

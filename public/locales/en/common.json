@@ -35,6 +35,24 @@
                 "metadata": "Directional_Insight",
                 "cta": "Explore_Module"
             }
-        ]
+        ],
+        "footer": {
+            "nav": {
+                "services": "Services",
+                "process": "Process",
+                "work": "Work",
+                "team": "Team",
+                "transaction": "Transactions"
+            }
+        }
+    },
+    "nav": {
+        "work": "Work",
+        "services": "Services",
+        "about": "About",
+        "journal": "Journal",
+        "team": "Team",
+        "testimonials": "Testimonials",
+        "contact": "Contact"
     }
 }

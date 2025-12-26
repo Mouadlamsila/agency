@@ -57,6 +57,7 @@ export default function SelectedWork() {
 
     return (
         <section
+            id="work"
             ref={sectionRef}
             className="relative h-[400vh] bg-[#0A0A0A] text-zinc-100 selection:bg-[#0066FF]/30"
         >

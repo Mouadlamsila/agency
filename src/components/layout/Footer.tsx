@@ -35,11 +35,13 @@ export default function Footer() {
     ];
 
     const navLinks = [
-        { label: t('footer.nav.services'), href: "#services" },
-        { label: t('footer.nav.process'), href: "#process" },
-        { label: t('footer.nav.work'), href: "#work" },
-        { label: t('footer.nav.team'), href: "#team" },
-        { label: t('footer.nav.transaction'), href: "/transaction" },
+        { label: t('nav.work'), href: "#work" },
+        { label: t('nav.services'), href: "#services" },
+        { label: t('nav.process'), href: "#process" },
+        { label: t('nav.pricing'), href: "#engagement" },
+        { label: t('nav.team'), href: "#team" },
+        { label: t('nav.testimonials'), href: "#testimonials" },
+        { label: t('nav.contact'), href: "#contact" },
     ];
 
     return (

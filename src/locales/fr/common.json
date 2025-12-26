@@ -576,11 +576,22 @@
             }
         ]
     },
+    "nav": {
+        "work": "Projets",
+        "services": "Services",
+        "about": "À Propos",
+        "journal": "Journal",
+        "team": "Équipe",
+        "testimonials": "Témoignages",
+        "pricing": "Tarification",
+        "process": "Processus",
+        "contact": "Contact"
+    },
     "footer": {
         "nav": {
             "services": "Services",
             "process": "Processus",
-            "work": "Travail",
+            "work": "Projets",
             "team": "Équipe",
             "transaction": "Transaction"
         }

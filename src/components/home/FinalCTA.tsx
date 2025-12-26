@@ -46,7 +46,7 @@ export default function FinalCTA() {
     const expoOut = [0.16, 1, 0.3, 1] as const;
 
     return (
-        <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#0D0D0D] px-6 py-40">
+        <section id="contact" className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#0D0D0D] px-6 py-40">
             {/* Subtle Grain Overlay */}
             <div className="pointer-events-none absolute inset-0 z-50 opacity-[0.03] mix-blend-overlay">
                 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">

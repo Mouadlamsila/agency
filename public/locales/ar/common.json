@@ -1,0 +1,58 @@
+{
+    "nav": {
+        "work": "أعمالنا",
+        "services": "خدماتنا",
+        "about": "من نحن",
+        "journal": "المدونة",
+        "team": "الفريق",
+        "testimonials": "آراء العملاء",
+        "contact": "تواصل معنا"
+    },
+    "footer": {
+        "nav": {
+            "services": "خدماتنا",
+            "process": "العملية",
+            "work": "أعمالنا",
+            "team": "الفريق",
+            "transaction": "المعاملات"
+        }
+    },
+    "services": {
+        "sectionLabel": "إمكانياتنا",
+        "heading": {
+            "line1": "صممت",
+            "line2": "من أجل",
+            "line3": "التميز"
+        },
+        "items": [
+            {
+                "label": "01 / هندسة",
+                "title": "الأنظمة الرقمية",
+                "description": "بنية تحتية رقمية أساسية مصممة للاستقرار والأداء على المدى الطويل.",
+                "metadata": "Structure_Mastery",
+                "cta": "استكشف"
+            },
+            {
+                "label": "02 / هندسة",
+                "title": "منتجات قابلة للتطوير",
+                "description": "تطبيقات عالية الأداء تنمو مع طموحك.",
+                "metadata": "Performance_Logic",
+                "cta": "استكشف"
+            },
+            {
+                "label": "03 / تجارة",
+                "title": "منطق التجارة",
+                "description": "تجارب تسوق مخصصة مبنية على منطق قوي يركز على التحويل.",
+                "metadata": "Conversion_Engine",
+                "cta": "استكشف"
+            },
+            {
+                "label": "04 / استراتيجية",
+                "title": "الاستراتيجية التقنية",
+                "description": "التنقل في المشهد الرقمي المعقد بدقة وبعد نظر.",
+                "metadata": "Directional_Insight",
+                "cta": "استكشف"
+            }
+        ]
+    }
+}

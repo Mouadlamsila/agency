@@ -35,6 +35,24 @@
                 "metadata": "Vision_Directionnelle",
                 "cta": "Explorer_Module"
             }
-        ]
+        ],
+        "footer": {
+            "nav": {
+                "services": "Services",
+                "process": "Processus",
+                "work": "Projets",
+                "team": "Équipe",
+                "transaction": "Transactions"
+            }
+        }
+    },
+    "nav": {
+        "work": "Projets",
+        "services": "Services",
+        "about": "À Propos",
+        "journal": "Journal",
+        "team": "Équipe",
+        "testimonials": "Témoignages",
+        "contact": "Contact"
     }
 }

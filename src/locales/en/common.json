@@ -576,6 +576,17 @@
             }
         ]
     },
+    "nav": {
+        "work": "Work",
+        "services": "Services",
+        "about": "About",
+        "journal": "Journal",
+        "team": "Team",
+        "testimonials": "Testimonials",
+        "pricing": "Pricing",
+        "process": "Process",
+        "contact": "Contact"
+    },
     "footer": {
         "nav": {
             "services": "Services",

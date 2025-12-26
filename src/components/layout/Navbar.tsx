@@ -7,18 +7,21 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
 
-const navLinks = [
-    { name: "Work", href: "#work" },
-    { name: "Services", href: "#services" },
-    { name: "About", href: "#about" },
-    { name: "Journal", href: "#journal" },
-];
-
 const Navbar = () => {
+    const { t, i18n } = useTranslation('common');
+    const { scrollY } = useScroll();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const { scrollY } = useScroll();
-    const { i18n } = useTranslation();
+
+    const navLinks = [
+        { name: t('nav.work'), href: "#work" },
+        { name: t('nav.services'), href: "#services" },
+        { name: t('nav.process'), href: "#process" },
+        { name: t('nav.pricing'), href: "#engagement" },
+        { name: t('nav.team'), href: "#team" },
+        { name: t('nav.testimonials'), href: "#testimonials" },
+        { name: t('nav.contact'), href: "#contact" },
+    ];
 
     // Subtle opacity shift on scroll
     const navBgOpacity = useTransform(scrollY, [0, 100], [0, 0.8]);

@@ -45,7 +45,7 @@ export default function Services() {
     ];
 
     return (
-        <section className="w-full py-32 md:py-48 px-6 bg-[#0A0A0A] relative overflow-hidden">
+        <section id="services" className="w-full py-32 md:py-48 px-6 bg-[#0A0A0A] relative overflow-hidden">
             {/* Background Grid Accent */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:60px_60px]" />
 

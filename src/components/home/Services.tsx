@@ -12,15 +12,15 @@ export default function Services() {
     const cards = [
         {
             id: "01",
-            icon: <Layers className="size-8 text-blue-500" />,
-            title: t('services.items.0.label'), // "01 / Architecture"
-            heading: t('services.items.0.title'), // "Digital Systems"
+            icon: <Layers className="size-8 text-brand-blue" />,
+            title: t('services.items.0.label'),
+            heading: t('services.items.0.title'),
             description: t('services.items.0.description'),
-            tag: t('services.items.0.metadata'), // "Structure_Mastery"
+            tag: t('services.items.0.metadata'),
         },
         {
             id: "02",
-            icon: <Zap className="size-8 text-blue-500" />,
+            icon: <Zap className="size-8 text-brand-blue" />,
             title: t('services.items.1.label'),
             heading: t('services.items.1.title'),
             description: t('services.items.1.description'),
@@ -28,7 +28,7 @@ export default function Services() {
         },
         {
             id: "03",
-            icon: <ShoppingCart className="size-8 text-blue-500" />,
+            icon: <ShoppingCart className="size-8 text-brand-blue" />,
             title: t('services.items.2.label'),
             heading: t('services.items.2.title'),
             description: t('services.items.2.description'),
@@ -36,7 +36,7 @@ export default function Services() {
         },
         {
             id: "04",
-            icon: <Compass className="size-8 text-blue-500" />,
+            icon: <Compass className="size-8 text-brand-blue" />,
             title: t('services.items.3.label'),
             heading: t('services.items.3.title'),
             description: t('services.items.3.description'),
@@ -59,8 +59,8 @@ export default function Services() {
                         transition={{ duration: 1, ease: expoOut }}
                         className="flex items-center gap-3 mb-6"
                     >
-                        <div className="w-8 h-px bg-blue-500/50" />
-                        <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-blue-400">
+                        <div className="w-8 h-px bg-brand-blue/50" />
+                        <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-brand-blue">
                             {t('services.sectionLabel')}
                         </span>
                     </motion.div>
@@ -74,7 +74,7 @@ export default function Services() {
                     >
                         {t('services.heading.line1')} <br />
                         <span className="text-neutral-500 italic font-serif pr-4">{t('services.heading.line2')}</span>
-                        <span className="text-blue-500">{t('services.heading.line3')}</span>
+                        <span className="text-brand-blue">{t('services.heading.line3')}</span>
                     </motion.h2>
                 </div>
 
@@ -91,21 +91,21 @@ export default function Services() {
                                 delay: index * 0.1,
                                 ease: expoOut
                             }}
-                            className="group relative flex flex-col justify-between p-8 md:p-12 rounded-[2rem] bg-neutral-900/50 backdrop-blur-md border border-neutral-800 hover:border-blue-500/30 transition-all duration-500 overflow-hidden"
+                            className="group relative flex flex-col justify-between p-8 md:p-12 rounded-[2rem] bg-neutral-900/50 backdrop-blur-md border border-neutral-800 hover:border-brand-blue/30 transition-all duration-500 overflow-hidden hover:bg-neutral-900/80"
                         >
                             <div className="flex flex-col gap-6 relative z-10">
                                 <div className="flex justify-between items-start">
-                                    <div className="p-3 rounded-2xl bg-neutral-800/50 text-blue-400 group-hover:bg-blue-500/10 group-hover:text-blue-400 transition-colors duration-500">
+                                    <div className="p-3 rounded-2xl bg-neutral-800/50 text-brand-blue group-hover:bg-brand-blue/10 group-hover:text-brand-blue transition-colors duration-500">
                                         {card.icon}
                                     </div>
-                                    <span className="font-mono text-xs text-neutral-600 group-hover:text-blue-400/60 transition-colors duration-300 border border-neutral-800 px-3 py-1 rounded-full uppercase tracking-wider">
+                                    <span className="font-mono text-xs text-neutral-600 group-hover:text-brand-blue/60 transition-colors duration-300 border border-neutral-800 px-3 py-1 rounded-full uppercase tracking-wider">
                                         {card.tag}
                                     </span>
                                 </div>
 
                                 <div className="space-y-4">
                                     <div>
-                                        <p className="font-mono text-xs text-blue-500/80 uppercase tracking-widest mb-2">
+                                        <p className="font-mono text-xs text-brand-blue/80 uppercase tracking-widest mb-2">
                                             {card.title}
                                         </p>
                                         <h3 className="text-3xl font-bold text-neutral-100 tracking-tight group-hover:translate-x-1 transition-transform duration-500">
@@ -120,13 +120,13 @@ export default function Services() {
                             </div>
 
                             {/* Hover Action */}
-                            <div className="mt-8 flex items-center gap-2 text-sm font-medium text-blue-400 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 delay-75">
-                                <span>Explore Module</span>
+                            <div className="mt-8 flex items-center gap-2 text-sm font-medium text-brand-blue opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 delay-75">
+                                <span>{t('services.items.0.cta') || 'Explore Module'}</span>
                                 <ArrowUpRight className="size-4" />
                             </div>
 
                             {/* Decorative Gradients */}
-                            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-blue-500/5 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none group-hover:bg-blue-500/10 transition-colors duration-700" />
+                            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-brand-blue/5 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none group-hover:bg-brand-blue/10 transition-colors duration-700" />
                         </motion.div>
                     ))}
                 </div>

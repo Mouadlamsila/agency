@@ -595,5 +595,25 @@
             "team": "Équipe",
             "transaction": "Transaction"
         }
+    },
+    "contactPage": {
+        "title": "Lancer un Projet",
+        "subtitle": "Parlez-nous de votre ambition numérique. Nous concevons des systèmes pour l'échelle.",
+        "form": {
+            "name": "Nom",
+            "email": "Email",
+            "subject": "Sujet",
+            "message": "Message",
+            "submit": "Demander un Appel Stratégique",
+            "sending": "Transmission...",
+            "success": "Demande Reçue. Système en Attente.",
+            "error": "Échec de la Transmission."
+        },
+        "info": {
+            "title": "Canaux de Contact",
+            "email": "hello@codsella.com",
+            "phone": "+1 (555) 000-0000",
+            "address": "123 Tech Street, San Francisco, CA"
+        }
     }
 }

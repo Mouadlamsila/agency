@@ -20,7 +20,7 @@ const Navbar = () => {
         { name: t('nav.pricing'), href: "#engagement" },
         { name: t('nav.team'), href: "#team" },
         { name: t('nav.testimonials'), href: "#testimonials" },
-        { name: t('nav.contact'), href: "#contact" },
+        { name: t('nav.contact'), href: "/contact" },
     ];
 
     // Subtle opacity shift on scroll
@@ -118,7 +118,7 @@ const Navbar = () => {
 
                         {/* CTA Button */}
                         <MagneticButton>
-                            <button className="relative group px-8 py-2.5 rounded-full overflow-hidden border border-white/10 bg-white/5 hover:border-white/20 transition-colors duration-500">
+                            <Link href="/contact" className="relative group px-8 py-2.5 rounded-full overflow-hidden border border-white/10 bg-white/5 hover:border-white/20 transition-colors duration-500 inline-block">
                                 <span className="relative z-10 font-mono text-[10px] uppercase tracking-[0.2em] text-white group-hover:text-black transition-colors duration-500">
                                     Start a Project
                                 </span>
@@ -126,7 +126,7 @@ const Navbar = () => {
                                     className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                                     initial={false}
                                 />
-                            </button>
+                            </Link>
                         </MagneticButton>
                     </div>
 
@@ -215,9 +215,9 @@ const Navbar = () => {
                             transition={{ delay: 0.6 }}
                             className="mt-8"
                         >
-                            <button className="px-12 py-4 rounded-full border border-white/20 font-mono text-xs uppercase tracking-widest text-white">
+                            <Link href="/contact" className="px-12 py-4 rounded-full border border-white/20 font-mono text-xs uppercase tracking-widest text-white">
                                 Start a Project
-                            </button>
+                            </Link>
                         </motion.div>
                     </motion.div>
                 )}

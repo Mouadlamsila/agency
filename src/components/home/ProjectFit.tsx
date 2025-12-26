@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
 
 interface Option {
     id: string;
@@ -147,7 +148,7 @@ const ProjectFit = () => {
                                             whileHover={{ scale: 1.02, backgroundColor: "rgba(46, 92, 255, 0.05)" }}
                                             whileTap={{ scale: 0.98 }}
                                             onClick={() => handleOptionClick(questions[currentStep].key, option.value)}
-                                            className="group relative p-6 rounded-xl border border-white/10 bg-white/[0.02] text-left transition-all duration-300 hover:border-brand-blue/50"
+                                            className="group relative p-6 rounded-xl border border-white/10 bg-white/2 text-left transition-all duration-300 hover:border-brand-blue/50"
                                         >
                                             <span className="relative z-10 text-foreground/80 group-hover:text-foreground font-sans font-medium transition-colors">
                                                 {option.label}
@@ -177,10 +178,10 @@ const ProjectFit = () => {
                                         <p className="text-foreground/60 text-lg mb-12 max-w-md leading-relaxed">
                                             {t('projectFit.results.success.description')}
                                         </p>
-                                        <button className="group relative px-8 py-4 bg-brand-blue text-white font-mono text-sm uppercase tracking-widest rounded-full overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(46,92,255,0.4)]">
+                                        <Link href="/contact" className="group relative px-8 py-4 bg-brand-blue text-white font-mono text-sm uppercase tracking-widest rounded-full overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(46,92,255,0.4)]">
                                             <span className="relative z-10">{t('projectFit.results.success.cta')}</span>
                                             <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                                        </button>
+                                        </Link>
                                     </>
                                 ) : (
                                     <>

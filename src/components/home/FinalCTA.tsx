@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -107,37 +108,39 @@ export default function FinalCTA() {
                     transition={{ duration: 2, delay: 1.2, ease: expoOut }}
                     className="mt-24"
                 >
-                    <motion.button
-                        ref={buttonRef}
-                        onMouseMove={handleMouseMove}
-                        onMouseEnter={() => setIsHovered(true)}
-                        onMouseLeave={handleMouseLeave}
-                        style={{ x: springX, y: springY }}
-                        className="group relative flex h-64 w-64 items-center justify-center rounded-full border border-white/5 bg-transparent transition-colors hover:border-white/10"
-                    >
-                        {/* Magnetic Background Glow */}
-                        <motion.div
-                            animate={{
-                                scale: isHovered ? 1.1 : 1,
-                                opacity: isHovered ? 0.1 : 0,
-                            }}
-                            className="absolute inset-0 rounded-full bg-brand-blue blur-2xl transition-all duration-700"
-                        />
-
-                        {/* Button Content */}
-                        <div className="relative z-10 flex flex-col items-center gap-2">
-                            <span className="font-sans text-sm font-medium text-zinc-200 transition-colors group-hover:text-white">
-                                {t('finalCTA.button')}
-                            </span>
+                    <Link href="/contact">
+                        <motion.button
+                            ref={buttonRef}
+                            onMouseMove={handleMouseMove}
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={handleMouseLeave}
+                            style={{ x: springX, y: springY }}
+                            className="group relative flex h-64 w-64 items-center justify-center rounded-full border border-white/5 bg-transparent transition-colors hover:border-white/10"
+                        >
+                            {/* Magnetic Background Glow */}
                             <motion.div
-                                animate={{ x: isHovered ? 5 : 0 }}
-                                className="h-px w-8 bg-brand-blue"
+                                animate={{
+                                    scale: isHovered ? 1.1 : 1,
+                                    opacity: isHovered ? 0.1 : 0,
+                                }}
+                                className="absolute inset-0 rounded-full bg-brand-blue blur-2xl transition-all duration-700"
                             />
-                        </div>
 
-                        {/* Border Glow */}
-                        <div className="absolute inset-0 rounded-full border border-brand-blue/0 transition-all duration-700 group-hover:border-brand-blue/20 group-hover:scale-[1.05]" />
-                    </motion.button>
+                            {/* Button Content */}
+                            <div className="relative z-10 flex flex-col items-center gap-2">
+                                <span className="font-sans text-sm font-medium text-zinc-200 transition-colors group-hover:text-white">
+                                    {t('finalCTA.button')}
+                                </span>
+                                <motion.div
+                                    animate={{ x: isHovered ? 5 : 0 }}
+                                    className="h-px w-8 bg-brand-blue"
+                                />
+                            </div>
+
+                            {/* Border Glow */}
+                            <div className="absolute inset-0 rounded-full border border-brand-blue/0 transition-all duration-700 group-hover:border-brand-blue/20 group-hover:scale-[1.05]" />
+                        </motion.button>
+                    </Link>
                 </motion.div>
 
                 {/* Secondary Micro Text */}

@@ -595,5 +595,25 @@
             "team": "الفريق",
             "transaction": "المعاملات"
         }
+    },
+    "contactPage": {
+        "title": "ابدأ مشروعًا",
+        "subtitle": "أخبرنا عن طموحك الرقمي. نحن نهندس أنظمة قابلة للتوسع.",
+        "form": {
+            "name": "الاسم",
+            "email": "البريد الإلكتروني",
+            "subject": "الموضوع",
+            "message": "الرسالة",
+            "submit": "اطلب مكالمة استراتيجية",
+            "sending": "جاري الإرسال...",
+            "success": "تم استلام الطلب. النظام جاهز.",
+            "error": "فشل الإرسال."
+        },
+        "info": {
+            "title": "قنوات الاتصال",
+            "email": "hello@codsella.com",
+            "phone": "+1 (555) 000-0000",
+            "address": "123 Tech Street, San Francisco, CA"
+        }
     }
 }

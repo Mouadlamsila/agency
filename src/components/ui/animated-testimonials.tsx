@@ -122,7 +122,7 @@ export const AnimatedTestimonials = ({
                         <h3 className="text-2xl font-bold text-white">
                             {testimonials[active].name}
                         </h3>
-                        <p className="text-sm text-gray-400">
+                        <p className="text-sm text-blue-400 font-medium">
                             {testimonials[active].designation}
                         </p>
                         <motion.p className="text-lg text-gray-400 mt-8">
@@ -154,15 +154,15 @@ export const AnimatedTestimonials = ({
                     <div className="flex gap-4 pt-12 md:pt-0">
                         <button
                             onClick={handlePrev}
-                            className="h-7 w-7 rounded-full bg-white/10 hover:bg-brand-blue flex items-center justify-center group/button transition-colors duration-300"
+                            className="h-7 w-7 rounded-full bg-neutral-800 hover:bg-blue-500 flex items-center justify-center group/button transition-colors duration-300"
                         >
-                            <IconArrowLeft className="h-5 w-5 text-white group-hover/button:rotate-12 transition-transform duration-300" />
+                            <IconArrowLeft className="h-5 w-5 text-neutral-400 group-hover/button:text-white group-hover/button:rotate-12 transition-all duration-300" />
                         </button>
                         <button
                             onClick={handleNext}
-                            className="h-7 w-7 rounded-full bg-white/10 hover:bg-brand-blue flex items-center justify-center group/button transition-colors duration-300"
+                            className="h-7 w-7 rounded-full bg-neutral-800 hover:bg-blue-500 flex items-center justify-center group/button transition-colors duration-300"
                         >
-                            <IconArrowRight className="h-5 w-5 text-white group-hover/button:-rotate-12 transition-transform duration-300" />
+                            <IconArrowRight className="h-5 w-5 text-neutral-400 group-hover/button:text-white group-hover/button:-rotate-12 transition-all duration-300" />
                         </button>
                     </div>
                 </div>

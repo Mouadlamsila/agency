@@ -17,6 +17,7 @@ import FinalCTA from "@/components/home/FinalCTA";
 import Navbar from "@/components/layout/Navbar";
 import Team from "@/components/home/Team";
 import Testimonials from "@/components/ui/testimonial-v2";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   useEffect(() => {
@@ -61,6 +62,7 @@ export default function Home() {
       <Team />
       <Testimonials />
       <FinalCTA />
+      <Footer />
     </main>
   );
 }

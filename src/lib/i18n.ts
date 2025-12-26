@@ -32,7 +32,7 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: getSavedLanguage(), // Use saved or detected language
+    lng: 'en', // Force initial render to match server (en) to prevent hydration mismatch
     fallbackLng: 'en',
     defaultNS: 'common',
     ns: ['common'],

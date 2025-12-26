@@ -15,6 +15,8 @@ import Philosophy from "@/components/home/Philosophy";
 import ProjectFit from "@/components/home/ProjectFit";
 import FinalCTA from "@/components/home/FinalCTA";
 import Navbar from "@/components/layout/Navbar";
+import Team from "@/components/home/Team";
+import Testimonials from "@/components/ui/testimonial-v2";
 
 export default function Home() {
   useEffect(() => {
@@ -56,6 +58,8 @@ export default function Home() {
       <SelectedWork />
       <Philosophy />
       <ProjectFit />
+      <Team />
+      <Testimonials />
       <FinalCTA />
     </main>
   );

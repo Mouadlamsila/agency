@@ -575,5 +575,14 @@
                 "quote": "Stratégie de notre feuille de route technologique pour nous garder en avance sur un marché en évolution rapide."
             }
         ]
+    },
+    "footer": {
+        "nav": {
+            "services": "Services",
+            "process": "Processus",
+            "work": "Travail",
+            "team": "Équipe",
+            "transaction": "Transaction"
+        }
     }
 }

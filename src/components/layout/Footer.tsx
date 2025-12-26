@@ -1,4 +1,5 @@
 "use client";
+import { useTranslation } from "react-i18next";
 import { Footer as FooterComponent } from "@/components/ui/modem-animated-footer";
 import {
     Twitter,
@@ -9,6 +10,7 @@ import {
 } from "lucide-react";
 
 export default function Footer() {
+    const { t } = useTranslation('common');
     const socialLinks = [
         {
             icon: <Twitter className="w-5 h-5" />,
@@ -33,10 +35,11 @@ export default function Footer() {
     ];
 
     const navLinks = [
-        { label: "Services", href: "#services" },
-        { label: "Process", href: "#process" },
-        { label: "Work", href: "#work" },
-        { label: "Team", href: "#team" },
+        { label: t('footer.nav.services'), href: "#services" },
+        { label: t('footer.nav.process'), href: "#process" },
+        { label: t('footer.nav.work'), href: "#work" },
+        { label: t('footer.nav.team'), href: "#team" },
+        { label: t('footer.nav.transaction'), href: "/transaction" },
     ];
 
     return (

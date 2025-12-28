@@ -455,7 +455,7 @@
             {
                 "title": "Architecture UI/UX",
                 "label": "Précision",
-                "description": "Ingénierie d'interfaces au pixel près, axées sur le mouvement, alliant excellence esthétique et logique fonctionnelle.",
+                "description": "Ingénierية d'interfaces au pixel près, axées sur le mouvement, alliant excellence esthétique et logique fonctionnelle.",
                 "supporting": [
                     "Design Mouvement",
                     "Systèmes Design",
@@ -473,7 +473,7 @@
                 ]
             },
             {
-                "title": "Stratégie Numérique",
+                "title": "Stratégية Numérique",
                 "label": "Vision",
                 "description": "Alignement de l'architecture technique avec les objectifs commerciaux pour assurer une croissance systémique à long terme.",
                 "supporting": [
@@ -585,7 +585,8 @@
         "testimonials": "Témoignages",
         "pricing": "Tarification",
         "process": "Processus",
-        "contact": "Contact"
+        "contact": "Contact",
+        "startProject": "Lancer un Projet"
     },
     "footer": {
         "nav": {
@@ -614,6 +615,65 @@
             "email": "hello@codsella.com",
             "phone": "+1 (555) 000-0000",
             "address": "123 Tech Street, San Francisco, CA"
+        }
+    },
+    "onboarding": {
+        "configurator": {
+            "title": "CONFIGURATEUR",
+            "subtitle": "DE PROJET",
+            "sequence": "SÉQUENCE_ONBOARDING_v1.0",
+            "coreStatus": "STATUT_NOYAU",
+            "operational": "OPÉRATIONNEL",
+            "selectedId": "ID_SÉLECTIONNÉ"
+        },
+        "phases": {
+            "01": "PHASE_01 / BRIEFING",
+            "02": "PHASE_02 / SÉLECTION",
+            "03": "PHASE_03 / TRANSMISSION"
+        },
+        "briefing": {
+            "nameLabel": "DÉSIGNATION_ENTRÉE",
+            "namePlaceholder": "Entrez le nom du projet...",
+            "categoryLabel": "CATÉGORIE_SYSTÈME"
+        },
+        "categories": {
+            "all": "TOUT",
+            "ecommerce": "E-COMMERCE",
+            "saas": "SAAS",
+            "creative": "CRÉATIF"
+        },
+        "selection": {
+            "availableModules": "MODULES_DISPONIBLES",
+            "noModules": "AUCUN_MODULE_TROUVÉ",
+            "idLabel": "ID_"
+        },
+        "actions": {
+            "initialize": "INITIALISER_TRANSMISSION",
+            "confirm": "CONFIRMER_ENVOI",
+            "abort": "AVORTER_SÉQUENCE",
+            "return": "RETOUR_À_LA_BASE"
+        },
+        "transmission": {
+            "portal": "PORTAIL_TRANSMISSION_v2.1",
+            "terminal": {
+                "init": "INITIALISATION_DU_PROTOCOLE_DE_TRANSMISSION...",
+                "auth": "AUTHENTIFICATION_DU_CLIENT: [SUCCÈS]",
+                "project": "NOM_DU_PROJET:",
+                "category": "CATÉGORIE_DU_SYSTÈME:",
+                "template": "MODULE_DE_MODÈLE:",
+                "timestamp": "HORODATAGE:",
+                "encrypt": "CHIFFREMENT_DES_PAQUETS_DE_DONNÉES...",
+                "ready": "PRÊT_POUR_LIAISON_MONTANTE."
+            },
+            "status": {
+                "syncing": "TÉLÉCHARGEMENT_VERS_SERVEUR_DEV...",
+                "complete": "SYNCHRO_STATUT_TERMINÉE"
+            }
+        },
+        "success": {
+            "title": "PROJET_VERROUILLÉ",
+            "subtitle": "ET_TRANSMIS",
+            "description": "Votre briefing a été archivé sur notre serveur de développement sécurisé. Nos ingénieurs examineront les paramètres du projet sous peu."
         }
     }
 }

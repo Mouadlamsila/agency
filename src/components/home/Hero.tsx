@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 export default function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
     const { t } = useTranslation('common');
+    const i18n = useTranslation();
     const { scrollY } = useScroll();
 
     const y1 = useTransform(scrollY, [0, 500], [0, 200]);
@@ -60,7 +61,7 @@ export default function Hero() {
                     opacity: { duration: 2, ease: "easeOut" },
                     scale: { duration: 2, ease: "easeOut" },
                 }}
-                className="absolute -right-[10%] -bottom-[20%] h-[70vw] w-[70vw] rounded-full bg-gradient-to-br from-brand-blue/30 to-transparent blur-[120px] pointer-events-none"
+                className="absolute ltr:-right-[10%] rtl:-left-[10%] -bottom-[20%] h-[70vw] w-[70vw] rounded-full bg-gradient-to-br from-brand-blue/30 to-transparent blur-[120px] pointer-events-none"
             />
 
             <div className="relative z-10 flex flex-col items-center text-center">
@@ -115,14 +116,14 @@ export default function Hero() {
                     transition={{ duration: 1.2, delay: 1.6, ease: expoOut }}
                     className="mt-16 flex flex-col sm:flex-row items-center gap-6"
                 >
-                    <button className="group relative px-8 py-4 bg-brand-blue text-white font-sans text-sm font-medium tracking-wide overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98]">
+                    <button className="group relative px-8 py-4 cursor-pointer bg-brand-blue text-white font-sans text-sm font-medium tracking-wide overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98]">
                         <span className="relative z-10">{t('hero.cta.primary')}</span>
                         <div className="absolute inset-0 bg-white/10 translate-y-full transition-transform group-hover:translate-y-0" />
                     </button>
 
-                    <button className="group flex items-center gap-2 text-zinc-500 hover:text-white transition-colors font-sans text-sm font-medium tracking-wide">
+                    <button className="group flex items-center cursor-pointer gap-2 text-zinc-500 hover:text-white transition-colors font-sans text-sm font-medium tracking-wide">
                         {t('hero.cta.secondary')}
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform group-hover:translate-x-1">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className={i18n.language === 'ar' ? 'transition-transform group-hover:translate-x-1 rtl:rotate-180 curpo' : 'transition-transform group-hover:-translate-x-1 rtl:rotate-180'}>
                             <path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     </button>
@@ -153,7 +154,7 @@ export default function Hero() {
                 style={{ y: y2 }}
                 className="absolute inset-0 pointer-events-none z-0"
             >
-                <div className="absolute left-[10%] top-[20%] h-64 w-64 rounded-full border border-white/5 bg-white/[0.01] backdrop-blur-2xl" />
+                <div className="absolute ltr:left-[10%] rtl:right-[10%] top-[20%] h-64 w-64 rounded-full border border-white/5 bg-white/[0.01] backdrop-blur-2xl" />
             </motion.div>
         </section>
     );

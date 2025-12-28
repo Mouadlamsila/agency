@@ -206,7 +206,7 @@ function ExpertiseRow({ item, index, activeIndex, setActiveIndex }: {
                         }`} />
                 </div>
 
-                <h3 className={`font-display text-3xl font-bold transition-all duration-500 md:text-4xl lg:text-5xl ${activeIndex === index ? "text-white translate-x-2" : "text-zinc-500"
+                <h3 className={`font-display text-3xl font-bold transition-all duration-500 md:text-4xl lg:text-5xl ${activeIndex === index ? "text-white ltr:translate-x-2 rtl:-translate-x-2" : "text-zinc-500"
                     }`}>
                     {item.title}
                 </h3>
@@ -236,7 +236,7 @@ function ExpertiseRow({ item, index, activeIndex, setActiveIndex }: {
             </div>
 
             {/* Background Highlight */}
-            <div className={`absolute inset-0 -z-10 bg-gradient-to-r from-brand-blue/5 to-transparent transition-opacity duration-500 ${activeIndex === index ? "opacity-100" : "opacity-0"
+            <div className={`absolute inset-0 -z-10 ltr:bg-gradient-to-r rtl:bg-gradient-to-l ltr:from-brand-blue/5 rtl:from-brand-blue/5 to-transparent transition-opacity duration-500 ${activeIndex === index ? "opacity-100" : "opacity-0"
                 }`} />
         </motion.div>
     );

@@ -1,22 +1,20 @@
 import type { Metadata } from "next";
-import { Inter_Tight, Geist_Mono, Cairo, Syne } from "next/font/google";
-import localFont from "next/font/local";
+import { Space_Grotesk, Readex_Pro, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NoiseOverlay from "@/components/ui/NoiseOverlay";
 import I18nProvider from "@/components/providers/I18nProvider";
 
-// Load Clash Display locally (simulated with localFont for now, assuming file exists or fallback)
-// If Clash Display isn't available, we'll use a strong fallback or just Inter Tight for now
-// For this environment, I'll use Inter Tight as the sans and a local font setup for Display if I had the file.
-// Since I don't have the file, I will use Inter Tight for both but with different weights/styles or try to find a similar Google Font.
-// Actually, the user requested Clash Display. I will simulate it or use a similar Google Font like 'Syne' or 'Outfit' if I can't load local.
-// But `next/font/google` is safer. Let's use 'Outfit' as a proxy for Clash Display if we want a modern display font, 
-// or just stick to Inter Tight for everything if we want to be safe.
-// Let's use Inter Tight for now and define a custom class for display.
-
-const interTight = Inter_Tight({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-inter-tight",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
+
+const readexPro = Readex_Pro({
+  subsets: ["arabic"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-readex-pro",
   display: "swap",
 });
 
@@ -24,19 +22,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-const cairo = Cairo({
-  subsets: ["arabic"],
-  variable: "--font-cairo",
-  display: "swap",
-});
-
-const syne = Syne({
-  subsets: ["latin"],
-  variable: "--font-clash-display", // Mapping Syne to the variable we used in CSS
-  display: "swap",
-});
-
 
 export const metadata: Metadata = {
   title: "Agency | Premium Digital Experience",
@@ -49,9 +34,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={`dark ${spaceGrotesk.variable} ${readexPro.variable} ${geistMono.variable}`}>
       <body
-        className={`${syne.variable} ${interTight.variable} ${geistMono.variable} ${cairo.variable} antialiased bg-brand-dark text-foreground overflow-x-hidden selection:bg-brand-blue selection:text-white`}
+        className="antialiased bg-brand-dark text-foreground selection:bg-brand-blue selection:text-white"
       >
         <NoiseOverlay />
         <I18nProvider>

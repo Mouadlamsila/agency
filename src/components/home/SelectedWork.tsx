@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 export default function SelectedWork() {
     const sectionRef = useRef<HTMLDivElement>(null);
-    const { t } = useTranslation('common');
+    const { t, i18n } = useTranslation('common');
 
     const projects = [
         {
@@ -51,8 +51,12 @@ export default function SelectedWork() {
         offset: ["start start", "end end"]
     });
 
-    // Custom expo.out easing for heavy, intentional movement
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+    const isRTL = i18n.language === 'ar';
+    const x = useTransform(
+        scrollYProgress,
+        [0, 1],
+        isRTL ? ["0%", "75%"] : ["0%", "-75%"]
+    );
     const springX = useSpring(x, { stiffness: 50, damping: 20, restDelta: 0.001 });
 
     return (
@@ -71,9 +75,9 @@ export default function SelectedWork() {
                 </svg>
             </div>
 
-            <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+            <div className="hidden md:flex sticky top-0 h-screen items-center overflow-hidden">
                 {/* Background Text / Progress */}
-                <div className="absolute left-12 top-12 z-10">
+                <div className="absolute ltr:left-12 rtl:right-12 top-12 z-10">
                     <motion.div
                         className="h-[1px] bg-[#0066FF]"
                         style={{ width: useTransform(scrollYProgress, [0, 1], ["0px", "200px"]) }}
@@ -183,7 +187,7 @@ function ProjectCard({ project, index }: { project: any, index: number }) {
                     </p>
                 </div>
 
-                <div className="col-span-4 flex flex-col justify-end space-y-2 border-l border-zinc-800 pl-8">
+                <div className="col-span-4 flex flex-col justify-end space-y-2 ltr:border-l rtl:border-r border-zinc-800 ltr:pl-8 rtl:pr-8">
                     <div className="space-y-1">
                         <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600">{t('selectedWork.labels.industry')}</p>
                         <p className="font-mono text-[10px] text-zinc-400">{project.industry}</p>
@@ -243,7 +247,7 @@ function AbstractUI({ isHovered = false }: { isHovered?: boolean }) {
                     <div className="h-1 w-full bg-zinc-800 overflow-hidden">
                         <motion.div
                             animate={{ scaleX: isHovered ? 1 : 0.3 }}
-                            className="h-full w-full bg-[#0066FF] origin-left"
+                            className="h-full w-full bg-[#0066FF] ltr:origin-left rtl:origin-right"
                         />
                     </div>
                 </div>

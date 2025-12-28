@@ -35,13 +35,13 @@ export default function Footer() {
     ];
 
     const navLinks = [
-        { label: t('nav.work'), href: "#work" },
-        { label: t('nav.services'), href: "#services" },
-        { label: t('nav.process'), href: "#process" },
-        { label: t('nav.pricing'), href: "#engagement" },
-        { label: t('nav.team'), href: "#team" },
-        { label: t('nav.testimonials'), href: "#testimonials" },
-        { label: t('nav.contact'), href: "#contact" },
+        { label: t('nav.work'), href: "/#work" },
+        { label: t('nav.services'), href: "/#services" },
+        { label: t('nav.process'), href: "/#process" },
+        { label: t('nav.pricing'), href: "/#engagement" },
+        { label: t('nav.team'), href: "/#team" },
+        { label: t('nav.testimonials'), href: "/#testimonials" },
+        { label: t('nav.contact'), href: "/contact" },
     ];
 
     return (
@@ -53,6 +53,7 @@ export default function Footer() {
             creatorName="CODSELLA Team"
             creatorUrl="#"
             brandIcon={<Plus className="w-8 sm:w-10 md:w-14 h-8 sm:h-10 md:h-14 text-brand-blue drop-shadow-lg" />}
+            brandIconLink="/onboarding"
             className="bg-brand-dark"
         />
     );

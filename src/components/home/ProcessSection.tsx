@@ -153,11 +153,11 @@ const ProcessSection = () => {
                                     <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">{t('process.systemVersion')}</span>
                                 </div>
                                 <Link
-                                    href="#packages"
+                                    href="/#engagement"
                                     className="group inline-flex items-center gap-4 text-[11px] font-mono uppercase tracking-[0.2em] text-white/60 hover:text-brand-blue transition-colors"
                                 >
                                     <span>{t('process.explore')}</span>
-                                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                                    <span className="group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform rtl:rotate-180 inline-block">→</span>
                                 </Link>
                             </div>
                         </motion.div>
@@ -166,14 +166,14 @@ const ProcessSection = () => {
                     {/* Right: Vertical Timeline */}
                     <div className="lg:w-2/3 relative">
                         {/* Vertical Progress Line */}
-                        <div className="absolute left-0 lg:left-8 top-0 bottom-0 w-[1px] bg-white/5">
+                        <div className="absolute ltr:left-0 rtl:right-0 lg:ltr:left-8 lg:rtl:right-8 top-0 bottom-0 w-[1px] bg-white/5">
                             <motion.div
                                 className="absolute top-0 left-0 right-0 w-full bg-brand-blue origin-top"
                                 style={{ scaleY }}
                             />
                         </div>
 
-                        <div className="flex flex-col gap-24 lg:gap-32 pl-8 lg:pl-24">
+                        <div className="flex flex-col gap-24 lg:gap-32 ltr:pl-8 rtl:pr-8 lg:ltr:pl-24 lg:rtl:pr-24">
                             {steps.map((step, index) => (
                                 <StepCard key={step.id} step={step} index={index} t={t} />
                             ))}
@@ -198,7 +198,7 @@ const StepCard = ({ step, index, t }: { step: Step; index: number, t: any }) => 
             className="group relative"
         >
             {/* Step Dot */}
-            <div className="absolute -left-[33px] lg:-left-[97px] top-2 flex items-center justify-center">
+            <div className="absolute ltr:-left-[33px] rtl:-right-[33px] lg:ltr:-left-[97px] lg:rtl:-right-[97px] top-2 flex items-center justify-center">
                 <div className={`w-2 h-2 rounded-full transition-all duration-500 ${step.status === "active" ? "bg-brand-blue scale-150 shadow-[0_0_15px_#2E5CFF]" :
                     step.status === "completed" ? "bg-emerald-500" : "bg-zinc-800"
                     }`} />

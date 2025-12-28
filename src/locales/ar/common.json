@@ -585,7 +585,8 @@
         "testimonials": "آراء العملاء",
         "pricing": "الأسعار",
         "process": "المنهجية",
-        "contact": "تواصل معنا"
+        "contact": "تواصل معنا",
+        "startProject": "ابدأ مشروعًا"
     },
     "footer": {
         "nav": {
@@ -614,6 +615,65 @@
             "email": "hello@codsella.com",
             "phone": "+1 (555) 000-0000",
             "address": "123 Tech Street, San Francisco, CA"
+        }
+    },
+    "onboarding": {
+        "configurator": {
+            "title": "تهيئة",
+            "subtitle": "المشروع",
+            "sequence": "تسلسل_الإعداد_v1.0",
+            "coreStatus": "حالة_النظام",
+            "operational": "نشط",
+            "selectedId": "المعرف_المختار"
+        },
+        "phases": {
+            "01": "المرحلة_01 / الإيجاز",
+            "02": "المرحلة_02 / الاختيار",
+            "03": "المرحلة_03 / الإرسال"
+        },
+        "briefing": {
+            "nameLabel": "تسمية_المدخلات",
+            "namePlaceholder": "أدخل اسم المشروع...",
+            "categoryLabel": "فئة_النظام"
+        },
+        "categories": {
+            "all": "الكل",
+            "ecommerce": "تجارة إلكترونية",
+            "saas": "برمجيات",
+            "creative": "إبداعي"
+        },
+        "selection": {
+            "availableModules": "الوحدات_المتاحة",
+            "noModules": "لم_يتم_العثور_على_وحدات_مطابقة",
+            "idLabel": "معرف_"
+        },
+        "actions": {
+            "initialize": "بدء_الإرسال",
+            "confirm": "تأكيد_الإرسال",
+            "abort": "إلغاء_التسلسل",
+            "return": "العودة_إلى_القاعدة"
+        },
+        "transmission": {
+            "portal": "بوابة_الإرسال_v2.1",
+            "terminal": {
+                "init": "بدء_بروتوكول_الإرسال...",
+                "auth": "المصادقة_على_مصافحة_العميل: [نجاح]",
+                "project": "اسم_المشروع:",
+                "category": "فئة_النظام:",
+                "template": "وحدة_النموذج:",
+                "timestamp": "الطابع_الزمني:",
+                "encrypt": "تشفير_حزم_البيانات...",
+                "ready": "جاهز_للإرسال."
+            },
+            "status": {
+                "syncing": "جاري_الرفع_إلى_خادم_التطوير...",
+                "complete": "اكتمل_تزامن_الحالة"
+            }
+        },
+        "success": {
+            "title": "المشروع_مقفل",
+            "subtitle": "وتم_الإرسال",
+            "description": "تمت أرشفة إيجازك في خادم التطوير الآمن الخاص بنا. سيقوم مهندسونا بمراجعة معايير المشروع قريبًا."
         }
     }
 }

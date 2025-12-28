@@ -14,13 +14,13 @@ const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const navLinks = [
-        { name: t('nav.work'), href: "#work" },
-        { name: t('nav.services'), href: "#services" },
-        { name: t('nav.process'), href: "#process" },
-        { name: t('nav.pricing'), href: "#engagement" },
-        { name: t('nav.team'), href: "#team" },
-        { name: t('nav.testimonials'), href: "#testimonials" },
-        { name: t('nav.contact'), href: "/contact" },
+        { name: t('nav.work'), href: "/#work" },
+        { name: t('nav.services'), href: "/#services" },
+        { name: t('nav.process'), href: "/#process" },
+        { name: t('nav.pricing'), href: "/#engagement" },
+        { name: t('nav.team'), href: "/#team" },
+        { name: t('nav.testimonials'), href: "/#testimonials" },
+        { name: t('nav.contact'), href: "/#contact" },
     ];
 
     // Subtle opacity shift on scroll
@@ -61,7 +61,7 @@ const Navbar = () => {
                         href="/"
                         className="group relative mix-blend-difference"
                     >
-                        <span className="font-display text-2xl font-bold tracking-tighter text-white">
+                        <span dir="ltr" className="font-display text-2xl font-bold tracking-tighter text-white">
                             CODSELLA<span className="text-brand-blue">.</span>
                         </span>
                         <motion.div
@@ -118,9 +118,9 @@ const Navbar = () => {
 
                         {/* CTA Button */}
                         <MagneticButton>
-                            <Link href="/contact" className="relative group px-8 py-2.5 rounded-full overflow-hidden border border-white/10 bg-white/5 hover:border-white/20 transition-colors duration-500 inline-block">
+                            <Link href="/onboarding" className="relative group px-8 py-2.5 rounded-full overflow-hidden border border-white/10 bg-white/5 hover:border-white/20 transition-colors duration-500 inline-block">
                                 <span className="relative z-10 font-mono text-[10px] uppercase tracking-[0.2em] text-white group-hover:text-black transition-colors duration-500">
-                                    Start a Project
+                                    {t('nav.startProject')}
                                 </span>
                                 <motion.div
                                     className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -215,8 +215,8 @@ const Navbar = () => {
                             transition={{ delay: 0.6 }}
                             className="mt-8"
                         >
-                            <Link href="/contact" className="px-12 py-4 rounded-full border border-white/20 font-mono text-xs uppercase tracking-widest text-white">
-                                Start a Project
+                            <Link href="/onboarding" className="px-12 py-4 rounded-full border border-white/20 font-mono text-xs uppercase tracking-widest text-white">
+                                {t('nav.startProject')}
                             </Link>
                         </motion.div>
                     </motion.div>

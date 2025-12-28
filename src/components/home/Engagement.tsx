@@ -94,6 +94,8 @@ export default function Engagement() {
                         >
                             {/* Blue Underline Animation */}
                             <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-brand-blue transition-all duration-700 ease-out group-hover:w-full" />
+                            {/* Decorative Gradients */}
+                            <div className="absolute top-0 ltr:right-0 rtl:left-0 w-[300px] h-[300px] bg-brand-blue/5 blur-[100px] rounded-full ltr:translate-x-1/2 rtl:-translate-x-1/2 -translate-y-1/2 pointer-events-none group-hover:bg-brand-blue/10 transition-colors duration-700" />
 
                             <div className="mb-16">
                                 <span className="font-mono text-[11px] text-brand-blue tracking-[0.3em] block mb-6">
@@ -105,6 +107,11 @@ export default function Engagement() {
                                 <p className="text-zinc-400 font-sans text-lg leading-relaxed max-w-[280px]">
                                     {model.positioning}
                                 </p>
+                                {/* Hover Action */}
+                                <div className="mt-8 flex items-center gap-2 text-sm font-medium text-brand-blue opacity-0 ltr:-translate-x-2 rtl:translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 delay-75">
+                                    <span>{t('services.items.0.cta') || 'Explore Module'}</span>
+                                    <ArrowUpRight className="size-4 rtl:-scale-x-100" />
+                                </div>
                             </div>
 
                             <div className="flex-grow">
@@ -148,7 +155,7 @@ export default function Engagement() {
                     <p className="text-zinc-500 font-sans mb-4">{t('engagement.notSure')}</p>
                     <button className="group relative inline-flex items-center gap-2 text-white font-display text-xl hover:text-brand-blue transition-colors duration-300">
                         {t('engagement.cta')}
-                        <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                        <ArrowUpRight className="w-5 h-5 transition-transform duration-300 ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 group-hover:-translate-y-1 rtl:-scale-x-100" />
                         <div className="absolute -bottom-2 left-0 w-full h-[1px] bg-zinc-800 group-hover:bg-brand-blue transition-colors duration-300" />
                     </button>
                 </motion.div>

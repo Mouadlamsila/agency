@@ -585,7 +585,8 @@
         "testimonials": "Testimonials",
         "pricing": "Pricing",
         "process": "Process",
-        "contact": "Contact"
+        "contact": "Contact",
+        "startProject": "Start a Project"
     },
     "footer": {
         "nav": {
@@ -614,6 +615,65 @@
             "email": "hello@codsella.com",
             "phone": "+1 (555) 000-0000",
             "address": "123 Tech Street, San Francisco, CA"
+        }
+    },
+    "onboarding": {
+        "configurator": {
+            "title": "PROJECT",
+            "subtitle": "CONFIGURATOR",
+            "sequence": "ONBOARDING_SEQUENCE_v1.0",
+            "coreStatus": "CORE_STATUS",
+            "operational": "OPERATIONAL",
+            "selectedId": "SELECTED_ID"
+        },
+        "phases": {
+            "01": "PHASE_01 / BRIEFING",
+            "02": "PHASE_02 / SELECTION",
+            "03": "PHASE_03 / TRANSMISSION"
+        },
+        "briefing": {
+            "nameLabel": "INPUT_DESIGNATION",
+            "namePlaceholder": "Enter project name...",
+            "categoryLabel": "SYSTEM_CATEGORY"
+        },
+        "categories": {
+            "all": "ALL",
+            "ecommerce": "E-COMMERCE",
+            "saas": "SAAS",
+            "creative": "CREATIVE"
+        },
+        "selection": {
+            "availableModules": "AVAILABLE_MODULES",
+            "noModules": "NO_MATCHING_MODULES_FOUND",
+            "idLabel": "ID_"
+        },
+        "actions": {
+            "initialize": "INITIALIZE_TRANSMISSION",
+            "confirm": "CONFIRM_SEND",
+            "abort": "ABORT_SEQUENCE",
+            "return": "RETURN_TO_BASE"
+        },
+        "transmission": {
+            "portal": "TRANSMISSION_PORTAL_v2.1",
+            "terminal": {
+                "init": "INITIALIZING_TRANSMISSION_PROTOCOL...",
+                "auth": "AUTHENTICATING_CLIENT_HANDSHAKE: [SUCCESS]",
+                "project": "PROJECT_NAME:",
+                "category": "SYSTEM_CATEGORY:",
+                "template": "TEMPLATE_MODULE:",
+                "timestamp": "TIMESTAMP:",
+                "encrypt": "ENCRYPTING_DATA_PACKETS...",
+                "ready": "READY_FOR_UPLINK."
+            },
+            "status": {
+                "syncing": "UPLOADING_TO_DEV_SERVER...",
+                "complete": "STATUS_SYNC_COMPLETE"
+            }
+        },
+        "success": {
+            "title": "PROJECT_LOCKED",
+            "subtitle": "AND_TRANSMITTED",
+            "description": "Your briefing has been archived in our secure dev_server. Our engineers will review the project parameters shortly."
         }
     }
 }

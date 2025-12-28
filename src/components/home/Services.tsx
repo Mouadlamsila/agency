@@ -73,7 +73,7 @@ export default function Services() {
                         className="text-5xl font-bold tracking-tighter md:text-7xl font-display text-white leading-[0.9]"
                     >
                         {t('services.heading.line1')} <br />
-                        <span className="text-neutral-500 italic font-serif pr-4">{t('services.heading.line2')}</span>
+                        <span className="text-neutral-500 italic font-serif ltr:pr-4 rtl:pl-4">{t('services.heading.line2')}</span>
                         <span className="text-brand-blue">{t('services.heading.line3')}</span>
                     </motion.h2>
                 </div>
@@ -108,7 +108,7 @@ export default function Services() {
                                         <p className="font-mono text-xs text-brand-blue/80 uppercase tracking-widest mb-2">
                                             {card.title}
                                         </p>
-                                        <h3 className="text-3xl font-bold text-neutral-100 tracking-tight group-hover:translate-x-1 transition-transform duration-500">
+                                        <h3 className="text-3xl font-bold text-neutral-100 tracking-tight ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform duration-500">
                                             {card.heading}
                                         </h3>
                                     </div>
@@ -120,13 +120,13 @@ export default function Services() {
                             </div>
 
                             {/* Hover Action */}
-                            <div className="mt-8 flex items-center gap-2 text-sm font-medium text-brand-blue opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 delay-75">
+                            <div className="mt-8 flex items-center gap-2 text-sm font-medium text-brand-blue opacity-0 ltr:-translate-x-2 rtl:translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 delay-75">
                                 <span>{t('services.items.0.cta') || 'Explore Module'}</span>
-                                <ArrowUpRight className="size-4" />
+                                <ArrowUpRight className="size-4 rtl:-scale-x-100" />
                             </div>
 
                             {/* Decorative Gradients */}
-                            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-brand-blue/5 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none group-hover:bg-brand-blue/10 transition-colors duration-700" />
+                            <div className="absolute top-0 ltr:right-0 rtl:left-0 w-[300px] h-[300px] bg-brand-blue/5 blur-[100px] rounded-full ltr:translate-x-1/2 rtl:-translate-x-1/2 -translate-y-1/2 pointer-events-none group-hover:bg-brand-blue/10 transition-colors duration-700" />
                         </motion.div>
                     ))}
                 </div>

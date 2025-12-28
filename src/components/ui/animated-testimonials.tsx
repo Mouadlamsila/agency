@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 type Testimonial = {
     quote: string;
@@ -22,6 +23,7 @@ export const AnimatedTestimonials = ({
     autoplay?: boolean;
     className?: string;
 }) => {
+    const { i18n } = useTranslation();
     const [active, setActive] = useState(0);
 
     const handleNext = () => {
@@ -156,13 +158,21 @@ export const AnimatedTestimonials = ({
                             onClick={handlePrev}
                             className="h-7 w-7 rounded-full bg-neutral-800 hover:bg-blue-500 flex items-center justify-center group/button transition-colors duration-300"
                         >
-                            <IconArrowLeft className="h-5 w-5 text-neutral-400 group-hover/button:text-white group-hover/button:rotate-12 transition-all duration-300" />
+                            {i18n.language === 'ar' ? (
+                                <IconArrowRight className="h-5 w-5 text-neutral-400 group-hover/button:text-white group-hover/button:-rotate-12 transition-all duration-300" />
+                            ) : (
+                                <IconArrowLeft className="h-5 w-5 text-neutral-400 group-hover/button:text-white group-hover/button:rotate-12 transition-all duration-300" />
+                            )}
                         </button>
                         <button
                             onClick={handleNext}
                             className="h-7 w-7 rounded-full bg-neutral-800 hover:bg-blue-500 flex items-center justify-center group/button transition-colors duration-300"
                         >
-                            <IconArrowRight className="h-5 w-5 text-neutral-400 group-hover/button:text-white group-hover/button:-rotate-12 transition-all duration-300" />
+                            {i18n.language === 'ar' ? (
+                                <IconArrowLeft className="h-5 w-5 text-neutral-400 group-hover/button:text-white group-hover/button:rotate-12 transition-all duration-300" />
+                            ) : (
+                                <IconArrowRight className="h-5 w-5 text-neutral-400 group-hover/button:text-white group-hover/button:-rotate-12 transition-all duration-300" />
+                            )}
                         </button>
                     </div>
                 </div>

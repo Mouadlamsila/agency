@@ -132,7 +132,9 @@ export default function FinalCTA() {
                                     {t('finalCTA.button')}
                                 </span>
                                 <motion.div
-                                    animate={{ x: isHovered ? 5 : 0 }}
+                                    animate={{
+                                        x: isHovered ? (document.documentElement.dir === 'rtl' ? -5 : 5) : 0
+                                    }}
                                     className="h-px w-8 bg-brand-blue"
                                 />
                             </div>

@@ -45,7 +45,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative flex min-h-screen flex-col bg-brand-dark overflow-x-hidden">
+    <main className="relative flex min-h-screen flex-col bg-brand-dark">
       {/* Global Grain/Noise Overlay */}
       <div className="fixed inset-0 pointer-events-none z-100 opacity-[0.03] mix-blend-overlay">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">

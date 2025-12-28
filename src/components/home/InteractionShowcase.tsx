@@ -3,11 +3,14 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, useSpring, useMotionValue, useTransform, AnimatePresence, useInView } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { cn } from "@/lib/utils";
 
 const MagneticButton = ({ children }: { children: React.ReactNode }) => {
     const ref = useRef<HTMLDivElement>(null);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
+
+    const { i18n } = useTranslation();
 
     const springConfig = { damping: 15, stiffness: 150 };
     const springX = useSpring(x, springConfig);
@@ -45,13 +48,25 @@ const MagneticButton = ({ children }: { children: React.ReactNode }) => {
                 />
                 <div className="relative z-10 flex items-center gap-3">
                     <span className="tracking-tight">{children}</span>
-                    <motion.span
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                        className="text-lg"
-                    >
-                        →
-                    </motion.span>
+                    {
+                        i18n.language === 'ar' ? (
+                            <motion.span
+                                animate={{ x: [0, 5, 0] }}
+                                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                                className="text-lg"
+                            >
+                                ←
+                            </motion.span>
+                        ) : (
+                            <motion.span
+                                animate={{ x: [0, -5, 0] }}
+                                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                                className="text-lg"
+                            >
+                                →
+                            </motion.span>
+                        )
+                    }
                 </div>
             </div>
             {/* Magnetic Glow */}
@@ -148,8 +163,10 @@ const TiltCard = ({ title, description, icon, label, activeModulesLabel }: { tit
 };
 
 const MicroInteractionGrid = ({ t }: { t: any }) => {
+    const { i18n } = useTranslation();
     const [activeToggle, setActiveToggle] = useState(false);
     const [sliderValue, setSliderValue] = useState(72);
+    const isRtl = i18n.language === 'ar';
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
@@ -163,8 +180,9 @@ const MicroInteractionGrid = ({ t }: { t: any }) => {
                     onClick={() => setActiveToggle(!activeToggle)}
                     className="w-14 h-7 rounded-full bg-zinc-900 border border-white/5 relative cursor-pointer overflow-hidden p-1"
                 >
+
                     <motion.div
-                        animate={{ x: activeToggle ? 28 : 0 }}
+                        animate={{ x: activeToggle ? (isRtl ? -28 : 28) : 0 }}
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                         className={`w-5 h-5 rounded-full shadow-lg ${activeToggle ? 'bg-brand-blue' : 'bg-zinc-600'}`}
                     />
@@ -182,7 +200,10 @@ const MicroInteractionGrid = ({ t }: { t: any }) => {
                 </div>
                 <div className="relative w-full h-1.5 bg-zinc-900 rounded-full overflow-hidden border border-white/5">
                     <motion.div
-                        className="absolute inset-y-0 left-0 bg-brand-blue shadow-[0_0_15px_rgba(46,92,255,0.5)]"
+                        className={cn(
+                            "absolute inset-y-0 bg-brand-blue shadow-[0_0_15px_rgba(46,92,255,0.5)]",
+                            isRtl ? "right-0" : "left-0"
+                        )}
                         animate={{ width: `${sliderValue}%` }}
                         transition={{ type: "spring", stiffness: 100, damping: 20 }}
                     />
@@ -194,6 +215,7 @@ const MicroInteractionGrid = ({ t }: { t: any }) => {
                         onChange={(e) => setSliderValue(parseInt(e.target.value))}
                         className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                     />
+
                 </div>
                 <div className="mt-6 flex justify-between">
                     <div className="flex gap-1">

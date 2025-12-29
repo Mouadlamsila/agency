@@ -1,0 +1,114 @@
+[
+  {
+    "id": "ASG-001",
+    "templateId": "TMP-CORE-01",
+    "memberId": "MEM-01-X",
+    "roleInProject": "Core Logic & Architecture",
+    "joinedAt": "2024-05-10T09:00:00Z",
+    "contributionLevel": 95
+  },
+  {
+    "id": "ASG-002",
+    "templateId": "TMP-CORE-01",
+    "memberId": "MEM-02-B",
+    "roleInProject": "Motion Design & Shaders",
+    "joinedAt": "2024-06-01T14:30:00Z",
+    "contributionLevel": 40
+  },
+  {
+    "id": "ASG-003",
+    "templateId": "TMP-UX-02",
+    "memberId": "MEM-02-B",
+    "roleInProject": "Primary Graphics Engineer",
+    "joinedAt": "2024-04-15T11:00:00Z",
+    "contributionLevel": 100
+  },
+  {
+    "id": "ASG-004",
+    "templateId": "TMP-UX-02",
+    "memberId": "MEM-03-A",
+    "roleInProject": "UX Synchronization",
+    "joinedAt": "2024-04-20T10:00:00Z",
+    "contributionLevel": 60
+  },
+  {
+    "templateId": "TMP-1766997453351",
+    "memberId": "MEM-01-X",
+    "roleInProject": "Contributor",
+    "id": "ASG-1766997453389",
+    "joinedAt": "2025-12-29T08:37:33.389Z",
+    "contributionLevel": 0
+  },
+  {
+    "templateId": "TMP-1766997453351",
+    "memberId": "MEM-02-B",
+    "roleInProject": "Contributor",
+    "id": "ASG-1766997453405",
+    "joinedAt": "2025-12-29T08:37:33.405Z",
+    "contributionLevel": 0
+  },
+  {
+    "templateId": "TMP-1766997453351",
+    "memberId": "MEM-03-A",
+    "roleInProject": "Contributor",
+    "id": "ASG-1766997453423",
+    "joinedAt": "2025-12-29T08:37:33.423Z",
+    "contributionLevel": 0
+  },
+  {
+    "templateId": "1766997453369",
+    "memberId": "MEM-01-X",
+    "roleInProject": "Contributor",
+    "id": "ASG-1766997480562",
+    "joinedAt": "2025-12-29T08:38:00.562Z",
+    "contributionLevel": 0
+  },
+  {
+    "templateId": "1766997453369",
+    "memberId": "MEM-02-B",
+    "roleInProject": "Contributor",
+    "id": "ASG-1766997480576",
+    "joinedAt": "2025-12-29T08:38:00.576Z",
+    "contributionLevel": 0
+  },
+  {
+    "templateId": "1766997453369",
+    "memberId": "MEM-1766997635157",
+    "roleInProject": "Lead Operator",
+    "id": "ASG-1766997635199",
+    "joinedAt": "2025-12-29T08:40:35.199Z",
+    "contributionLevel": 0
+  },
+  {
+    "templateId": "TMP-1766998447403",
+    "memberId": "MEM-01-X",
+    "roleInProject": "Contributor",
+    "id": "ASG-1766998447431",
+    "joinedAt": "2025-12-29T08:54:07.431Z",
+    "contributionLevel": 0
+  },
+  {
+    "templateId": "TMP-1766998447403",
+    "memberId": "1766997635171",
+    "roleInProject": "Contributor",
+    "id": "ASG-1766998447445",
+    "joinedAt": "2025-12-29T08:54:07.445Z",
+    "contributionLevel": 0
+  },
+  {
+    "templateId": "TMP-1766998447403",
+    "memberId": "MEM-03-A",
+    "roleInProject": "Contributor",
+    "id": "ASG-1766998447460",
+    "joinedAt": "2025-12-29T08:54:07.460Z",
+    "contributionLevel": 0
+  },
+  {
+    "templateId": "TMP-1766998447403",
+    "memberId": "MEM-02-B",
+    "roleInProject": "Contributor",
+    "id": "ASG-1766998447477",
+    "joinedAt": "2025-12-29T08:54:07.477Z",
+    "contributionLevel": 0
+  }
+]

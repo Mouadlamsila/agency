@@ -1,0 +1,42 @@
+[
+  {
+    "id": "MEM-01-X",
+    "name": "Marcus Vane",
+    "role": "Lead Systems Architect",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop",
+    "status": "active",
+    "specialty": "Distributed Engines",
+    "rank": "Level-V Architect",
+    "bio": "Specialized in high-throughput node architectures and neural UI mesh synchronization."
+  },
+  {
+    "id": "MEM-02-B",
+    "name": "Elias Thorne",
+    "role": "Motion Matrix Specialist",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&h=200&auto=format&fit=crop",
+    "status": "active",
+    "specialty": "GSAP/Fragment Shaders",
+    "rank": "Senior Visualist",
+    "bio": "Defining physics-based interactions and high-frequency motion protocols for premium interfaces."
+  },
+  {
+    "id": "MEM-03-A",
+    "name": "Sienna Ray",
+    "role": "Core Interface Designer",
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&h=200&auto=format&fit=crop",
+    "status": "standby",
+    "specialty": "Aesthetic Logic",
+    "rank": "Lead Creative",
+    "bio": "Bridging human-centric design with cold, engineered precision."
+  },
+  {
+    "name": "mouad",
+    "role": "Motion Matrix Specialist",
+    "status": "active",
+    "specialty": "reactjs/nextjs/laravel",
+    "rank": "good",
+    "bio": "",
+    "id": "1766997635171",
+    "avatar": "https://images.unsplash.com/photo-968213?w=200&h=200&auto=format&fit=crop"
+  }
+]

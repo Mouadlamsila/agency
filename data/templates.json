@@ -1,0 +1,66 @@
+[
+  {
+    "id": "TMP-CORE-01",
+    "codeName": "VANGUARD-PRIME",
+    "coreModel": "Next.js 15 / Turbopack",
+    "category": "Enterprise Engine",
+    "status": "deployed",
+    "version": "2.4.0",
+    "techStack": [
+      "Next.js",
+      "Tailwind v4",
+      "Framer Motion",
+      "TypeScript"
+    ],
+    "performanceScore": 98.4
+  },
+  {
+    "id": "TMP-UX-02",
+    "codeName": "NEURAL-MESH",
+    "coreModel": "Three.js / React Three Fiber",
+    "category": "Immersive Visualizer",
+    "status": "stable",
+    "version": "1.1.2",
+    "techStack": [
+      "Three.js",
+      "R3F",
+      "GLSL",
+      "React"
+    ],
+    "performanceScore": 92.1
+  },
+  {
+    "id": "TMP-SAAS-03",
+    "codeName": "HORIZON-SYNC",
+    "coreModel": "Vite / WebSocket",
+    "category": "Real-time SaaS",
+    "status": "beta",
+    "version": "0.9.8",
+    "techStack": [
+      "Vite",
+      "Socket.io",
+      "React",
+      "Radix UI"
+    ],
+    "performanceScore": 89.9
+  },
+  {
+    "codeName": "test2",
+    "category": "Real-time SaaS",
+    "status": "stable",
+    "coreModel": "test",
+    "id": "1766997453369",
+    "version": "1.0.0",
+    "performanceScore": 100
+  },
+  {
+    "codeName": "test",
+    "category": "Enterprise Engine",
+    "status": "stable",
+    "coreModel": "test",
+    "techStack": [],
+    "id": "1766998447415",
+    "version": "1.0.0",
+    "performanceScore": 100
+  }
+]

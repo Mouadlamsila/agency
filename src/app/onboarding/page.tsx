@@ -56,6 +56,12 @@ export default function OnboardingPage() {
     const [projectName, setProjectName] = useState("");
     const [category, setCategory] = useState("ALL");
     const [selectedTemplateId, setSelectedTemplateId] = useState<string | null>(null);
+    const [personalInfo, setPersonalInfo] = useState({
+        fullName: "",
+        email: "",
+        phone: "",
+        contact: "",
+    });
 
     // Transmission States
     const [isReviewing, setIsReviewing] = useState(false);
@@ -77,7 +83,8 @@ export default function OnboardingPage() {
                 body: JSON.stringify({
                     projectName,
                     category,
-                    templateId: selectedTemplateId
+                    templateId: selectedTemplateId,
+                    personalInfo
                 })
             });
 
@@ -238,6 +245,8 @@ export default function OnboardingPage() {
                             setProjectName={setProjectName}
                             category={category}
                             setCategory={setCategory}
+                            personalInfo={personalInfo}
+                            setPersonalInfo={setPersonalInfo}
                         />
                     </motion.div>
 
@@ -272,8 +281,8 @@ export default function OnboardingPage() {
                     >
                         <button
                             onClick={() => setIsReviewing(true)}
-                            disabled={!projectName || !selectedTemplateId}
-                            className={`group relative px-12 py-5 font-mono text-xs font-bold uppercase tracking-[0.3em] overflow-hidden transition-all duration-500 ${projectName && selectedTemplateId
+                            disabled={!projectName || !selectedTemplateId || !personalInfo.fullName || !personalInfo.email || !personalInfo.phone}
+                            className={`group relative px-12 py-5 font-mono text-xs font-bold uppercase tracking-[0.3em] overflow-hidden transition-all duration-500 ${projectName && selectedTemplateId && personalInfo.fullName && personalInfo.email && personalInfo.phone
                                 ? "bg-brand-blue text-white hover:scale-105"
                                 : "bg-white/5 text-zinc-600 cursor-not-allowed border border-white/5"
                                 }`}
@@ -286,7 +295,7 @@ export default function OnboardingPage() {
                                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 )}
                             </span>
-                            {projectName && selectedTemplateId && (
+                            {projectName && selectedTemplateId && personalInfo.fullName && personalInfo.email && personalInfo.phone && (
                                 <motion.div
                                     className="absolute inset-0 bg-white/10"
                                     animate={{ left: ["-100%", "100%"] }}

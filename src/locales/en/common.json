@@ -634,13 +634,24 @@
         "briefing": {
             "nameLabel": "INPUT_DESIGNATION",
             "namePlaceholder": "Enter project name...",
-            "categoryLabel": "SYSTEM_CATEGORY"
+            "categoryLabel": "SYSTEM_CATEGORY",
+            "fullName": "FULL_NAME",
+            "fullNamePlaceholder": "John Doe",
+            "email": "EMAIL",
+            "emailPlaceholder": "john@example.com",
+            "phone": "PHONE",
+            "phonePlaceholder": "+1 (555) 000-0000",
+            "contact": "CONTACT_OPTIONAL",
+            "contactPlaceholder": "Additional contact (optional)"
         },
         "categories": {
             "all": "ALL",
+            "landing": "LANDING_PAGE",
             "ecommerce": "E-COMMERCE",
             "saas": "SAAS",
-            "creative": "CREATIVE"
+            "portfolio": "PORTFOLIO",
+            "creative": "CREATIVE",
+            "corporate": "CORPORATE"
         },
         "selection": {
             "availableModules": "AVAILABLE_MODULES",
@@ -675,5 +686,84 @@
             "subtitle": "AND_TRANSMITTED",
             "description": "Your briefing has been archived in our secure dev_server. Our engineers will review the project parameters shortly."
         }
+    },
+    "clientBriefing": {
+        "label": "CLIENT_BRIEFING_FORM",
+        "title": "PROJECT BRIEFING",
+        "description": "Please fill out this comprehensive form to help us understand your project requirements and preferences.",
+        "sections": {
+            "brandIdentity": "BRAND_IDENTITY",
+            "projectDetails": "PROJECT_DETAILS",
+            "content": "CONTENT_&_AUDIENCE",
+            "technical": "TECHNICAL_REQUIREMENTS"
+        },
+        "logo": "LOGO",
+        "uploadLogo": "UPLOAD_LOGO",
+        "productName": "PRODUCT_NAME",
+        "productNamePlaceholder": "Enter your product/service name...",
+        "brandDescription": "BRAND_DESCRIPTION",
+        "brandDescriptionPlaceholder": "Describe your brand, mission, and values...",
+        "colors": "COLOR_PREFERENCES",
+        "customColorPlaceholder": "Or enter hex color code (e.g., #FF5733)",
+        "projectType": "PROJECT_TYPE",
+        "selectProjectType": "Select project type...",
+        "types": {
+            "website": "Website",
+            "webapp": "Web Application",
+            "mobile": "Mobile App",
+            "ecommerce": "E-commerce Platform",
+            "saas": "SaaS Platform",
+            "landing": "Landing Page"
+        },
+        "style": "DESIGN_STYLE",
+        "selectStyle": "Select design style...",
+        "styles": {
+            "modern": "Modern",
+            "classic": "Classic",
+            "minimalist": "Minimalist",
+            "bold": "Bold",
+            "elegant": "Elegant",
+            "playful": "Playful"
+        },
+        "animation": "ANIMATION_PREFERENCE",
+        "selectAnimation": "Select animation preference...",
+        "animationOptions": {
+            "yes": "Yes, I want animations",
+            "no": "No animations",
+            "minimal": "Minimal animations",
+            "extensive": "Extensive animations"
+        },
+        "preferredFonts": "PREFERRED_FONTS",
+        "preferredFontsPlaceholder": "List any preferred fonts or typography styles...",
+        "targetAudience": "TARGET_AUDIENCE",
+        "targetAudiencePlaceholder": "Describe your target audience and user personas...",
+        "contentReady": "CONTENT_READY",
+        "selectContentReady": "Select content status...",
+        "contentOptions": {
+            "yes": "Yes, all content is ready",
+            "partial": "Partially ready",
+            "no": "No, content needs to be created"
+        },
+        "referenceWebsites": "REFERENCE_WEBSITES",
+        "referenceWebsitesPlaceholder": "List any websites you like or want to reference (URLs)...",
+        "specialRequirements": "SPECIAL_REQUIREMENTS",
+        "specialRequirementsPlaceholder": "Any special features, functionality, or requirements...",
+        "integrations": "INTEGRATIONS",
+        "integrationsPlaceholder": "List any third-party integrations needed (payment, analytics, CRM, etc.)...",
+        "preferredTimeline": "PREFERRED_TIMELINE",
+        "selectTimeline": "Select timeline...",
+        "timelineOptions": {
+            "asap": "ASAP",
+            "1month": "1 Month",
+            "2to3months": "2-3 Months",
+            "3to6months": "3-6 Months",
+            "flexible": "Flexible"
+        },
+        "additionalNotes": "ADDITIONAL_NOTES",
+        "additionalNotesPlaceholder": "Any additional information, ideas, or concerns...",
+        "submit": "SUBMIT_BRIEFING",
+        "submitting": "SUBMITTING",
+        "success": "BRIEFING_SUBMITTED_SUCCESSFULLY",
+        "error": "SUBMISSION_FAILED"
     }
 }

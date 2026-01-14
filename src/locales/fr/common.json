@@ -634,13 +634,24 @@
         "briefing": {
             "nameLabel": "DÉSIGNATION_ENTRÉE",
             "namePlaceholder": "Entrez le nom du projet...",
-            "categoryLabel": "CATÉGORIE_SYSTÈME"
+            "categoryLabel": "CATÉGORIE_SYSTÈME",
+            "fullName": "NOM_COMPLET",
+            "fullNamePlaceholder": "Jean Dupont",
+            "email": "EMAIL",
+            "emailPlaceholder": "jean@exemple.com",
+            "phone": "TÉLÉPHONE",
+            "phonePlaceholder": "+33 6 12 34 56 78",
+            "contact": "CONTACT_OPTIONNEL",
+            "contactPlaceholder": "Contact supplémentaire (optionnel)"
         },
         "categories": {
             "all": "TOUT",
+            "landing": "PAGE_D'ATTERRISSAGE",
             "ecommerce": "E-COMMERCE",
             "saas": "SAAS",
-            "creative": "CRÉATIF"
+            "portfolio": "PORTFOLIO",
+            "creative": "CRÉATIF",
+            "corporate": "ENTREPRISE"
         },
         "selection": {
             "availableModules": "MODULES_DISPONIBLES",
@@ -675,5 +686,84 @@
             "subtitle": "ET_TRANSMIS",
             "description": "Votre briefing a été archivé sur notre serveur de développement sécurisé. Nos ingénieurs examineront les paramètres du projet sous peu."
         }
+    },
+    "clientBriefing": {
+        "label": "FORMULAIRE_DE_BRIEFING_CLIENT",
+        "title": "BRIEFING_PROJET",
+        "description": "Veuillez remplir ce formulaire complet pour nous aider à comprendre vos exigences et préférences de projet.",
+        "sections": {
+            "brandIdentity": "IDENTITÉ_DE_MARQUE",
+            "projectDetails": "DÉTAILS_DU_PROJET",
+            "content": "CONTENU_&_PUBLIC",
+            "technical": "EXIGENCES_TECHNIQUES"
+        },
+        "logo": "LOGO",
+        "uploadLogo": "TÉLÉCHARGER_LOGO",
+        "productName": "NOM_DU_PRODUIT",
+        "productNamePlaceholder": "Entrez le nom de votre produit/service...",
+        "brandDescription": "DESCRIPTION_DE_LA_MARQUE",
+        "brandDescriptionPlaceholder": "Décrivez votre marque, mission et valeurs...",
+        "colors": "PRÉFÉRENCES_DE_COULEUR",
+        "customColorPlaceholder": "Ou entrez un code couleur hex (ex: #FF5733)",
+        "projectType": "TYPE_DE_PROJET",
+        "selectProjectType": "Sélectionnez le type de projet...",
+        "types": {
+            "website": "Site Web",
+            "webapp": "Application Web",
+            "mobile": "Application Mobile",
+            "ecommerce": "Plateforme E-commerce",
+            "saas": "Plateforme SaaS",
+            "landing": "Page d'Atterrissage"
+        },
+        "style": "STYLE_DE_CONCEPTION",
+        "selectStyle": "Sélectionnez le style de conception...",
+        "styles": {
+            "modern": "Moderne",
+            "classic": "Classique",
+            "minimalist": "Minimaliste",
+            "bold": "Audacieux",
+            "elegant": "Élégant",
+            "playful": "Joueur"
+        },
+        "animation": "PRÉFÉRENCE_D'ANIMATION",
+        "selectAnimation": "Sélectionnez la préférence d'animation...",
+        "animationOptions": {
+            "yes": "Oui, je veux des animations",
+            "no": "Pas d'animations",
+            "minimal": "Animations minimales",
+            "extensive": "Animations extensives"
+        },
+        "preferredFonts": "POLICES_PRÉFÉRÉES",
+        "preferredFontsPlaceholder": "Listez les polices ou styles typographiques préférés...",
+        "targetAudience": "PUBLIC_CIBLE",
+        "targetAudiencePlaceholder": "Décrivez votre public cible et vos personas utilisateurs...",
+        "contentReady": "CONTENU_PRÊT",
+        "selectContentReady": "Sélectionnez le statut du contenu...",
+        "contentOptions": {
+            "yes": "Oui, tout le contenu est prêt",
+            "partial": "Partiellement prêt",
+            "no": "Non, le contenu doit être créé"
+        },
+        "referenceWebsites": "SITES_WEB_DE_RÉFÉRENCE",
+        "referenceWebsitesPlaceholder": "Listez les sites web que vous aimez ou voulez référencer (URLs)...",
+        "specialRequirements": "EXIGENCES_SPÉCIFIQUES",
+        "specialRequirementsPlaceholder": "Toute fonctionnalité, fonction ou exigence spéciale...",
+        "integrations": "INTÉGRATIONS",
+        "integrationsPlaceholder": "Listez les intégrations tierces nécessaires (paiement, analytics, CRM, etc.)...",
+        "preferredTimeline": "DÉLAI_PRÉFÉRÉ",
+        "selectTimeline": "Sélectionnez le délai...",
+        "timelineOptions": {
+            "asap": "Dès que possible",
+            "1month": "1 Mois",
+            "2to3months": "2-3 Mois",
+            "3to6months": "3-6 Mois",
+            "flexible": "Flexible"
+        },
+        "additionalNotes": "NOTES_SUPPLÉMENTAIRES",
+        "additionalNotesPlaceholder": "Toute information supplémentaire, idées ou préoccupations...",
+        "submit": "SOUMETTRE_LE_BRIEFING",
+        "submitting": "ENVOI_EN_COURS",
+        "success": "BRIEFING_SOUMIS_AVEC_SUCCÈS",
+        "error": "ÉCHEC_DE_L'ENVOI"
     }
 }

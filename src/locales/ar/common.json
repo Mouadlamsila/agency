@@ -634,13 +634,24 @@
         "briefing": {
             "nameLabel": "تسمية_المدخلات",
             "namePlaceholder": "أدخل اسم المشروع...",
-            "categoryLabel": "فئة_النظام"
+            "categoryLabel": "فئة_النظام",
+            "fullName": "الاسم_الكامل",
+            "fullNamePlaceholder": "محمد أحمد",
+            "email": "البريد_الإلكتروني",
+            "emailPlaceholder": "mohamed@example.com",
+            "phone": "الهاتف",
+            "phonePlaceholder": "+212 6 12 34 56 78",
+            "contact": "جهة_اتصال_اختيارية",
+            "contactPlaceholder": "جهة اتصال إضافية (اختياري)"
         },
         "categories": {
             "all": "الكل",
+            "landing": "صفحة_هبوط",
             "ecommerce": "تجارة إلكترونية",
             "saas": "برمجيات",
-            "creative": "إبداعي"
+            "portfolio": "معرض_أعمال",
+            "creative": "إبداعي",
+            "corporate": "شركة"
         },
         "selection": {
             "availableModules": "الوحدات_المتاحة",
@@ -675,5 +686,84 @@
             "subtitle": "وتم_الإرسال",
             "description": "تمت أرشفة إيجازك في خادم التطوير الآمن الخاص بنا. سيقوم مهندسونا بمراجعة معايير المشروع قريبًا."
         }
+    },
+    "clientBriefing": {
+        "label": "نموذج_الإيجاز_للعميل",
+        "title": "إيجاز_المشروع",
+        "description": "يرجى ملء هذا النموذج الشامل لمساعدتنا على فهم متطلبات وتفضيلات مشروعك.",
+        "sections": {
+            "brandIdentity": "هوية_العلامة_التجارية",
+            "projectDetails": "تفاصيل_المشروع",
+            "content": "المحتوى_والجمهور",
+            "technical": "المتطلبات_التقنية"
+        },
+        "logo": "الشعار",
+        "uploadLogo": "رفع_الشعار",
+        "productName": "اسم_المنتج",
+        "productNamePlaceholder": "أدخل اسم منتجك/خدمتك...",
+        "brandDescription": "وصف_العلامة_التجارية",
+        "brandDescriptionPlaceholder": "اوصف علامتك التجارية ورسالتك وقيمك...",
+        "colors": "تفضيلات_الألوان",
+        "customColorPlaceholder": "أو أدخل رمز اللون السداسي (مثل: #FF5733)",
+        "projectType": "نوع_المشروع",
+        "selectProjectType": "اختر نوع المشروع...",
+        "types": {
+            "website": "موقع ويب",
+            "webapp": "تطبيق ويب",
+            "mobile": "تطبيق جوال",
+            "ecommerce": "منصة تجارة إلكترونية",
+            "saas": "منصة SaaS",
+            "landing": "صفحة هبوط"
+        },
+        "style": "أسلوب_التصميم",
+        "selectStyle": "اختر أسلوب التصميم...",
+        "styles": {
+            "modern": "حديث",
+            "classic": "كلاسيكي",
+            "minimalist": "بسيط",
+            "bold": "جريء",
+            "elegant": "أنيق",
+            "playful": "مرح"
+        },
+        "animation": "تفضيل_الحركة",
+        "selectAnimation": "اختر تفضيل الحركة...",
+        "animationOptions": {
+            "yes": "نعم، أريد حركات",
+            "no": "بدون حركات",
+            "minimal": "حركات بسيطة",
+            "extensive": "حركات واسعة"
+        },
+        "preferredFonts": "الخطوط_المفضلة",
+        "preferredFontsPlaceholder": "اذكر أي خطوط أو أنماط طباعة مفضلة...",
+        "targetAudience": "الجمهور_الهدف",
+        "targetAudiencePlaceholder": "اوصف جمهورك المستهدف وشخصيات المستخدمين...",
+        "contentReady": "المحتوى_جاهز",
+        "selectContentReady": "اختر حالة المحتوى...",
+        "contentOptions": {
+            "yes": "نعم، كل المحتوى جاهز",
+            "partial": "جاهز جزئيًا",
+            "no": "لا، يجب إنشاء المحتوى"
+        },
+        "referenceWebsites": "مواقع_مرجعية",
+        "referenceWebsitesPlaceholder": "اذكر أي مواقع تحبها أو تريد الرجوع إليها (عناوين URL)...",
+        "specialRequirements": "متطلبات_خاصة",
+        "specialRequirementsPlaceholder": "أي ميزات أو وظائف أو متطلبات خاصة...",
+        "integrations": "التكاملات",
+        "integrationsPlaceholder": "اذكر أي تكاملات لطرف ثالث مطلوبة (دفع، تحليلات، CRM، إلخ)...",
+        "preferredTimeline": "الجدول_الزمني_المفضل",
+        "selectTimeline": "اختر الجدول الزمني...",
+        "timelineOptions": {
+            "asap": "في أقرب وقت ممكن",
+            "1month": "شهر واحد",
+            "2to3months": "2-3 أشهر",
+            "3to6months": "3-6 أشهر",
+            "flexible": "مرن"
+        },
+        "additionalNotes": "ملاحظات_إضافية",
+        "additionalNotesPlaceholder": "أي معلومات إضافية أو أفكار أو مخاوف...",
+        "submit": "إرسال_الإيجاز",
+        "submitting": "جاري_الإرسال",
+        "success": "تم_إرسال_الإيجاز_بنجاح",
+        "error": "فشل_الإرسال"
     }
 }

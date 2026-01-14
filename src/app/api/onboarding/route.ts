@@ -10,6 +10,9 @@ export async function POST(request: Request) {
         console.log(`project: ${body.projectName}`);
         console.log(`category: ${body.category}`);
         console.log(`template: MOD_${body.templateId}`);
+        if (body.personalInfo) {
+            console.log(`personalInfo:`, body.personalInfo);
+        }
         console.log('----------------------------------------');
 
         // Here you would typically integrate with EmailJS, Formspree, or your DB

@@ -16,10 +16,7 @@ const Navbar = () => {
     const navLinks = [
         { name: t('nav.work'), href: "/#work" },
         { name: t('nav.services'), href: "/#services" },
-        { name: t('nav.process'), href: "/#process" },
         { name: t('nav.pricing'), href: "/#engagement" },
-        { name: t('nav.team'), href: "/#team" },
-        { name: t('nav.testimonials'), href: "/#testimonials" },
         { name: t('nav.contact'), href: "/#contact" },
     ];
 
